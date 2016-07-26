@@ -1,7 +1,7 @@
---Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+--Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
---Tool Version: Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
---Date        : Thu Jul 21 14:16:49 2016
+--Tool Version: Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
+--Date        : Tue Jul 26 10:50:44 2016
 --Host        : wintermute running 64-bit Ubuntu 14.04.4 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
