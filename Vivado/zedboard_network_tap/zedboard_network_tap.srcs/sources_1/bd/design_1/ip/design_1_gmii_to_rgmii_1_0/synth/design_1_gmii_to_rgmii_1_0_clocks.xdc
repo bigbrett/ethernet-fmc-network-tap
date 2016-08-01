@@ -9,7 +9,6 @@ create_clock -name design_1_gmii_to_rgmii_1_0_rgmii_rx_clk -period 8
 # Identify RGMII Rx Pads only.  
 # This prevents setup/hold analysis being performed on false inputs,
 # eg, the configuration_vector inputs.
-
 set_input_delay -clock [get_clocks design_1_gmii_to_rgmii_1_0_rgmii_rx_clk] -max -1.5 [get_ports {rgmii_rxd[*] rgmii_rx_ctl}]
 set_input_delay -clock [get_clocks design_1_gmii_to_rgmii_1_0_rgmii_rx_clk] -min -2.8 [get_ports {rgmii_rxd[*] rgmii_rx_ctl}]
 set_input_delay -clock [get_clocks design_1_gmii_to_rgmii_1_0_rgmii_rx_clk] -clock_fall -max -1.5 -add_delay [get_ports {rgmii_rxd[*] rgmii_rx_ctl}]

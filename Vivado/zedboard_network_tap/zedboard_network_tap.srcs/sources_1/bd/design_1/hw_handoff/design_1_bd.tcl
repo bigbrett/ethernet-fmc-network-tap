@@ -165,6 +165,9 @@ proc create_root_design { parentCell } {
   set reset_port_0 [ create_bd_port -dir O reset_port_0 ]
   set reset_port_1 [ create_bd_port -dir O reset_port_1 ]
 
+  # Create instance: axi_interfaces_0, and set properties
+  set axi_interfaces_0 [ create_bd_cell -type ip -vlnv WebSensing.com:hls:axi_interfaces:2.2 axi_interfaces_0 ]
+
   # Create instance: fifo_generator_0, and set properties
   set fifo_generator_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:fifo_generator:13.1 fifo_generator_0 ]
   set_property -dict [ list \
@@ -201,12 +204,8 @@ CONFIG.Valid_Flag {true} \
 CONFIG.Write_Acknowledge_Flag {false} \
  ] $fifo_generator_1
 
-  # Create instance: gmii_to_rgmii_0, and set properties
-  set gmii_to_rgmii_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:gmii_to_rgmii:4.0 gmii_to_rgmii_0 ]
-  set_property -dict [ list \
-CONFIG.C_PHYADDR {7} \
-CONFIG.SupportLevel {Include_Shared_Logic_in_Core} \
- ] $gmii_to_rgmii_0
+  # Create instance: gmii2axis_0, and set properties
+  set gmii2axis_0 [ create_bd_cell -type ip -vlnv user.org:user:gmii2axis:1.0 gmii2axis_0 ]
 
   # Create instance: gmii_to_rgmii_1, and set properties
   set gmii_to_rgmii_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:gmii_to_rgmii:4.0 gmii_to_rgmii_1 ]
@@ -255,6 +254,13 @@ CONFIG.C_SIZE {1} \
 CONFIG.C_OPERATION {not} \
 CONFIG.C_SIZE {1} \
  ] $not_gate_full_fifo_1
+
+  # Create instance: not_gate_full_fifo_2, and set properties
+  set not_gate_full_fifo_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 not_gate_full_fifo_2 ]
+  set_property -dict [ list \
+CONFIG.C_OPERATION {not} \
+CONFIG.C_SIZE {1} \
+ ] $not_gate_full_fifo_2
 
   # Create instance: or_gate_rd_en_fifo_0, and set properties
   set or_gate_rd_en_fifo_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 or_gate_rd_en_fifo_0 ]
@@ -403,7 +409,7 @@ CONFIG.PCW_FCLK_CLK0_BUF {true} \
 CONFIG.PCW_FCLK_CLK1_BUF {true} \
 CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ {100.000000} \
 CONFIG.PCW_FPGA1_PERIPHERAL_FREQMHZ {200} \
-CONFIG.PCW_FPGA2_PERIPHERAL_FREQMHZ {50.000000} \
+CONFIG.PCW_FPGA2_PERIPHERAL_FREQMHZ {50} \
 CONFIG.PCW_FPGA3_PERIPHERAL_FREQMHZ {50} \
 CONFIG.PCW_FPGA_FCLK0_ENABLE {1} \
 CONFIG.PCW_FPGA_FCLK1_ENABLE {1} \
@@ -729,7 +735,7 @@ CONFIG.PCW_QSPI_GRP_SS1_IO {<Select>} \
 CONFIG.PCW_QSPI_PERIPHERAL_CLKSRC {IO PLL} \
 CONFIG.PCW_QSPI_PERIPHERAL_DIVISOR0 {5} \
 CONFIG.PCW_QSPI_PERIPHERAL_ENABLE {1} \
-CONFIG.PCW_QSPI_PERIPHERAL_FREQMHZ {200.000000} \
+CONFIG.PCW_QSPI_PERIPHERAL_FREQMHZ {200} \
 CONFIG.PCW_QSPI_QSPI_IO {MIO 1 .. 6} \
 CONFIG.PCW_SD0_GRP_CD_ENABLE {1} \
 CONFIG.PCW_SD0_GRP_CD_IO {MIO 47} \
@@ -1599,6 +1605,9 @@ CONFIG.IN1_WIDTH {1} \
 CONFIG.NUM_PORTS {3} \
  ] $xlconcat_1
 
+  # Create instance: xlconstant_0, and set properties
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+
   # Create instance: xlslice_data_0, and set properties
   set xlslice_data_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_data_0 ]
   set_property -dict [ list \
@@ -1654,31 +1663,34 @@ CONFIG.DOUT_WIDTH {1} \
  ] $xlslice_valid_1
 
   # Create interface connections
-  connect_bd_intf_net -intf_net gmii_to_rgmii_0_RGMII [get_bd_intf_ports rgmii_port_0] [get_bd_intf_pins gmii_to_rgmii_0/RGMII]
-  connect_bd_intf_net -intf_net gmii_to_rgmii_1_MDIO_PHY [get_bd_intf_pins gmii_to_rgmii_0/MDIO_GEM] [get_bd_intf_pins gmii_to_rgmii_1/MDIO_PHY]
+  connect_bd_intf_net -intf_net gmii2axis_0_RGMII [get_bd_intf_ports rgmii_port_0] [get_bd_intf_pins gmii2axis_0/RGMII]
+  connect_bd_intf_net -intf_net gmii_to_rgmii_1_MDIO_PHY [get_bd_intf_pins gmii2axis_0/MDIO_GEM] [get_bd_intf_pins gmii_to_rgmii_1/MDIO_PHY]
   connect_bd_intf_net -intf_net gmii_to_rgmii_1_RGMII [get_bd_intf_ports rgmii_port_1] [get_bd_intf_pins gmii_to_rgmii_1/RGMII]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
   connect_bd_intf_net -intf_net processing_system7_0_MDIO_ETHERNET_1 [get_bd_intf_pins gmii_to_rgmii_1/MDIO_GEM] [get_bd_intf_pins processing_system7_0/MDIO_ETHERNET_1]
 
   # Create port connections
+  connect_bd_net -net axi_interfaces_0_d_i_TREADY [get_bd_pins axi_interfaces_0/d_i_TREADY] [get_bd_pins gmii2axis_0/m00_axis_tready]
+  connect_bd_net -net axi_interfaces_0_d_o_TDATA [get_bd_pins axi_interfaces_0/d_o_TDATA] [get_bd_pins xlconcat_0/In0]
+  connect_bd_net -net axi_interfaces_0_d_o_TVALID [get_bd_pins axi_interfaces_0/d_o_TVALID] [get_bd_pins or_gate_wr_en_fifo_0/Op2] [get_bd_pins xlconcat_0/In2]
   connect_bd_net -net fifo_generator_0_dout [get_bd_pins fifo_generator_0/dout] [get_bd_pins xlslice_data_0/Din] [get_bd_pins xlslice_error_0/Din] [get_bd_pins xlslice_valid_0/Din]
   connect_bd_net -net fifo_generator_0_prog_empty [get_bd_pins fifo_generator_0/prog_empty] [get_bd_pins not_gate_empty_fifo_0/Op1]
   connect_bd_net -net fifo_generator_0_prog_full [get_bd_pins fifo_generator_0/prog_full] [get_bd_pins not_gate_full_fifo_0/Op1]
   connect_bd_net -net fifo_generator_1_dout [get_bd_pins fifo_generator_1/dout] [get_bd_pins xlslice_data_1/Din] [get_bd_pins xlslice_error_1/Din] [get_bd_pins xlslice_valid_1/Din]
   connect_bd_net -net fifo_generator_1_prog_empty [get_bd_pins fifo_generator_1/prog_empty] [get_bd_pins not_gate_empty_fifo_1/Op1]
   connect_bd_net -net fifo_generator_1_prog_full [get_bd_pins fifo_generator_1/prog_full] [get_bd_pins not_gate_full_fifo_1/Op1]
-  connect_bd_net -net gmii_clk_125m_out [get_bd_pins gmii_to_rgmii_0/gmii_clk_125m_out] [get_bd_pins gmii_to_rgmii_1/gmii_clk_125m_in]
-  connect_bd_net -net gmii_to_rgmii_0_gmii_clk_25m_out [get_bd_pins gmii_to_rgmii_0/gmii_clk_25m_out] [get_bd_pins gmii_to_rgmii_1/gmii_clk_25m_in]
-  connect_bd_net -net gmii_to_rgmii_0_gmii_clk_2_5m_out [get_bd_pins gmii_to_rgmii_0/gmii_clk_2_5m_out] [get_bd_pins gmii_to_rgmii_1/gmii_clk_2_5m_in]
-  connect_bd_net -net gmii_to_rgmii_0_gmii_rx_clk [get_bd_pins fifo_generator_0/wr_clk] [get_bd_pins gmii_to_rgmii_0/gmii_rx_clk]
-  connect_bd_net -net gmii_to_rgmii_0_gmii_rx_dv [get_bd_pins gmii_to_rgmii_0/gmii_rx_dv] [get_bd_pins or_gate_wr_en_fifo_0/Op2] [get_bd_pins xlconcat_0/In2]
-  connect_bd_net -net gmii_to_rgmii_0_gmii_rx_er [get_bd_pins gmii_to_rgmii_0/gmii_rx_er] [get_bd_pins xlconcat_0/In1]
-  connect_bd_net -net gmii_to_rgmii_0_gmii_rxd [get_bd_pins gmii_to_rgmii_0/gmii_rxd] [get_bd_pins xlconcat_0/In0]
-  connect_bd_net -net gmii_to_rgmii_0_gmii_tx_clk [get_bd_pins fifo_generator_1/rd_clk] [get_bd_pins gmii_to_rgmii_0/gmii_tx_clk]
-  connect_bd_net -net gmii_to_rgmii_0_link_status [get_bd_pins gmii_to_rgmii_0/link_status] [get_bd_pins link_status_and_gate/Op1]
-  connect_bd_net -net gmii_to_rgmii_0_mmcm_locked_out [get_bd_pins gmii_to_rgmii_0/mmcm_locked_out] [get_bd_pins gmii_to_rgmii_1/mmcm_locked_in]
-  connect_bd_net -net gmii_to_rgmii_0_ref_clk_out [get_bd_pins gmii_to_rgmii_0/ref_clk_out] [get_bd_pins gmii_to_rgmii_1/ref_clk_in]
+  connect_bd_net -net gmii2axis_0_Q_gmii_clk_125m_out [get_bd_pins gmii2axis_0/Q_gmii_clk_125m_out] [get_bd_pins gmii_to_rgmii_1/gmii_clk_125m_in]
+  connect_bd_net -net gmii2axis_0_Q_gmii_clk_25m_out [get_bd_pins gmii2axis_0/Q_gmii_clk_25m_out] [get_bd_pins gmii_to_rgmii_1/gmii_clk_25m_in]
+  connect_bd_net -net gmii2axis_0_Q_gmii_clk_2_5m_out [get_bd_pins gmii2axis_0/Q_gmii_clk_2_5m_out] [get_bd_pins gmii_to_rgmii_1/gmii_clk_2_5m_in]
+  connect_bd_net -net gmii2axis_0_Q_gmii_rx_er [get_bd_pins gmii2axis_0/Q_gmii_rx_er] [get_bd_pins xlconcat_0/In1]
+  connect_bd_net -net gmii2axis_0_Q_link_status [get_bd_pins gmii2axis_0/Q_link_status] [get_bd_pins link_status_and_gate/Op1]
+  connect_bd_net -net gmii2axis_0_Q_mmcm_locked [get_bd_pins gmii2axis_0/Q_mmcm_locked] [get_bd_pins gmii_to_rgmii_1/mmcm_locked_in]
+  connect_bd_net -net gmii2axis_0_Q_ref_clk_out [get_bd_pins gmii2axis_0/Q_ref_clk_out] [get_bd_pins gmii_to_rgmii_1/ref_clk_in]
+  connect_bd_net -net gmii2axis_0_m00_axis_aclk_OUT [get_bd_pins axi_interfaces_0/ap_clk] [get_bd_pins fifo_generator_0/wr_clk] [get_bd_pins gmii2axis_0/m00_axis_aclk_OUT]
+  connect_bd_net -net gmii2axis_0_m00_axis_tdata [get_bd_pins axi_interfaces_0/d_i_TDATA] [get_bd_pins gmii2axis_0/m00_axis_tdata]
+  connect_bd_net -net gmii2axis_0_m00_axis_tvalid [get_bd_pins axi_interfaces_0/d_i_TVALID] [get_bd_pins gmii2axis_0/m00_axis_tvalid]
+  connect_bd_net -net gmii2axis_0_s00_axis_aclk_OUT [get_bd_pins fifo_generator_1/rd_clk] [get_bd_pins gmii2axis_0/s00_axis_aclk_OUT]
   connect_bd_net -net gmii_to_rgmii_1_gmii_rx_clk [get_bd_pins fifo_generator_1/wr_clk] [get_bd_pins gmii_to_rgmii_1/gmii_rx_clk]
   connect_bd_net -net gmii_to_rgmii_1_gmii_rx_dv [get_bd_pins gmii_to_rgmii_1/gmii_rx_dv] [get_bd_pins or_gate_wr_en_fifo_1/Op2] [get_bd_pins xlconcat_1/In2]
   connect_bd_net -net gmii_to_rgmii_1_gmii_rx_er [get_bd_pins gmii_to_rgmii_1/gmii_rx_er] [get_bd_pins xlconcat_1/In1]
@@ -1691,125 +1703,136 @@ CONFIG.DOUT_WIDTH {1} \
   connect_bd_net -net not_gate_empty_fifo_1_Res [get_bd_pins not_gate_empty_fifo_1/Res] [get_bd_pins or_gate_rd_en_fifo_1/Op1]
   connect_bd_net -net not_gate_full_fifo_0_Res [get_bd_pins not_gate_full_fifo_0/Res] [get_bd_pins or_gate_wr_en_fifo_0/Op1]
   connect_bd_net -net not_gate_full_fifo_1_Res [get_bd_pins not_gate_full_fifo_1/Res] [get_bd_pins or_gate_wr_en_fifo_1/Op1]
+  connect_bd_net -net not_gate_full_fifo_2_Res [get_bd_pins axi_interfaces_0/ap_rst_n] [get_bd_pins not_gate_full_fifo_2/Res]
   connect_bd_net -net or_gate_rd_en_fifo_0_Res [get_bd_pins fifo_generator_0/rd_en] [get_bd_pins or_gate_rd_en_fifo_0/Res]
   connect_bd_net -net or_gate_rd_en_fifo_1_Res [get_bd_pins fifo_generator_1/rd_en] [get_bd_pins or_gate_rd_en_fifo_1/Res]
   connect_bd_net -net or_gate_wr_en_fifo_0_Res [get_bd_pins fifo_generator_0/wr_en] [get_bd_pins or_gate_wr_en_fifo_0/Res]
   connect_bd_net -net or_gate_wr_en_fifo_1_Res [get_bd_pins fifo_generator_1/wr_en] [get_bd_pins or_gate_wr_en_fifo_1/Res]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK]
-  connect_bd_net -net processing_system7_0_FCLK_CLK1 [get_bd_pins gmii_to_rgmii_0/clkin] [get_bd_pins processing_system7_0/FCLK_CLK1]
+  connect_bd_net -net processing_system7_0_FCLK_CLK1 [get_bd_pins gmii2axis_0/I_clk200] [get_bd_pins processing_system7_0/FCLK_CLK1]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins util_reduced_logic_0/Op1] [get_bd_pins util_reduced_logic_1/Op1] [get_bd_pins util_vector_logic_0/Op1]
   connect_bd_net -net ref_clk_fsel_dout [get_bd_ports ref_clk_fsel] [get_bd_pins ref_clk_fsel/dout]
   connect_bd_net -net ref_clk_oe_dout [get_bd_ports ref_clk_oe] [get_bd_pins ref_clk_oe/dout]
   connect_bd_net -net util_reduced_logic_0_Res [get_bd_ports reset_port_0] [get_bd_pins util_reduced_logic_0/Res]
   connect_bd_net -net util_reduced_logic_1_Res [get_bd_ports reset_port_1] [get_bd_pins util_reduced_logic_1/Res]
-  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins gmii_to_rgmii_0/rx_reset] [get_bd_pins gmii_to_rgmii_0/tx_reset] [get_bd_pins gmii_to_rgmii_1/rx_reset] [get_bd_pins gmii_to_rgmii_1/tx_reset] [get_bd_pins util_vector_logic_0/Res]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins gmii2axis_0/m00_axis_aresetn] [get_bd_pins gmii2axis_0/s00_axis_aresetn] [get_bd_pins gmii_to_rgmii_1/rx_reset] [get_bd_pins gmii_to_rgmii_1/tx_reset] [get_bd_pins not_gate_full_fifo_2/Op1] [get_bd_pins util_vector_logic_0/Res]
   connect_bd_net -net xlconcat_0_dout [get_bd_pins fifo_generator_0/din] [get_bd_pins xlconcat_0/dout]
   connect_bd_net -net xlconcat_1_dout [get_bd_pins fifo_generator_1/din] [get_bd_pins xlconcat_1/dout]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins axi_interfaces_0/ap_start] [get_bd_pins xlconstant_0/dout]
   connect_bd_net -net xlslice_data_0_Dout [get_bd_pins gmii_to_rgmii_1/gmii_txd] [get_bd_pins xlslice_data_0/Dout]
-  connect_bd_net -net xlslice_data_1_Dout [get_bd_pins gmii_to_rgmii_0/gmii_txd] [get_bd_pins xlslice_data_1/Dout]
+  connect_bd_net -net xlslice_data_1_Dout [get_bd_pins gmii2axis_0/s00_axis_tdata] [get_bd_pins xlslice_data_1/Dout]
   connect_bd_net -net xlslice_error_0_Dout [get_bd_pins gmii_to_rgmii_1/gmii_tx_er] [get_bd_pins xlslice_error_0/Dout]
-  connect_bd_net -net xlslice_error_1_Dout [get_bd_pins gmii_to_rgmii_0/gmii_tx_er] [get_bd_pins xlslice_error_1/Dout]
+  connect_bd_net -net xlslice_error_1_Dout [get_bd_pins gmii2axis_0/I_gmii_tx_er] [get_bd_pins xlslice_error_1/Dout]
   connect_bd_net -net xlslice_valid_0_Dout [get_bd_pins gmii_to_rgmii_1/gmii_tx_en] [get_bd_pins or_gate_rd_en_fifo_0/Op2] [get_bd_pins xlslice_valid_0/Dout]
-  connect_bd_net -net xlslice_valid_1_Dout [get_bd_pins gmii_to_rgmii_0/gmii_tx_en] [get_bd_pins or_gate_rd_en_fifo_1/Op2] [get_bd_pins xlslice_valid_1/Dout]
+  connect_bd_net -net xlslice_valid_1_Dout [get_bd_pins gmii2axis_0/s00_axis_tvalid] [get_bd_pins or_gate_rd_en_fifo_1/Op2] [get_bd_pins xlslice_valid_1/Dout]
 
   # Create address segments
 
   # Perform GUI Layout
   regenerate_bd_layout -layout_string {
+   DisplayTieOff: "1",
    guistr: "# # String gsaved with Nlview 6.5.12  2016-01-29 bk=1.3547 VDI=39 GEI=35 GUI=JA:1.6
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -y 840 -defaultsOSRD
-preplace port rgmii_port_0 -pg 1 -y 800 -defaultsOSRD
-preplace port rgmii_port_1 -pg 1 -y 820 -defaultsOSRD
-preplace port reset_port_0 -pg 1 -y 1010 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -y 960 -defaultsOSRD
-preplace port reset_port_1 -pg 1 -y 1100 -defaultsOSRD
-preplace portBus ref_clk_fsel -pg 1 -y 1190 -defaultsOSRD
-preplace portBus ref_clk_oe -pg 1 -y 1280 -defaultsOSRD
-preplace inst xlslice_data_0 -pg 1 -lvl 1 -y 310 -defaultsOSRD
-preplace inst not_gate_full_fifo_0 -pg 1 -lvl 4 -y 210 -defaultsOSRD
-preplace inst xlslice_data_1 -pg 1 -lvl 2 -y 670 -defaultsOSRD
-preplace inst not_gate_full_fifo_1 -pg 1 -lvl 4 -y 620 -defaultsOSRD
-preplace inst or_gate_rd_en_fifo_0 -pg 1 -lvl 5 -y 740 -defaultsOSRD
-preplace inst or_gate_wr_en_fifo_0 -pg 1 -lvl 5 -y 220 -defaultsOSRD
-preplace inst or_gate_rd_en_fifo_1 -pg 1 -lvl 5 -y 900 -defaultsOSRD
-preplace inst or_gate_wr_en_fifo_1 -pg 1 -lvl 5 -y 610 -defaultsOSRD
-preplace inst ref_clk_fsel -pg 1 -lvl 6 -y 1190 -defaultsOSRD
-preplace inst ref_clk_oe -pg 1 -lvl 6 -y 1280 -defaultsOSRD
-preplace inst xlconcat_0 -pg 1 -lvl 5 -y 100 -defaultsOSRD
-preplace inst link_status_not_gate -pg 1 -lvl 5 -y 350 -defaultsOSRD
-preplace inst util_vector_logic_0 -pg 1 -lvl 1 -y 1210 -defaultsOSRD
-preplace inst xlconcat_1 -pg 1 -lvl 5 -y 460 -defaultsOSRD
-preplace inst util_reduced_logic_0 -pg 1 -lvl 6 -y 1010 -defaultsOSRD
-preplace inst xlslice_valid_0 -pg 1 -lvl 1 -y 1120 -defaultsOSRD
-preplace inst util_reduced_logic_1 -pg 1 -lvl 6 -y 1100 -defaultsOSRD
-preplace inst not_gate_empty_fifo_0 -pg 1 -lvl 4 -y 730 -defaultsOSRD
-preplace inst xlslice_valid_1 -pg 1 -lvl 2 -y 490 -defaultsOSRD
-preplace inst xlslice_error_0 -pg 1 -lvl 1 -y 220 -defaultsOSRD
-preplace inst link_status_and_gate -pg 1 -lvl 4 -y 470 -defaultsOSRD
-preplace inst not_gate_empty_fifo_1 -pg 1 -lvl 4 -y 890 -defaultsOSRD
-preplace inst xlslice_error_1 -pg 1 -lvl 2 -y 580 -defaultsOSRD
+preplace port DDR -pg 1 -y 1190 -defaultsOSRD
+preplace port rgmii_port_0 -pg 1 -y 1010 -defaultsOSRD
+preplace port rgmii_port_1 -pg 1 -y 990 -defaultsOSRD
+preplace port reset_port_0 -pg 1 -y 1270 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y 1210 -defaultsOSRD
+preplace port reset_port_1 -pg 1 -y 1360 -defaultsOSRD
+preplace portBus ref_clk_fsel -pg 1 -y 1140 -defaultsOSRD
+preplace portBus ref_clk_oe -pg 1 -y 1050 -defaultsOSRD
+preplace inst xlslice_data_0 -pg 1 -lvl 1 -y 450 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 3 -y 720 -defaultsOSRD
+preplace inst gmii2axis_0 -pg 1 -lvl 3 -y 420 -defaultsOSRD
+preplace inst not_gate_full_fifo_0 -pg 1 -lvl 4 -y 290 -defaultsOSRD
+preplace inst xlslice_data_1 -pg 1 -lvl 2 -y 700 -defaultsOSRD
+preplace inst not_gate_full_fifo_1 -pg 1 -lvl 4 -y 680 -defaultsOSRD
+preplace inst or_gate_rd_en_fifo_0 -pg 1 -lvl 5 -y 800 -defaultsOSRD
+preplace inst or_gate_wr_en_fifo_0 -pg 1 -lvl 5 -y 280 -defaultsOSRD
+preplace inst not_gate_full_fifo_2 -pg 1 -lvl 3 -y 810 -defaultsOSRD
+preplace inst or_gate_rd_en_fifo_1 -pg 1 -lvl 5 -y 920 -defaultsOSRD
+preplace inst or_gate_wr_en_fifo_1 -pg 1 -lvl 5 -y 690 -defaultsOSRD
+preplace inst ref_clk_fsel -pg 1 -lvl 6 -y 1140 -defaultsOSRD
+preplace inst ref_clk_oe -pg 1 -lvl 6 -y 1050 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 5 -y 160 -defaultsOSRD
+preplace inst link_status_not_gate -pg 1 -lvl 5 -y 440 -defaultsOSRD
+preplace inst util_vector_logic_0 -pg 1 -lvl 1 -y 810 -defaultsOSRD
+preplace inst xlconcat_1 -pg 1 -lvl 5 -y 560 -defaultsOSRD
+preplace inst util_reduced_logic_0 -pg 1 -lvl 6 -y 1270 -defaultsOSRD
+preplace inst xlslice_valid_0 -pg 1 -lvl 1 -y 270 -defaultsOSRD
+preplace inst util_reduced_logic_1 -pg 1 -lvl 6 -y 1360 -defaultsOSRD
+preplace inst not_gate_empty_fifo_0 -pg 1 -lvl 4 -y 790 -defaultsOSRD
+preplace inst xlslice_valid_1 -pg 1 -lvl 2 -y 610 -defaultsOSRD
+preplace inst xlslice_error_0 -pg 1 -lvl 1 -y 360 -defaultsOSRD
+preplace inst link_status_and_gate -pg 1 -lvl 4 -y 450 -defaultsOSRD
+preplace inst axi_interfaces_0 -pg 1 -lvl 4 -y 120 -defaultsOSRD
+preplace inst not_gate_empty_fifo_1 -pg 1 -lvl 4 -y 910 -defaultsOSRD
+preplace inst xlslice_error_1 -pg 1 -lvl 2 -y 790 -defaultsOSRD
 preplace inst fifo_generator_0 -pg 1 -lvl 6 -y 280 -defaultsOSRD
-preplace inst gmii_to_rgmii_0 -pg 1 -lvl 3 -y 530 -defaultsOSRD
-preplace inst fifo_generator_1 -pg 1 -lvl 6 -y 540 -defaultsOSRD
-preplace inst gmii_to_rgmii_1 -pg 1 -lvl 2 -y 220 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 1 -y 910 -defaultsOSRD
-preplace netloc processing_system7_0_DDR 1 1 6 NJ 840 NJ 840 NJ 840 NJ 840 NJ 840 NJ
-preplace netloc or_gate_rd_en_fifo_0_Res 1 5 1 2010
-preplace netloc fifo_generator_1_prog_full 1 3 4 1440 670 NJ 670 NJ 670 2380
-preplace netloc gmii_to_rgmii_1_gmii_tx_clk 1 1 5 590 430 NJ 290 NJ 290 NJ 290 NJ
+preplace inst fifo_generator_1 -pg 1 -lvl 6 -y 550 -defaultsOSRD
+preplace inst gmii_to_rgmii_1 -pg 1 -lvl 2 -y 360 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -y 1260 -defaultsOSRD
+preplace netloc processing_system7_0_DDR 1 1 6 NJ 1190 NJ 1190 NJ 1190 NJ 1190 NJ 1190 NJ
+preplace netloc gmii2axis_0_m00_axis_tvalid 1 3 1 1380
+preplace netloc gmii2axis_0_Q_link_status 1 3 1 1480
+preplace netloc or_gate_rd_en_fifo_0_Res 1 5 1 2270
+preplace netloc fifo_generator_1_prog_full 1 3 4 1580 630 NJ 630 NJ 680 2650
+preplace netloc gmii_to_rgmii_1_gmii_tx_clk 1 1 5 570 850 NJ 660 NJ 380 NJ 380 2250
 preplace netloc ref_clk_fsel_dout 1 6 1 NJ
 preplace netloc util_reduced_logic_1_Res 1 6 1 NJ
-preplace netloc or_gate_wr_en_fifo_0_Res 1 5 1 1990
-preplace netloc gmii_to_rgmii_0_gmii_clk_2_5m_out 1 1 3 570 790 NJ 760 1310
-preplace netloc gmii_to_rgmii_1_gmii_rx_dv 1 1 4 520 780 NJ 740 NJ 550 1720
-preplace netloc gmii_to_rgmii_1_gmii_rx_er 1 1 4 550 440 NJ 350 NJ 350 NJ
-preplace netloc or_gate_wr_en_fifo_1_Res 1 5 1 2020
-preplace netloc fifo_generator_0_prog_empty 1 3 4 1430 300 NJ 300 NJ 410 2380
-preplace netloc gmii_to_rgmii_0_gmii_rx_clk 1 2 4 1000 360 NJ 530 NJ 530 1970
-preplace netloc gmii_to_rgmii_0_gmii_rxd 1 2 3 970 80 NJ 80 NJ
-preplace netloc gmii_to_rgmii_0_ref_clk_out 1 1 3 560 770 NJ 730 1340
-preplace netloc xlconcat_1_dout 1 5 1 1980
-preplace netloc util_vector_logic_0_Res 1 1 2 500 720 890
-preplace netloc gmii_to_rgmii_0_mmcm_locked_out 1 1 3 580 750 NJ 710 1320
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 6 30 1260 460 1020 NJ 1020 NJ 1020 NJ 1020 2010
-preplace netloc xlslice_valid_1_Dout 1 2 3 910 940 NJ 940 NJ
+preplace netloc gmii2axis_0_RGMII 1 3 4 NJ 1000 NJ 1000 NJ 1000 NJ
+preplace netloc axi_interfaces_0_d_o_TVALID 1 4 1 1990
+preplace netloc or_gate_wr_en_fifo_0_Res 1 5 1 2230
+preplace netloc axi_interfaces_0_d_i_TREADY 1 3 1 1420
+preplace netloc gmii_to_rgmii_1_gmii_rx_dv 1 1 4 510 950 NJ 950 NJ 620 1990
+preplace netloc gmii_to_rgmii_1_gmii_rx_er 1 1 4 530 940 NJ 940 NJ 560 NJ
+preplace netloc axi_interfaces_0_d_o_TDATA 1 4 1 1980
+preplace netloc gmii2axis_0_Q_gmii_clk_25m_out 1 1 3 600 890 NJ 880 1400
+preplace netloc or_gate_wr_en_fifo_1_Res 1 5 1 2290
+preplace netloc fifo_generator_0_prog_empty 1 3 4 1570 360 NJ 360 NJ 420 2640
+preplace netloc util_vector_logic_0_Res 1 1 2 500 840 910
+preplace netloc gmii2axis_0_Q_mmcm_locked 1 1 3 580 870 NJ 860 1420
+preplace netloc gmii2axis_0_Q_gmii_rx_er 1 3 2 1450 240 NJ
+preplace netloc xlconcat_1_dout 1 5 1 2280
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 6 30 960 460 1360 NJ 1360 NJ 1360 NJ 1360 2280
+preplace netloc gmii2axis_0_s00_axis_aclk_OUT 1 3 3 NJ 370 NJ 370 2260
+preplace netloc xlslice_valid_1_Dout 1 2 3 1010 980 NJ 960 NJ
 preplace netloc ref_clk_oe_dout 1 6 1 NJ
-preplace netloc gmii_to_rgmii_0_RGMII 1 3 4 NJ 800 NJ 800 NJ 800 NJ
-preplace netloc fifo_generator_1_prog_empty 1 3 4 1440 830 NJ 830 NJ 830 2370
+preplace netloc gmii2axis_0_Q_ref_clk_out 1 1 3 560 910 NJ 900 1380
+preplace netloc fifo_generator_1_prog_empty 1 3 4 1600 980 NJ 980 NJ 980 2640
 preplace netloc not_gate_empty_fifo_0_Res 1 4 1 NJ
 preplace netloc not_gate_full_fifo_0_Res 1 4 1 NJ
 preplace netloc link_status_and_gate_Res 1 4 1 NJ
-preplace netloc gmii_to_rgmii_1_RGMII 1 2 5 NJ 820 NJ 820 NJ 820 NJ 820 NJ
+preplace netloc gmii_to_rgmii_1_RGMII 1 2 5 NJ 990 NJ 990 NJ 990 NJ 990 NJ
+preplace netloc not_gate_full_fifo_2_Res 1 3 1 NJ
+preplace netloc xlconstant_0_dout 1 3 1 NJ
+preplace netloc gmii2axis_0_m00_axis_aclk_OUT 1 3 3 1440 340 NJ 340 NJ
+preplace netloc xlslice_data_1_Dout 1 2 1 NJ
 preplace netloc not_gate_empty_fifo_1_Res 1 4 1 NJ
 preplace netloc xlslice_data_0_Dout 1 1 1 NJ
-preplace netloc xlslice_data_1_Dout 1 2 1 NJ
-preplace netloc gmii_to_rgmii_0_gmii_rx_dv 1 2 3 990 110 NJ 110 1680
-preplace netloc xlconcat_0_dout 1 5 1 2040
-preplace netloc gmii_to_rgmii_1_MDIO_PHY 1 2 1 960
-preplace netloc processing_system7_0_MDIO_ETHERNET_1 1 1 1 450
-preplace netloc processing_system7_0_FIXED_IO 1 1 6 NJ 960 NJ 960 NJ 960 NJ 960 NJ 960 NJ
-preplace netloc gmii_to_rgmii_1_link_status 1 2 2 940 750 NJ
-preplace netloc gmii_to_rgmii_0_link_status 1 3 1 1350
+preplace netloc xlconcat_0_dout 1 5 1 2230
+preplace netloc processing_system7_0_FIXED_IO 1 1 6 NJ 1210 NJ 1210 NJ 1210 NJ 1210 NJ 1210 NJ
+preplace netloc gmii_to_rgmii_1_MDIO_PHY 1 2 1 1020
+preplace netloc processing_system7_0_MDIO_ETHERNET_1 1 1 1 470
+preplace netloc gmii_to_rgmii_1_link_status 1 2 2 1000 910 NJ
 preplace netloc util_reduced_logic_0_Res 1 6 1 NJ
 preplace netloc not_gate_full_fifo_1_Res 1 4 1 NJ
 preplace netloc xlslice_error_0_Dout 1 1 1 NJ
-preplace netloc fifo_generator_1_dout 1 1 5 550 810 NJ 790 NJ 680 NJ 680 NJ
-preplace netloc fifo_generator_0_dout 1 0 6 20 750 NJ 830 NJ 810 NJ 810 NJ 810 NJ
-preplace netloc gmii_to_rgmii_0_gmii_clk_25m_out 1 1 3 600 740 NJ 700 1300
-preplace netloc gmii_clk_125m_out 1 1 3 540 10 NJ 120 1330
-preplace netloc fifo_generator_0_prog_full 1 3 4 1430 280 NJ 280 NJ 150 2380
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 2 30 1070 450
+preplace netloc fifo_generator_1_dout 1 1 5 550 970 NJ 970 NJ 860 NJ 860 NJ
+preplace netloc fifo_generator_0_dout 1 0 6 20 860 NJ 860 NJ 670 NJ 390 NJ 390 NJ
+preplace netloc gmii2axis_0_m00_axis_tdata 1 3 1 1390
+preplace netloc gmii2axis_0_Q_gmii_clk_2_5m_out 1 1 3 610 900 NJ 890 1390
+preplace netloc fifo_generator_0_prog_full 1 3 4 1570 350 NJ 350 NJ 410 2650
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 2 30 1420 450
+preplace netloc processing_system7_0_FCLK_CLK1 1 1 2 NJ 1350 1020
 preplace netloc xlslice_error_1_Dout 1 2 1 NJ
-preplace netloc gmii_to_rgmii_1_gmii_rxd 1 1 4 530 760 NJ 720 NJ 540 NJ
-preplace netloc link_status_not_gate_Res 1 5 1 2040
-preplace netloc processing_system7_0_FCLK_CLK1 1 1 2 490 730 NJ
-preplace netloc or_gate_rd_en_fifo_1_Res 1 5 1 2050
-preplace netloc xlslice_valid_0_Dout 1 1 4 470 820 NJ 800 NJ 780 NJ
-preplace netloc gmii_to_rgmii_0_gmii_tx_clk 1 2 4 1000 780 NJ 570 NJ 550 NJ
-preplace netloc gmii_to_rgmii_1_gmii_rx_clk 1 1 5 510 800 NJ 770 NJ 560 NJ 540 NJ
-preplace netloc gmii_to_rgmii_0_gmii_rx_er 1 2 3 980 100 NJ 100 NJ
-levelinfo -pg 1 0 240 740 1150 1560 1850 2210 2400 -top 0 -bot 1330
+preplace netloc gmii_to_rgmii_1_gmii_rxd 1 1 4 540 930 NJ 930 NJ 540 NJ
+preplace netloc link_status_not_gate_Res 1 5 1 2310
+preplace netloc gmii2axis_0_Q_gmii_clk_125m_out 1 1 3 590 880 NJ 870 1410
+preplace netloc or_gate_rd_en_fifo_1_Res 1 5 1 2320
+preplace netloc xlslice_valid_0_Dout 1 1 4 490 960 NJ 960 NJ 840 NJ
+preplace netloc gmii_to_rgmii_1_gmii_rx_clk 1 1 5 520 920 NJ 920 NJ 510 NJ 490 NJ
+levelinfo -pg 1 0 240 750 1200 1790 2110 2480 2670 -top 0 -bot 1430
 ",
 }
 

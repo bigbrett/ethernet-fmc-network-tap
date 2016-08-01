@@ -212,15 +212,6 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>gmii_to_rgmii_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="ip" spirit:name="gmii_to_rgmii" spirit:vendor="xilinx.com" spirit:version="4.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_gmii_to_rgmii_0_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="C_PHYADDR">7</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="SupportLevel">Include_Shared_Logic_in_Core</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
         <spirit:instanceName>gmii_to_rgmii_1</spirit:instanceName>
         <spirit:componentRef spirit:library="ip" spirit:name="gmii_to_rgmii" spirit:vendor="xilinx.com" spirit:version="4.0"/>
         <spirit:configurableElementValues>
@@ -468,6 +459,36 @@
           <spirit:configurableElementValue spirit:referenceId="C_OPERATION">not</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>gmii2axis_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="user" spirit:name="gmii2axis" spirit:vendor="user.org" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_gmii2axis_0_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>xlconstant_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="xlconstant" spirit:vendor="xilinx.com" spirit:version="1.1"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_xlconstant_0_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>not_gate_full_fifo_2</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="util_vector_logic" spirit:vendor="xilinx.com" spirit:version="2.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_not_gate_full_fifo_1_1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_SIZE">1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_OPERATION">not</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>axi_interfaces_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="hls" spirit:name="axi_interfaces" spirit:vendor="WebSensing.com" spirit:version="2.2"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_axi_interfaces_0_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
     </spirit:componentInstances>
     <spirit:interconnections>
       <spirit:interconnection>
@@ -478,7 +499,7 @@
       <spirit:interconnection>
         <spirit:name>gmii_to_rgmii_1_MDIO_PHY</spirit:name>
         <spirit:activeInterface spirit:busRef="MDIO_PHY" spirit:componentRef="gmii_to_rgmii_1"/>
-        <spirit:activeInterface spirit:busRef="MDIO_GEM" spirit:componentRef="gmii_to_rgmii_0"/>
+        <spirit:activeInterface spirit:busRef="MDIO_GEM" spirit:componentRef="gmii2axis_0"/>
       </spirit:interconnection>
     </spirit:interconnections>
     <spirit:adHocConnections>
@@ -505,44 +526,6 @@
         <spirit:externalPortReference spirit:portRef="reset_port_1"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>gmii_to_rgmii_0_ref_clk_out</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="ref_clk_out"/>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="ref_clk_in"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>gmii_to_rgmii_0_mmcm_locked_out</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="mmcm_locked_out"/>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="mmcm_locked_in"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>gmii_clk_125m_out</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="gmii_clk_125m_out"/>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="gmii_clk_125m_in"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>gmii_to_rgmii_0_gmii_clk_25m_out</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="gmii_clk_25m_out"/>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="gmii_clk_25m_in"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>gmii_to_rgmii_0_gmii_clk_2_5m_out</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="gmii_clk_2_5m_out"/>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="gmii_clk_2_5m_in"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>processing_system7_0_FCLK_CLK1</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="FCLK_CLK1"/>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="clkin"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>util_vector_logic_0_Res</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="util_vector_logic_0" spirit:portRef="Res"/>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="tx_reset"/>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="rx_reset"/>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="tx_reset"/>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="rx_reset"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
         <spirit:name>ref_clk_oe_dout</spirit:name>
         <spirit:internalPortReference spirit:componentRef="ref_clk_oe" spirit:portRef="dout"/>
         <spirit:externalPortReference spirit:portRef="ref_clk_oe"/>
@@ -551,11 +534,6 @@
         <spirit:name>ref_clk_fsel_dout</spirit:name>
         <spirit:internalPortReference spirit:componentRef="ref_clk_fsel" spirit:portRef="dout"/>
         <spirit:externalPortReference spirit:portRef="ref_clk_fsel"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>gmii_to_rgmii_0_link_status</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="link_status"/>
-        <spirit:internalPortReference spirit:componentRef="link_status_and_gate" spirit:portRef="Op1"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>gmii_to_rgmii_1_link_status</spirit:name>
@@ -598,27 +576,6 @@
         <spirit:internalPortReference spirit:componentRef="fifo_generator_1" spirit:portRef="din"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>gmii_to_rgmii_0_gmii_rxd</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="gmii_rxd"/>
-        <spirit:internalPortReference spirit:componentRef="xlconcat_0" spirit:portRef="In0"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>gmii_to_rgmii_0_gmii_rx_er</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="gmii_rx_er"/>
-        <spirit:internalPortReference spirit:componentRef="xlconcat_0" spirit:portRef="In1"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>gmii_to_rgmii_0_gmii_rx_dv</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="gmii_rx_dv"/>
-        <spirit:internalPortReference spirit:componentRef="xlconcat_0" spirit:portRef="In2"/>
-        <spirit:internalPortReference spirit:componentRef="or_gate_wr_en_fifo_0" spirit:portRef="Op2"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>gmii_to_rgmii_0_gmii_rx_clk</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="gmii_rx_clk"/>
-        <spirit:internalPortReference spirit:componentRef="fifo_generator_0" spirit:portRef="wr_clk"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
         <spirit:name>gmii_to_rgmii_1_gmii_rxd</spirit:name>
         <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="gmii_rxd"/>
         <spirit:internalPortReference spirit:componentRef="xlconcat_1" spirit:portRef="In0"/>
@@ -638,27 +595,6 @@
         <spirit:name>gmii_to_rgmii_1_gmii_rx_clk</spirit:name>
         <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="gmii_rx_clk"/>
         <spirit:internalPortReference spirit:componentRef="fifo_generator_1" spirit:portRef="wr_clk"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>xlslice_data_1_Dout</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="xlslice_data_1" spirit:portRef="Dout"/>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="gmii_txd"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>xlslice_error_1_Dout</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="xlslice_error_1" spirit:portRef="Dout"/>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="gmii_tx_er"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>xlslice_valid_1_Dout</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="xlslice_valid_1" spirit:portRef="Dout"/>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="gmii_tx_en"/>
-        <spirit:internalPortReference spirit:componentRef="or_gate_rd_en_fifo_1" spirit:portRef="Op2"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>gmii_to_rgmii_0_gmii_tx_clk</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="gmii_tx_clk"/>
-        <spirit:internalPortReference spirit:componentRef="fifo_generator_1" spirit:portRef="rd_clk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>xlslice_data_0_Dout</spirit:name>
@@ -741,6 +677,118 @@
         <spirit:internalPortReference spirit:componentRef="or_gate_wr_en_fifo_1" spirit:portRef="Res"/>
         <spirit:internalPortReference spirit:componentRef="fifo_generator_1" spirit:portRef="wr_en"/>
       </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>gmii2axis_0_Q_gmii_rx_er</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="Q_gmii_rx_er"/>
+        <spirit:internalPortReference spirit:componentRef="xlconcat_0" spirit:portRef="In1"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>gmii2axis_0_Q_mmcm_locked</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="Q_mmcm_locked"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="mmcm_locked_in"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>gmii2axis_0_Q_gmii_clk_2_5m_out</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="Q_gmii_clk_2_5m_out"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="gmii_clk_2_5m_in"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>gmii2axis_0_Q_gmii_clk_125m_out</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="Q_gmii_clk_125m_out"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="gmii_clk_125m_in"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>gmii2axis_0_Q_gmii_clk_25m_out</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="Q_gmii_clk_25m_out"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="gmii_clk_25m_in"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>xlslice_valid_1_Dout</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="xlslice_valid_1" spirit:portRef="Dout"/>
+        <spirit:internalPortReference spirit:componentRef="or_gate_rd_en_fifo_1" spirit:portRef="Op2"/>
+        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="s00_axis_tvalid"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>gmii2axis_0_Q_link_status</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="Q_link_status"/>
+        <spirit:internalPortReference spirit:componentRef="link_status_and_gate" spirit:portRef="Op1"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>gmii2axis_0_m00_axis_tdata</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="m00_axis_tdata"/>
+        <spirit:internalPortReference spirit:componentRef="axi_interfaces_0" spirit:portRef="d_i_TDATA"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>xlslice_error_1_Dout</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="xlslice_error_1" spirit:portRef="Dout"/>
+        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="I_gmii_tx_er"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>xlslice_data_1_Dout</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="xlslice_data_1" spirit:portRef="Dout"/>
+        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="s00_axis_tdata"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>gmii2axis_0_s00_axis_aclk_OUT</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="s00_axis_aclk_OUT"/>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_1" spirit:portRef="rd_clk"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>gmii2axis_0_Q_ref_clk_out</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="Q_ref_clk_out"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="ref_clk_in"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>gmii2axis_0_m00_axis_aclk_OUT</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="m00_axis_aclk_OUT"/>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_0" spirit:portRef="wr_clk"/>
+        <spirit:internalPortReference spirit:componentRef="axi_interfaces_0" spirit:portRef="ap_clk"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>processing_system7_0_FCLK_CLK1</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="FCLK_CLK1"/>
+        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="I_clk200"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>xlconstant_0_dout</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="xlconstant_0" spirit:portRef="dout"/>
+        <spirit:internalPortReference spirit:componentRef="axi_interfaces_0" spirit:portRef="ap_start"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>axi_interfaces_0_d_o_TVALID</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="axi_interfaces_0" spirit:portRef="d_o_TVALID"/>
+        <spirit:internalPortReference spirit:componentRef="xlconcat_0" spirit:portRef="In2"/>
+        <spirit:internalPortReference spirit:componentRef="or_gate_wr_en_fifo_0" spirit:portRef="Op2"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>gmii2axis_0_m00_axis_tvalid</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="m00_axis_tvalid"/>
+        <spirit:internalPortReference spirit:componentRef="axi_interfaces_0" spirit:portRef="d_i_TVALID"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>axi_interfaces_0_d_o_TDATA</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="axi_interfaces_0" spirit:portRef="d_o_TDATA"/>
+        <spirit:internalPortReference spirit:componentRef="xlconcat_0" spirit:portRef="In0"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>axi_interfaces_0_d_i_TREADY</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="axi_interfaces_0" spirit:portRef="d_i_TREADY"/>
+        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="m00_axis_tready"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>util_vector_logic_0_Res</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="util_vector_logic_0" spirit:portRef="Res"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="tx_reset"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="rx_reset"/>
+        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="s00_axis_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="m00_axis_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="not_gate_full_fifo_2" spirit:portRef="Op1"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>not_gate_full_fifo_2_Res</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="not_gate_full_fifo_2" spirit:portRef="Res"/>
+        <spirit:internalPortReference spirit:componentRef="axi_interfaces_0" spirit:portRef="ap_rst_n"/>
+      </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>
       <spirit:hierConnection spirit:interfaceRef="DDR/processing_system7_0_DDR">
@@ -749,8 +797,8 @@
       <spirit:hierConnection spirit:interfaceRef="FIXED_IO/processing_system7_0_FIXED_IO">
         <spirit:activeInterface spirit:busRef="FIXED_IO" spirit:componentRef="processing_system7_0"/>
       </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="rgmii_port_0/gmii_to_rgmii_0_RGMII">
-        <spirit:activeInterface spirit:busRef="RGMII" spirit:componentRef="gmii_to_rgmii_0"/>
+      <spirit:hierConnection spirit:interfaceRef="rgmii_port_0/gmii2axis_0_RGMII">
+        <spirit:activeInterface spirit:busRef="RGMII" spirit:componentRef="gmii2axis_0"/>
       </spirit:hierConnection>
       <spirit:hierConnection spirit:interfaceRef="rgmii_port_1/gmii_to_rgmii_1_RGMII">
         <spirit:activeInterface spirit:busRef="RGMII" spirit:componentRef="gmii_to_rgmii_1"/>

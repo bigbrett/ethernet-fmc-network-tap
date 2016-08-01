@@ -1,7 +1,7 @@
 --Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
---Date        : Tue Jul 26 10:51:30 2016
+--Date        : Mon Aug  1 15:04:07 2016
 --Host        : wintermute running 64-bit Ubuntu 14.04.4 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -77,11 +77,11 @@ architecture STRUCTURE of design_1_wrapper is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
+    rgmii_port_0_td : out STD_LOGIC_VECTOR ( 3 downto 0 );
     rgmii_port_0_rd : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    rgmii_port_0_tx_ctl : out STD_LOGIC;
     rgmii_port_0_rx_ctl : in STD_LOGIC;
     rgmii_port_0_rxc : in STD_LOGIC;
-    rgmii_port_0_td : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    rgmii_port_0_tx_ctl : out STD_LOGIC;
     rgmii_port_0_txc : out STD_LOGIC;
     rgmii_port_1_rd : in STD_LOGIC_VECTOR ( 3 downto 0 );
     rgmii_port_1_rx_ctl : in STD_LOGIC;
