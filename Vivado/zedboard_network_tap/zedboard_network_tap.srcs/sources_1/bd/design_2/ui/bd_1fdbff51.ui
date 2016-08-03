@@ -1,42 +1,82 @@
 {
    guistr: "# # String gsaved with Nlview 6.5.12  2016-01-29 bk=1.3547 VDI=39 GEI=35 GUI=JA:1.6
 #  -string -flagsOSRD
-preplace port clkin -pg 1 -y -120 -defaultsOSRD
-preplace port tx_reset -pg 1 -y -180 -defaultsOSRD
-preplace port rx_reset -pg 1 -y -140 -defaultsOSRD
-preplace port mdio_gem_o -pg 1 -y 130 -defaultsOSRD
-preplace port GMII_0 -pg 1 -y -200 -defaultsOSRD
-preplace port mdio_gem_mdc -pg 1 -y 90 -defaultsOSRD
-preplace port GMII_1 -pg 1 -y 60 -defaultsOSRD
-preplace port mdio_gem_t -pg 1 -y 150 -defaultsOSRD
-preplace port RGMII_0 -pg 1 -y -240 -defaultsOSRD
-preplace port RGMII_1 -pg 1 -y 130 -defaultsOSRD
-preplace port mdio_gem_i -pg 1 -y 110 -defaultsOSRD
-preplace portBus link_status_AND -pg 1 -y 20 -defaultsOSRD
-preplace inst link_status_and_gate -pg 1 -lvl 2 -y 20 -defaultsOSRD
-preplace inst gmii_to_rgmii_0 -pg 1 -lvl 1 -y -170 -defaultsOSRD
-preplace inst gmii_to_rgmii_1 -pg 1 -lvl 1 -y 190 -defaultsOSRD
-preplace netloc gmii_to_rgmii_0_gmii_clk_125m_out 1 0 2 -30 -10 510
-preplace netloc mdio_gem_o_1 1 0 1 NJ
-preplace netloc mdio_gem_mdc_1 1 0 1 NJ
-preplace netloc gmii_to_rgmii_0_gmii_clk_2_5m_out 1 0 2 -40 -20 500
-preplace netloc tx_reset_1 1 0 1 NJ
-preplace netloc clkin_1 1 0 1 -40
-preplace netloc gmii_to_rgmii_0_ref_clk_out 1 0 2 0 10 550
-preplace netloc util_vector_logic_0_Res 1 2 1 N
-preplace netloc gmii_to_rgmii_0_mmcm_locked_out 1 0 2 -10 0 520
-preplace netloc gmii_to_rgmii_0_RGMII 1 1 2 N -250 880
-preplace netloc GMII_1 1 0 1 -60
-preplace netloc mdio_gem_t_1 1 0 1 NJ
-preplace netloc gmii_to_rgmii_1_RGMII 1 1 2 550 130 N
-preplace netloc GMII_2 1 0 1 -70
-preplace netloc gmii_to_rgmii_1_MDIO_PHY 1 0 2 -20 20 500
-preplace netloc gmii_to_rgmii_1_link_status 1 1 1 540
-preplace netloc gmii_to_rgmii_0_link_status 1 1 1 560
-preplace netloc rx_reset_1 1 0 1 NJ
-preplace netloc gmii_to_rgmii_0_gmii_clk_25m_out 1 0 2 0 360 530
-preplace netloc gmii_to_rgmii_1_mdio_gem_i 1 0 3 -20 370 NJ 110 NJ
-levelinfo -pg 1 -90 350 760 900 -top -320 -bot 380
+preplace port gmii_0_tx_er -pg 1 -y 500 -defaultsOSRD
+preplace port gmii_0_tx_clk -pg 1 -y 460 -defaultsOSRD
+preplace port clkin -pg 1 -y 70 -defaultsOSRD
+preplace port gmii_1_rx_clk -pg 1 -y 1100 -defaultsOSRD
+preplace port gmii_1_tx_clk -pg 1 -y 1180 -defaultsOSRD
+preplace port tx_reset -pg 1 -y 870 -defaultsOSRD
+preplace port rx_reset -pg 1 -y 890 -defaultsOSRD
+preplace port S_AXIS_GMII1_TX -pg 1 -y 920 -defaultsOSRD
+preplace port gmii_0_rx_er -pg 1 -y 420 -defaultsOSRD
+preplace port mdio_gem_o -pg 1 -y 790 -defaultsOSRD
+preplace port S_AXIS_GMII0_TX -pg 1 -y 20 -defaultsOSRD
+preplace port mdio_gem_mdc -pg 1 -y 750 -defaultsOSRD
+preplace port M_AXIS_GMII0_RX -pg 1 -y -10 -defaultsOSRD -left
+preplace port M_AXIS_GMII1_RX -pg 1 -y 780 -defaultsOSRD
+preplace port mdio_gem_t -pg 1 -y 810 -defaultsOSRD
+preplace port RGMII_0 -pg 1 -y 300 -defaultsOSRD
+preplace port RGMII_1 -pg 1 -y 820 -defaultsOSRD
+preplace port gmii_0_rx_clk -pg 1 -y 380 -defaultsOSRD
+preplace port mdio_gem_i -pg 1 -y 670 -defaultsOSRD
+preplace portBus link_status_AND -pg 1 -y 550 -defaultsOSRD
+preplace inst axis_data_fifo_1 -pg 1 -lvl 3 -y 230 -defaultsOSRD -orient R180
+preplace inst axis_data_fifo_2 -pg 1 -lvl 3 -y 840 -defaultsOSRD -orient R180
+preplace inst axis_data_fifo_3 -pg 1 -lvl 2 -y 1000 -defaultsOSRD
+preplace inst util_vector_logic_0 -pg 1 -lvl 1 -y 620 -defaultsOSRD
+preplace inst util_vector_logic_1 -pg 1 -lvl 1 -y 320 -defaultsOSRD
+preplace inst axis_subset_converter_0 -pg 1 -lvl 3 -y 470 -defaultsOSRD
+preplace inst axis_subset_converter_1 -pg 1 -lvl 2 -y 240 -defaultsOSRD -orient R180
+preplace inst axis_subset_converter_2 -pg 1 -lvl 2 -y 800 -defaultsOSRD -orient R180
+preplace inst link_status_and_gate -pg 1 -lvl 5 -y 550 -defaultsOSRD
+preplace inst axis_subset_converter_3 -pg 1 -lvl 3 -y 1100 -defaultsOSRD
+preplace inst gmii_to_rgmii_0 -pg 1 -lvl 4 -y 440 -defaultsOSRD
+preplace inst gmii_to_rgmii_1 -pg 1 -lvl 4 -y 1160 -defaultsOSRD
+preplace inst axis_data_fifo_0 -pg 1 -lvl 2 -y 430 -defaultsOSRD
+preplace netloc axis_subset_converter_1_M_AXIS 1 0 2 NJ -10 NJ
+preplace netloc axis_subset_converter_3_m_axis_tvalid 1 3 1 2030
+preplace netloc gmii_to_rgmii_1_gmii_tx_clk 1 1 5 910 1130 1560 1200 2020 1440 NJ 1180 NJ
+preplace netloc gmii_to_rgmii_0_gmii_clk_125m_out 1 3 2 NJ 700 2530
+preplace netloc mdio_gem_o_1 1 0 4 NJ 790 NJ 890 NJ 990 2090
+preplace netloc mdio_gem_mdc_1 1 0 4 NJ 750 NJ 880 NJ 960 N
+preplace netloc gmii_to_rgmii_0_gmii_clk_2_5m_out 1 3 2 NJ 690 2510
+preplace netloc gmii_to_rgmii_1_gmii_rx_dv 1 3 1 2070
+preplace netloc tx_reset_1 1 0 4 NJ 680 NJ 680 NJ 680 NJ
+preplace netloc gmii_to_rgmii_0_gmii_rx_clk 1 3 3 2160 220 NJ 220 2860
+preplace netloc gmii_to_rgmii_0_gmii_rxd 1 3 1 2150
+preplace netloc clkin_1 1 0 4 NJ 70 NJ 90 NJ 90 2130
+preplace netloc gmii_to_rgmii_0_ref_clk_out 1 1 4 880 1110 1550 970 NJ 770 2550
+preplace netloc axis_subset_converter_0_m_axis_tdata 1 3 1 2030
+preplace netloc util_vector_logic_0_Res 1 5 1 NJ
+preplace netloc gmii_to_rgmii_0_mmcm_locked_out 1 3 2 NJ 710 2540
+preplace netloc axis_subset_converter_3_m_axis_tdata 1 3 1 2040
+preplace netloc gmii_to_rgmii_0_RGMII 1 4 2 NJ 300 NJ
+preplace netloc mdio_gem_t_1 1 0 4 NJ 810 NJ 1120 NJ 1000 2060
+preplace netloc gmii_to_rgmii_1_RGMII 1 4 2 NJ 820 NJ
+preplace netloc gmii_to_rgmii_0_gmii_rx_dv 1 3 1 2140
+preplace netloc gmii_to_rgmii_1_MDIO_PHY 1 3 2 2170 230 2560
+preplace netloc axis_subset_converter_0_m_axis_tvalid 1 3 1 2040
+preplace netloc gmii_to_rgmii_1_link_status 1 4 1 NJ
+preplace netloc gmii_to_rgmii_0_link_status 1 4 1 N
+preplace netloc S_AXIS_1 1 0 2 NJ 20 NJ
+preplace netloc rx_reset_1 1 0 4 NJ 670 NJ 670 NJ 670 NJ
+preplace netloc gmii_to_rgmii_0_gmii_clk_25m_out 1 3 2 NJ 680 2520
+preplace netloc S_AXIS_2 1 0 2 NJ 920 NJ
+preplace netloc axis_data_fifo_1_M_AXIS 1 2 1 N
+preplace netloc axis_data_fifo_0_M_AXIS 1 2 1 1590
+preplace netloc gmii_tx_er_1 1 0 4 NJ 500 NJ 520 NJ 350 NJ
+preplace netloc util_vector_logic_1_Res 1 1 3 N 320 NJ 110 2020
+preplace netloc axis_data_fifo_2_M_AXIS 1 2 1 1580
+preplace netloc axis_subset_converter_2_M_AXIS 1 1 5 910 720 NJ 720 NJ 720 NJ 720 NJ
+preplace netloc axis_data_fifo_3_M_AXIS 1 2 1 1540
+preplace netloc gmii_to_rgmii_1_gmii_rxd 1 3 1 2080
+preplace netloc util_vector_logic_0_Res1 1 1 2 890 540 1590
+preplace netloc gmii_to_rgmii_1_mdio_gem_i 1 3 3 NJ 670 NJ 670 NJ
+preplace netloc gmii_to_rgmii_1_gmii_rx_clk 1 3 3 2050 1430 NJ 1100 NJ
+preplace netloc gmii_to_rgmii_0_gmii_rx_er 1 3 3 2170 650 NJ 420 NJ
+preplace netloc gmii_to_rgmii_0_gmii_tx_clk 1 1 5 910 530 1580 370 NJ 660 NJ 460 NJ
+levelinfo -pg 1 -10 740 1370 1820 2360 2740 2880 -top -30 -bot 1460
 ",
 }
 0
