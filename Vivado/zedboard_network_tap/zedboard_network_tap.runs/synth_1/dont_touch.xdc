@@ -12,12 +12,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_proces
 # IP: bd/design_1/ip/design_1_util_vector_logic_0_0/design_1_util_vector_logic_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_util_vector_logic_0_0 || ORIG_REF_NAME==design_1_util_vector_logic_0_0}]
 
-# IP: bd/design_1/ip/design_1_gmii_to_rgmii_0_0/design_1_gmii_to_rgmii_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_gmii_to_rgmii_0_0 || ORIG_REF_NAME==design_1_gmii_to_rgmii_0_0}]
-
-# IP: bd/design_1/ip/design_1_gmii_to_rgmii_1_0/design_1_gmii_to_rgmii_1_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_gmii_to_rgmii_1_0 || ORIG_REF_NAME==design_1_gmii_to_rgmii_1_0}]
-
 # IP: bd/design_1/ip/design_1_util_reduced_logic_0_0/design_1_util_reduced_logic_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_util_reduced_logic_0_0 || ORIG_REF_NAME==design_1_util_reduced_logic_0_0}]
 
@@ -35,9 +29,6 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_fifo_g
 
 # IP: bd/design_1/ip/design_1_fifo_generator_1_0/design_1_fifo_generator_1_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_fifo_generator_1_0 || ORIG_REF_NAME==design_1_fifo_generator_1_0}]
-
-# IP: bd/design_1/ip/design_1_link_status_and_gate_0/design_1_link_status_and_gate_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_link_status_and_gate_0 || ORIG_REF_NAME==design_1_link_status_and_gate_0}]
 
 # IP: bd/design_1/ip/design_1_link_status_not_gate_0/design_1_link_status_not_gate_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_link_status_not_gate_0 || ORIG_REF_NAME==design_1_link_status_not_gate_0}]
@@ -90,24 +81,20 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_not_ga
 # IP: bd/design_1/ip/design_1_not_gate_empty_fifo_1_0/design_1_not_gate_empty_fifo_1_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_not_gate_empty_fifo_1_0 || ORIG_REF_NAME==design_1_not_gate_empty_fifo_1_0}]
 
+# IP: bd/design_1/ip/design_1_gmii_to_rgmii_axis_wrapper_0_1/design_1_gmii_to_rgmii_axis_wrapper_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_gmii_to_rgmii_axis_wrapper_0_1 || ORIG_REF_NAME==design_1_gmii_to_rgmii_axis_wrapper_0_1}]
+
+# IP: bd/design_1/ip/design_1_gmii_to_rgmii_axis_wrapper_0_1/src/design_2_gmii_to_rgmii_0_0/design_2_gmii_to_rgmii_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_2_gmii_to_rgmii_0_0 || ORIG_REF_NAME==design_2_gmii_to_rgmii_0_0}]
+
+# IP: bd/design_1/ip/design_1_gmii_to_rgmii_axis_wrapper_0_1/src/design_2_gmii_to_rgmii_0_1/design_2_gmii_to_rgmii_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_2_gmii_to_rgmii_0_1 || ORIG_REF_NAME==design_2_gmii_to_rgmii_0_1}]
+
+# IP: bd/design_1/ip/design_1_gmii_to_rgmii_axis_wrapper_0_1/src/design_2_util_vector_logic_0_0/design_2_util_vector_logic_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_2_util_vector_logic_0_0 || ORIG_REF_NAME==design_2_util_vector_logic_0_0}]
+
 # XDC: bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc
 set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_1_processing_system7_0_0 || ORIG_REF_NAME==design_1_processing_system7_0_0}] {/inst }]/inst ]]
-
-# XDC: bd/design_1/ip/design_1_gmii_to_rgmii_0_0/synth/design_1_gmii_to_rgmii_0_0.xdc
-set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_1_gmii_to_rgmii_0_0 || ORIG_REF_NAME==design_1_gmii_to_rgmii_0_0}] {/U0 }]/U0 ]]
-
-# XDC: bd/design_1/ip/design_1_gmii_to_rgmii_0_0/synth/design_1_gmii_to_rgmii_0_0_clocks.xdc
-#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_1_gmii_to_rgmii_0_0 || ORIG_REF_NAME==design_1_gmii_to_rgmii_0_0}] {/U0 }]/U0 ]]
-
-# XDC: bd/design_1/ip/design_1_gmii_to_rgmii_0_0/synth/design_1_gmii_to_rgmii_0_0_ooc.xdc
-
-# XDC: bd/design_1/ip/design_1_gmii_to_rgmii_1_0/synth/design_1_gmii_to_rgmii_1_0.xdc
-set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_1_gmii_to_rgmii_1_0 || ORIG_REF_NAME==design_1_gmii_to_rgmii_1_0}] {/U0 }]/U0 ]]
-
-# XDC: bd/design_1/ip/design_1_gmii_to_rgmii_1_0/synth/design_1_gmii_to_rgmii_1_0_clocks.xdc
-#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_1_gmii_to_rgmii_1_0 || ORIG_REF_NAME==design_1_gmii_to_rgmii_1_0}] {/U0 }]/U0 ]]
-
-# XDC: bd/design_1/ip/design_1_gmii_to_rgmii_1_0/synth/design_1_gmii_to_rgmii_1_0_ooc.xdc
 
 # XDC: bd/design_1/ip/design_1_fifo_generator_0_0/design_1_fifo_generator_0_0/design_1_fifo_generator_0_0_clocks.xdc
 set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_1_fifo_generator_0_0 || ORIG_REF_NAME==design_1_fifo_generator_0_0}] {/U0 }]/U0 ]]
@@ -124,5 +111,23 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 #dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_1_fifo_generator_1_0 || ORIG_REF_NAME==design_1_fifo_generator_1_0}] {/U0 }]/U0 ]]
 
 # XDC: bd/design_1/ip/design_1_fifo_generator_1_0/design_1_fifo_generator_1_0_ooc.xdc
+
+# XDC: bd/design_1/ip/design_1_gmii_to_rgmii_axis_wrapper_0_1/src/design_2_gmii_to_rgmii_0_0/synth/design_2_gmii_to_rgmii_0_0.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_2_gmii_to_rgmii_0_0 || ORIG_REF_NAME==design_2_gmii_to_rgmii_0_0}] {/U0 }]/U0 ]]
+
+# XDC: bd/design_1/ip/design_1_gmii_to_rgmii_axis_wrapper_0_1/src/design_2_gmii_to_rgmii_0_0/synth/design_2_gmii_to_rgmii_0_0_clocks.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_2_gmii_to_rgmii_0_0 || ORIG_REF_NAME==design_2_gmii_to_rgmii_0_0}] {/U0 }]/U0 ]]
+
+# XDC: bd/design_1/ip/design_1_gmii_to_rgmii_axis_wrapper_0_1/src/design_2_gmii_to_rgmii_0_0/synth/design_2_gmii_to_rgmii_0_0_ooc.xdc
+
+# XDC: bd/design_1/ip/design_1_gmii_to_rgmii_axis_wrapper_0_1/src/design_2_gmii_to_rgmii_0_1/synth/design_2_gmii_to_rgmii_0_1.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_2_gmii_to_rgmii_0_1 || ORIG_REF_NAME==design_2_gmii_to_rgmii_0_1}] {/U0 }]/U0 ]]
+
+# XDC: bd/design_1/ip/design_1_gmii_to_rgmii_axis_wrapper_0_1/src/design_2_gmii_to_rgmii_0_1/synth/design_2_gmii_to_rgmii_0_1_clocks.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_2_gmii_to_rgmii_0_1 || ORIG_REF_NAME==design_2_gmii_to_rgmii_0_1}] {/U0 }]/U0 ]]
+
+# XDC: bd/design_1/ip/design_1_gmii_to_rgmii_axis_wrapper_0_1/src/design_2_gmii_to_rgmii_0_1/synth/design_2_gmii_to_rgmii_0_1_ooc.xdc
+
+# XDC: bd/design_1/ip/design_1_gmii_to_rgmii_axis_wrapper_0_1/src/design_2_ooc.xdc
 
 # XDC: bd/design_1/design_1_ooc.xdc

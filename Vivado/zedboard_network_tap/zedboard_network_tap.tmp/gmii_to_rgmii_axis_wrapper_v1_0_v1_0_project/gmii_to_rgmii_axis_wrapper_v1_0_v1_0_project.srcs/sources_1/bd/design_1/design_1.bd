@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:synthFlowMode="None" bd:tool_version="2016.2" bd:top="design_1" bd:version="1.00.a">
+
+  <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
+    <spirit:vendor>xilinx.com</spirit:vendor>
+    <spirit:library>BlockDiagram</spirit:library>
+    <spirit:name>design_1</spirit:name>
+    <spirit:version>1.00.a</spirit:version>
+    <spirit:parameters>
+      <spirit:parameter>
+        <spirit:name>isTop</spirit:name>
+        <spirit:value spirit:format="bool" spirit:resolve="immediate">true</spirit:value>
+      </spirit:parameter>
+    </spirit:parameters>
+    <spirit:busInterfaces>
+      <spirit:busInterface>
+        <spirit:name>RGMII_0</spirit:name>
+        <spirit:master/>
+        <spirit:busType spirit:library="interface" spirit:name="rgmii" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="rgmii_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>RGMII_1</spirit:name>
+        <spirit:master/>
+        <spirit:busType spirit:library="interface" spirit:name="rgmii" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="rgmii_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>GMII_1</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="gmii" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="gmii_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>GMII_0</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="gmii" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="gmii_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>MDIO_GEM</spirit:name>
+        <spirit:slave/>
+        <spirit:busType spirit:library="interface" spirit:name="mdio" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="interface" spirit:name="mdio_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>RST.TX_RESET</spirit:name>
+        <spirit:displayName>Reset</spirit:displayName>
+        <spirit:description>Reset</spirit:description>
+        <spirit:busType spirit:library="signal" spirit:name="reset" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="signal" spirit:name="reset_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:slave/>
+        <spirit:portMaps>
+          <spirit:portMap>
+            <spirit:logicalPort>
+              <spirit:name>RST</spirit:name>
+            </spirit:logicalPort>
+            <spirit:physicalPort>
+              <spirit:name>tx_reset</spirit:name>
+            </spirit:physicalPort>
+          </spirit:portMap>
+        </spirit:portMaps>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>POLARITY</spirit:name>
+            <spirit:value>ACTIVE_HIGH</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>RST.RX_RESET</spirit:name>
+        <spirit:displayName>Reset</spirit:displayName>
+        <spirit:description>Reset</spirit:description>
+        <spirit:busType spirit:library="signal" spirit:name="reset" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="signal" spirit:name="reset_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:slave/>
+        <spirit:portMaps>
+          <spirit:portMap>
+            <spirit:logicalPort>
+              <spirit:name>RST</spirit:name>
+            </spirit:logicalPort>
+            <spirit:physicalPort>
+              <spirit:name>rx_reset</spirit:name>
+            </spirit:physicalPort>
+          </spirit:portMap>
+        </spirit:portMaps>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>POLARITY</spirit:name>
+            <spirit:value>ACTIVE_HIGH</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>CLK.CLKIN</spirit:name>
+        <spirit:displayName>Clk</spirit:displayName>
+        <spirit:description>Clock</spirit:description>
+        <spirit:busType spirit:library="signal" spirit:name="clock" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="signal" spirit:name="clock_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:slave/>
+        <spirit:portMaps>
+          <spirit:portMap>
+            <spirit:logicalPort>
+              <spirit:name>CLK</spirit:name>
+            </spirit:logicalPort>
+            <spirit:physicalPort>
+              <spirit:name>clkin</spirit:name>
+            </spirit:physicalPort>
+          </spirit:portMap>
+        </spirit:portMaps>
+        <spirit:parameters/>
+      </spirit:busInterface>
+    </spirit:busInterfaces>
+    <spirit:model>
+      <spirit:views>
+        <spirit:view>
+          <spirit:name>BlockDiagram</spirit:name>
+          <spirit:envIdentifier>:vivado.xilinx.com:</spirit:envIdentifier>
+          <spirit:hierarchyRef spirit:library="BlockDiagram" spirit:name="design_1_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
+        </spirit:view>
+      </spirit:views>
+      <spirit:ports>
+        <spirit:port>
+          <spirit:name>tx_reset</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>rx_reset</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>link_status_AND</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+            <spirit:vector>
+              <spirit:left>0</spirit:left>
+              <spirit:right>0</spirit:right>
+            </spirit:vector>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>clkin</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+      </spirit:ports>
+    </spirit:model>
+  </spirit:component>
+
+  <spirit:design xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
+    <spirit:vendor>xilinx.com</spirit:vendor>
+    <spirit:library>BlockDiagram</spirit:library>
+    <spirit:name>design_1_imp</spirit:name>
+    <spirit:version>1.00.a</spirit:version>
+    <spirit:componentInstances>
+      <spirit:componentInstance>
+        <spirit:instanceName>gmii_to_rgmii_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="gmii_to_rgmii" spirit:vendor="xilinx.com" spirit:version="4.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_gmii_to_rgmii_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PHYADDR">7</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="SupportLevel">Include_Shared_Logic_in_Core</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>gmii_to_rgmii_1</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="gmii_to_rgmii" spirit:vendor="xilinx.com" spirit:version="4.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_gmii_to_rgmii_1_0</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>link_status_and_gate</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="util_vector_logic" spirit:vendor="xilinx.com" spirit:version="2.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_util_vector_logic_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_SIZE">1</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+    </spirit:componentInstances>
+    <spirit:interconnections>
+      <spirit:interconnection>
+        <spirit:name>gmii_to_rgmii_1_MDIO_PHY</spirit:name>
+        <spirit:activeInterface spirit:busRef="MDIO_PHY" spirit:componentRef="gmii_to_rgmii_1"/>
+        <spirit:activeInterface spirit:busRef="MDIO_GEM" spirit:componentRef="gmii_to_rgmii_0"/>
+      </spirit:interconnection>
+    </spirit:interconnections>
+    <spirit:adHocConnections>
+      <spirit:adHocConnection>
+        <spirit:name>gmii_to_rgmii_0_gmii_clk_125m_out</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="gmii_clk_125m_out"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="gmii_clk_125m_in"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>gmii_to_rgmii_0_gmii_clk_25m_out</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="gmii_clk_25m_out"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="gmii_clk_25m_in"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>gmii_to_rgmii_0_gmii_clk_2_5m_out</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="gmii_clk_2_5m_out"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="gmii_clk_2_5m_in"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>gmii_to_rgmii_0_ref_clk_out</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="ref_clk_out"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="ref_clk_in"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>gmii_to_rgmii_0_mmcm_locked_out</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="mmcm_locked_out"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="mmcm_locked_in"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>tx_reset_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="tx_reset"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="tx_reset"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="tx_reset"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>rx_reset_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="rx_reset"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="rx_reset"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="rx_reset"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>gmii_to_rgmii_0_link_status</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="link_status"/>
+        <spirit:internalPortReference spirit:componentRef="link_status_and_gate" spirit:portRef="Op1"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>gmii_to_rgmii_1_link_status</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="link_status"/>
+        <spirit:internalPortReference spirit:componentRef="link_status_and_gate" spirit:portRef="Op2"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>util_vector_logic_0_Res</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="link_status_and_gate" spirit:portRef="Res"/>
+        <spirit:externalPortReference spirit:portRef="link_status_AND"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>clkin_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="clkin"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="clkin"/>
+      </spirit:adHocConnection>
+    </spirit:adHocConnections>
+    <spirit:hierConnections>
+      <spirit:hierConnection spirit:interfaceRef="RGMII_0/gmii_to_rgmii_0_RGMII">
+        <spirit:activeInterface spirit:busRef="RGMII" spirit:componentRef="gmii_to_rgmii_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="RGMII_1/gmii_to_rgmii_1_RGMII">
+        <spirit:activeInterface spirit:busRef="RGMII" spirit:componentRef="gmii_to_rgmii_1"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="GMII_1/GMII_1">
+        <spirit:activeInterface spirit:busRef="GMII" spirit:componentRef="gmii_to_rgmii_1"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="GMII_0/GMII_1_1">
+        <spirit:activeInterface spirit:busRef="GMII" spirit:componentRef="gmii_to_rgmii_0"/>
+      </spirit:hierConnection>
+      <spirit:hierConnection spirit:interfaceRef="MDIO_GEM/MDIO_GEM_1">
+        <spirit:activeInterface spirit:busRef="MDIO_GEM" spirit:componentRef="gmii_to_rgmii_1"/>
+      </spirit:hierConnection>
+    </spirit:hierConnections>
+  </spirit:design>
+
+</bd:repository>

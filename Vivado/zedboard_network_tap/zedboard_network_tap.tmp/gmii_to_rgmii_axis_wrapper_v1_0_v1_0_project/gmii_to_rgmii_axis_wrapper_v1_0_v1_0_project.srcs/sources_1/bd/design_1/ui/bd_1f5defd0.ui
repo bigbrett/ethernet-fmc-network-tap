@@ -1,0 +1,29 @@
+{
+   guistr: "# # String gsaved with Nlview 6.5.12  2016-01-29 bk=1.3547 VDI=39 GEI=35 GUI=JA:1.6
+#  -string -flagsOSRD
+preplace port clkin -pg 1 -y 230 -defaultsOSRD
+preplace port tx_reset -pg 1 -y 190 -defaultsOSRD
+preplace port rx_reset -pg 1 -y 210 -defaultsOSRD
+preplace port RGMII_0 -pg 1 -y 110 -defaultsOSRD
+preplace port RGMII_1 -pg 1 -y 540 -defaultsOSRD
+preplace portBus link_status_AND -pg 1 -y 380 -defaultsOSRD
+preplace inst link_status_and_gate -pg 1 -lvl 2 -y 380 -defaultsOSRD
+preplace inst gmii_to_rgmii_0 -pg 1 -lvl 1 -y 190 -defaultsOSRD
+preplace inst gmii_to_rgmii_1 -pg 1 -lvl 1 -y 570 -defaultsOSRD
+preplace netloc gmii_to_rgmii_0_gmii_clk_125m_out 1 0 2 -10 0 570
+preplace netloc gmii_to_rgmii_0_gmii_clk_2_5m_out 1 0 2 -30 -20 590
+preplace netloc tx_reset_1 1 0 1 NJ
+preplace netloc clkin_1 1 0 1 N
+preplace netloc gmii_to_rgmii_0_ref_clk_out 1 0 2 10 30 540
+preplace netloc util_vector_logic_0_Res 1 2 1 N
+preplace netloc gmii_to_rgmii_0_mmcm_locked_out 1 0 2 0 10 550
+preplace netloc gmii_to_rgmii_0_RGMII 1 1 2 NJ 110 NJ
+preplace netloc gmii_to_rgmii_1_RGMII 1 1 2 NJ 540 NJ
+preplace netloc gmii_to_rgmii_1_MDIO_PHY 1 0 2 20 40 560
+preplace netloc gmii_to_rgmii_1_link_status 1 1 1 590
+preplace netloc gmii_to_rgmii_0_link_status 1 1 1 590
+preplace netloc rx_reset_1 1 0 1 NJ
+preplace netloc gmii_to_rgmii_0_gmii_clk_25m_out 1 0 2 -20 -10 580
+levelinfo -pg 1 -70 400 800 940 -top -130 -bot 700
+",
+}

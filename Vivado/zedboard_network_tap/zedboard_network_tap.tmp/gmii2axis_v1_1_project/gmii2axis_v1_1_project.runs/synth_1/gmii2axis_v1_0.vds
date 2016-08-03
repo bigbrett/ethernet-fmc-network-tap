@@ -1,0 +1,848 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:35 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Tue Aug  2 14:44:40 2016
+# Process ID: 4373
+# Current directory: /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/zedboard_network_tap/zedboard_network_tap.tmp/gmii2axis_v1_1_project/gmii2axis_v1_1_project.runs/synth_1
+# Command line: vivado -log gmii2axis_v1_0.vds -mode batch -messageDb vivado.pb -notrace -source gmii2axis_v1_0.tcl
+# Log file: /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/zedboard_network_tap/zedboard_network_tap.tmp/gmii2axis_v1_1_project/gmii2axis_v1_1_project.runs/synth_1/gmii2axis_v1_0.vds
+# Journal file: /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/zedboard_network_tap/zedboard_network_tap.tmp/gmii2axis_v1_1_project/gmii2axis_v1_1_project.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source gmii2axis_v1_0.tcl -notrace
+Command: synth_design -top gmii2axis_v1_0 -part xc7z020clg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 4376 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1020.078 ; gain = 135.137 ; free physical = 20730 ; free virtual = 55253
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'gmii2axis_v1_0' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/hdl/gmii2axis_v1_0.vhd:66]
+	Parameter C_M00_AXIS_TDATA_WIDTH bound to: 8 - type: integer 
+	Parameter C_M00_AXIS_START_COUNT bound to: 8 - type: integer 
+	Parameter C_S00_AXIS_TDATA_WIDTH bound to: 8 - type: integer 
+	Parameter C_S00_AXIS_START_COUNT bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'gmii_to_rgmii_0' declared at '/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0.vhd:77' bound to instance 'gmii_to_rgmii' of component 'GMII_TO_RGMII_0' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/hdl/gmii2axis_v1_0.vhd:128]
+INFO: [Synth 8-638] synthesizing module 'gmii_to_rgmii_0' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0.vhd:128]
+INFO: [Synth 8-3491] module 'gmii_to_rgmii_0_support' declared at '/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_support.vhd:65' bound to instance 'U0' of component 'gmii_to_rgmii_0_support' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0.vhd:193]
+INFO: [Synth 8-638] synthesizing module 'gmii_to_rgmii_0_support' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_support.vhd:115]
+INFO: [Synth 8-3491] module 'gmii_to_rgmii_0_clocking' declared at '/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocking.vhd:62' bound to instance 'i_gmii_to_rgmii_0_clocking' of component 'gmii_to_rgmii_0_clocking' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_support.vhd:205]
+INFO: [Synth 8-638] synthesizing module 'gmii_to_rgmii_0_clocking' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocking.vhd:75]
+INFO: [Synth 8-113] binding component instance 'i_bufg_clk_in' to cell 'BUFG' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocking.vhd:92]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT_F bound to: 5.000000 - type: float 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKFBOUT_USE_FINE_PS bound to: 0 - type: bool 
+	Parameter CLKIN1_PERIOD bound to: 5.000000 - type: float 
+	Parameter CLKIN2_PERIOD bound to: 0.000000 - type: float 
+	Parameter CLKOUT0_DIVIDE_F bound to: 8.000000 - type: float 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT0_USE_FINE_PS bound to: 0 - type: bool 
+	Parameter CLKOUT1_DIVIDE bound to: 40 - type: integer 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT1_USE_FINE_PS bound to: 0 - type: bool 
+	Parameter CLKOUT2_DIVIDE bound to: 100 - type: integer 
+	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT2_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT2_USE_FINE_PS bound to: 0 - type: bool 
+	Parameter CLKOUT3_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT3_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT3_USE_FINE_PS bound to: 0 - type: bool 
+	Parameter CLKOUT4_CASCADE bound to: 0 - type: bool 
+	Parameter CLKOUT4_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT4_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT4_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT4_USE_FINE_PS bound to: 0 - type: bool 
+	Parameter CLKOUT5_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT5_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT5_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT5_USE_FINE_PS bound to: 0 - type: bool 
+	Parameter CLKOUT6_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT6_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT6_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT6_USE_FINE_PS bound to: 0 - type: bool 
+	Parameter COMPENSATION bound to: ZHOLD - type: string 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter IS_CLKINSEL_INVERTED bound to: 1'b0 
+	Parameter IS_PSEN_INVERTED bound to: 1'b0 
+	Parameter IS_PSINCDEC_INVERTED bound to: 1'b0 
+	Parameter IS_PWRDWN_INVERTED bound to: 1'b0 
+	Parameter IS_RST_INVERTED bound to: 1'b0 
+	Parameter REF_JITTER1 bound to: 0.010000 - type: float 
+	Parameter REF_JITTER2 bound to: 0.000000 - type: float 
+	Parameter SS_EN bound to: FALSE - type: string 
+	Parameter SS_MODE bound to: CENTER_HIGH - type: string 
+	Parameter SS_MOD_PERIOD bound to: 10000 - type: integer 
+	Parameter STARTUP_WAIT bound to: 0 - type: bool 
+INFO: [Synth 8-113] binding component instance 'mmcm_adv_inst' to cell 'MMCME2_ADV' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocking.vhd:96]
+	Parameter BUFR_DIVIDE bound to: 4 - type: string 
+	Parameter SIM_DEVICE bound to: 7SERIES - type: string 
+INFO: [Synth 8-113] binding component instance 'clk10_div_buf' to cell 'BUFR' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocking.vhd:164]
+INFO: [Synth 8-256] done synthesizing module 'gmii_to_rgmii_0_clocking' (1#1) [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocking.vhd:75]
+INFO: [Synth 8-3491] module 'gmii_to_rgmii_0_resets' declared at '/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_resets.vhd:61' bound to instance 'i_gmii_to_rgmii_0_resets' of component 'gmii_to_rgmii_0_resets' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_support.vhd:226]
+INFO: [Synth 8-638] synthesizing module 'gmii_to_rgmii_0_resets' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_resets.vhd:69]
+INFO: [Synth 8-3491] module 'gmii_to_rgmii_0_reset_sync' declared at '/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_reset_sync.vhd:66' bound to instance 'idelayctrl_reset_gen' of component 'gmii_to_rgmii_0_reset_sync' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_resets.vhd:89]
+INFO: [Synth 8-638] synthesizing module 'gmii_to_rgmii_0_reset_sync' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_reset_sync.vhd:82]
+	Parameter INITIALISE bound to: 2'b11 
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'reset_sync1' to cell 'FDP' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_reset_sync.vhd:111]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'reset_sync2' to cell 'FDP' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_reset_sync.vhd:122]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'reset_sync3' to cell 'FDP' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_reset_sync.vhd:133]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'reset_sync4' to cell 'FDP' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_reset_sync.vhd:144]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'reset_sync5' to cell 'FDP' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_reset_sync.vhd:155]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'reset_sync6' to cell 'FDP' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_reset_sync.vhd:166]
+INFO: [Synth 8-256] done synthesizing module 'gmii_to_rgmii_0_reset_sync' (2#1) [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_reset_sync.vhd:82]
+INFO: [Synth 8-256] done synthesizing module 'gmii_to_rgmii_0_resets' (3#1) [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_resets.vhd:69]
+	Parameter SIM_DEVICE bound to: 7SERIES - type: string 
+INFO: [Synth 8-113] binding component instance 'i_gmii_to_rgmii_0_idelayctrl' to cell 'IDELAYCTRL' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_support.vhd:233]
+INFO: [Synth 8-3491] module 'gmii_to_rgmii_0_block' declared at '/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_block.vhd:87' bound to instance 'i_gmii_to_rgmii_block' of component 'gmii_to_rgmii_0_block' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_support.vhd:244]
+INFO: [Synth 8-638] synthesizing module 'gmii_to_rgmii_0_block' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_block.vhd:136]
+	Parameter CLK_SEL_TYPE bound to: SYNC - type: string 
+INFO: [Synth 8-113] binding component instance 'i_bufgmux_gmii_clk_25m_2_5m' to cell 'BUFGMUX' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_block.vhd:207]
+	Parameter CLK_SEL_TYPE bound to: SYNC - type: string 
+INFO: [Synth 8-113] binding component instance 'i_bufgmux_gmii_clk' to cell 'BUFGMUX' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_block.vhd:215]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'rgmii_txc_obuf_i' to cell 'OBUF' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_block.vhd:225]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'rgmii_tx_ctl_obuf_i' to cell 'OBUF' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_block.vhd:231]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'rgmii_txd_obuf_i' to cell 'OBUF' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_block.vhd:238]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'rgmii_txd_obuf_i' to cell 'OBUF' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_block.vhd:238]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'rgmii_txd_obuf_i' to cell 'OBUF' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_block.vhd:238]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'rgmii_txd_obuf_i' to cell 'OBUF' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_block.vhd:238]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+INFO: [Synth 8-113] binding component instance 'rgmii_rxc_ibuf_i' to cell 'IBUF' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_block.vhd:245]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+INFO: [Synth 8-113] binding component instance 'rgmii_rx_ctl_ibuf_i' to cell 'IBUF' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_block.vhd:251]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+INFO: [Synth 8-113] binding component instance 'rgmii_rxd_ibuf_i' to cell 'IBUF' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_block.vhd:258]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+INFO: [Synth 8-113] binding component instance 'rgmii_rxd_ibuf_i' to cell 'IBUF' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_block.vhd:258]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+INFO: [Synth 8-113] binding component instance 'rgmii_rxd_ibuf_i' to cell 'IBUF' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_block.vhd:258]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+INFO: [Synth 8-113] binding component instance 'rgmii_rxd_ibuf_i' to cell 'IBUF' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_block.vhd:258]
+	Parameter C_RGMII_TXC_SKEW_EN bound to: 0 - type: integer 
+	Parameter C_RGMII_TXC_ODELAY_VAL bound to: 0 - type: integer 
+	Parameter C_DEVICE_TYPE bound to: 0 - type: integer 
+	Parameter C_PHYADDR bound to: 5'b01000 
+INFO: [Synth 8-3491] module 'gmii_to_rgmii_v4_0_3' declared at '/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/gmii_to_rgmii_v4_0_3/hdl/gmii_to_rgmii_v4_0_vhsyn_rfs.vhd:2410' bound to instance 'gmii_to_rgmii_0_core' of component 'gmii_to_rgmii_v4_0_3' [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_block.vhd:266]
+	Parameter C_RGMII_TXC_SKEW_EN bound to: 0 - type: integer 
+	Parameter C_RGMII_TXC_ODELAY_VAL bound to: 0 - type: integer 
+	Parameter C_DEVICE_TYPE bound to: 0 - type: integer 
+	Parameter C_PHYADDR bound to: 5'b01000 
+	Parameter C_RGMII_TXC_SKEW_EN bound to: 0 - type: integer 
+	Parameter C_RGMII_TXC_ODELAY_VAL bound to: 0 - type: integer 
+	Parameter C_DEVICE_TYPE bound to: 0 - type: integer 
+	Parameter C_PHYADDR bound to: 5'b01000 
+	Parameter C_RGMII_TXC_SKEW_EN bound to: 0 - type: integer 
+	Parameter C_RGMII_TXC_ODELAY_VAL bound to: 0 - type: integer 
+	Parameter C_DEVICE_TYPE bound to: 0 - type: integer 
+	Parameter C_PHYADDR bound to: 5'b01000 
+	Parameter INITIALISE bound to: 2'b11 
+	Parameter INIT bound to: 1'b1 
+	Parameter INIT bound to: 1'b1 
+	Parameter INIT bound to: 1'b1 
+	Parameter INIT bound to: 1'b1 
+	Parameter INIT bound to: 1'b1 
+	Parameter INIT bound to: 1'b1 
+	Parameter INITIALISE bound to: 2'b00 
+	Parameter INITIALISE bound to: 2'b00 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INITIALISE bound to: 2'b00 
+	Parameter C_RGMII_TXC_SKEW_EN bound to: 0 - type: integer 
+	Parameter C_DEVICE_TYPE bound to: 0 - type: integer 
+	Parameter C_RGMII_TXC_ODELAY_VAL bound to: 0 - type: integer 
+	Parameter C_RGMII_TXC_SKEW_EN bound to: 0 - type: integer 
+	Parameter C_DEVICE_TYPE bound to: 0 - type: integer 
+	Parameter C_RGMII_TXC_ODELAY_VAL bound to: 0 - type: integer 
+	Parameter DDR_CLK_EDGE bound to: SAME_EDGE - type: string 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D1_INVERTED bound to: 1'b0 
+	Parameter IS_D2_INVERTED bound to: 1'b0 
+	Parameter SRTYPE bound to: SYNC - type: string 
+	Parameter DDR_CLK_EDGE bound to: SAME_EDGE - type: string 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D1_INVERTED bound to: 1'b0 
+	Parameter IS_D2_INVERTED bound to: 1'b0 
+	Parameter SRTYPE bound to: SYNC - type: string 
+	Parameter DDR_CLK_EDGE bound to: SAME_EDGE - type: string 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D1_INVERTED bound to: 1'b0 
+	Parameter IS_D2_INVERTED bound to: 1'b0 
+	Parameter SRTYPE bound to: SYNC - type: string 
+	Parameter DDR_CLK_EDGE bound to: SAME_EDGE - type: string 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D1_INVERTED bound to: 1'b0 
+	Parameter IS_D2_INVERTED bound to: 1'b0 
+	Parameter SRTYPE bound to: SYNC - type: string 
+	Parameter DDR_CLK_EDGE bound to: SAME_EDGE - type: string 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D1_INVERTED bound to: 1'b0 
+	Parameter IS_D2_INVERTED bound to: 1'b0 
+	Parameter SRTYPE bound to: SYNC - type: string 
+	Parameter DDR_CLK_EDGE bound to: SAME_EDGE - type: string 
+	Parameter INIT bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D1_INVERTED bound to: 1'b0 
+	Parameter IS_D2_INVERTED bound to: 1'b0 
+	Parameter SRTYPE bound to: SYNC - type: string 
+	Parameter BUFR_DIVIDE bound to: 1 - type: string 
+	Parameter SIM_DEVICE bound to: 7SERIES - type: string 
+	Parameter CINVCTRL_SEL bound to: 0 - type: bool 
+	Parameter DELAY_SRC bound to: I - type: string 
+	Parameter HIGH_PERFORMANCE_MODE bound to: 0 - type: bool 
+	Parameter IDELAY_TYPE bound to: FIXED - type: string 
+	Parameter IDELAY_VALUE bound to: 16 - type: integer 
+	Parameter ODELAY_TYPE bound to: FIXED - type: string 
+	Parameter ODELAY_VALUE bound to: 0 - type: integer 
+	Parameter REFCLK_FREQUENCY bound to: 200.000000 - type: float 
+	Parameter SIGNAL_PATTERN bound to: DATA - type: string 
+	Parameter CINVCTRL_SEL bound to: 0 - type: bool 
+	Parameter DELAY_SRC bound to: I - type: string 
+	Parameter HIGH_PERFORMANCE_MODE bound to: 0 - type: bool 
+	Parameter IDELAY_TYPE bound to: FIXED - type: string 
+	Parameter IDELAY_VALUE bound to: 16 - type: integer 
+	Parameter ODELAY_TYPE bound to: FIXED - type: string 
+	Parameter ODELAY_VALUE bound to: 0 - type: integer 
+	Parameter REFCLK_FREQUENCY bound to: 200.000000 - type: float 
+	Parameter SIGNAL_PATTERN bound to: DATA - type: string 
+	Parameter CINVCTRL_SEL bound to: 0 - type: bool 
+	Parameter DELAY_SRC bound to: I - type: string 
+	Parameter HIGH_PERFORMANCE_MODE bound to: 0 - type: bool 
+	Parameter IDELAY_TYPE bound to: FIXED - type: string 
+	Parameter IDELAY_VALUE bound to: 16 - type: integer 
+	Parameter ODELAY_TYPE bound to: FIXED - type: string 
+	Parameter ODELAY_VALUE bound to: 0 - type: integer 
+	Parameter REFCLK_FREQUENCY bound to: 200.000000 - type: float 
+	Parameter SIGNAL_PATTERN bound to: DATA - type: string 
+	Parameter CINVCTRL_SEL bound to: 0 - type: bool 
+	Parameter DELAY_SRC bound to: I - type: string 
+	Parameter HIGH_PERFORMANCE_MODE bound to: 0 - type: bool 
+	Parameter IDELAY_TYPE bound to: FIXED - type: string 
+	Parameter IDELAY_VALUE bound to: 16 - type: integer 
+	Parameter ODELAY_TYPE bound to: FIXED - type: string 
+	Parameter ODELAY_VALUE bound to: 0 - type: integer 
+	Parameter REFCLK_FREQUENCY bound to: 200.000000 - type: float 
+	Parameter SIGNAL_PATTERN bound to: DATA - type: string 
+	Parameter CINVCTRL_SEL bound to: 0 - type: bool 
+	Parameter DELAY_SRC bound to: I - type: string 
+	Parameter HIGH_PERFORMANCE_MODE bound to: 0 - type: bool 
+	Parameter IDELAY_TYPE bound to: FIXED - type: string 
+	Parameter IDELAY_VALUE bound to: 16 - type: integer 
+	Parameter ODELAY_TYPE bound to: FIXED - type: string 
+	Parameter ODELAY_VALUE bound to: 0 - type: integer 
+	Parameter REFCLK_FREQUENCY bound to: 200.000000 - type: float 
+	Parameter SIGNAL_PATTERN bound to: DATA - type: string 
+	Parameter DDR_CLK_EDGE bound to: SAME_EDGE_PIPELINED - type: string 
+	Parameter INIT_Q1 bound to: 1'b0 
+	Parameter INIT_Q2 bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter SRTYPE bound to: SYNC - type: string 
+	Parameter DDR_CLK_EDGE bound to: SAME_EDGE_PIPELINED - type: string 
+	Parameter INIT_Q1 bound to: 1'b0 
+	Parameter INIT_Q2 bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter SRTYPE bound to: SYNC - type: string 
+	Parameter DDR_CLK_EDGE bound to: SAME_EDGE_PIPELINED - type: string 
+	Parameter INIT_Q1 bound to: 1'b0 
+	Parameter INIT_Q2 bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter SRTYPE bound to: SYNC - type: string 
+	Parameter DDR_CLK_EDGE bound to: SAME_EDGE_PIPELINED - type: string 
+	Parameter INIT_Q1 bound to: 1'b0 
+	Parameter INIT_Q2 bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter SRTYPE bound to: SYNC - type: string 
+	Parameter DDR_CLK_EDGE bound to: SAME_EDGE_PIPELINED - type: string 
+	Parameter INIT_Q1 bound to: 1'b0 
+	Parameter INIT_Q2 bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter SRTYPE bound to: SYNC - type: string 
+INFO: [Synth 8-256] done synthesizing module 'gmii_to_rgmii_0_block' (11#1) [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_block.vhd:136]
+INFO: [Synth 8-256] done synthesizing module 'gmii_to_rgmii_0_support' (12#1) [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_support.vhd:115]
+INFO: [Synth 8-256] done synthesizing module 'gmii_to_rgmii_0' (13#1) [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0.vhd:128]
+WARNING: [Synth 8-3848] Net m00_axis_tstrb in module/entity gmii2axis_v1_0 does not have driver. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/hdl/gmii2axis_v1_0.vhd:51]
+WARNING: [Synth 8-3848] Net m00_axis_tlast in module/entity gmii2axis_v1_0 does not have driver. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/hdl/gmii2axis_v1_0.vhd:52]
+WARNING: [Synth 8-3848] Net s00_axis_tready in module/entity gmii2axis_v1_0 does not have driver. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/hdl/gmii2axis_v1_0.vhd:62]
+INFO: [Synth 8-256] done synthesizing module 'gmii2axis_v1_0' (14#1) [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/hdl/gmii2axis_v1_0.vhd:66]
+WARNING: [Synth 8-3331] design reset_sync has unconnected port enable
+WARNING: [Synth 8-3331] design gmii_to_rgmii_core has unconnected port speed_selection[0]
+WARNING: [Synth 8-3331] design gmii2axis_v1_0 has unconnected port m00_axis_tstrb[0]
+WARNING: [Synth 8-3331] design gmii2axis_v1_0 has unconnected port m00_axis_tlast
+WARNING: [Synth 8-3331] design gmii2axis_v1_0 has unconnected port s00_axis_tready
+WARNING: [Synth 8-3331] design gmii2axis_v1_0 has unconnected port m00_axis_aresetn
+WARNING: [Synth 8-3331] design gmii2axis_v1_0 has unconnected port m00_axis_tready
+WARNING: [Synth 8-3331] design gmii2axis_v1_0 has unconnected port s00_axis_aresetn
+WARNING: [Synth 8-3331] design gmii2axis_v1_0 has unconnected port s00_axis_tstrb[0]
+WARNING: [Synth 8-3331] design gmii2axis_v1_0 has unconnected port s00_axis_tlast
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1061.523 ; gain = 176.582 ; free physical = 20672 ; free virtual = 55210
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1061.523 ; gain = 176.582 ; free physical = 20671 ; free virtual = 55210
+---------------------------------------------------------------------------------
+INFO: [Netlist 29-17] Analyzing 81 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0.xdc] for cell 'gmii_to_rgmii/U0'
+Finished Parsing XDC File [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0.xdc] for cell 'gmii_to_rgmii/U0'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/gmii2axis_v1_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/gmii2axis_v1_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/zedboard_network_tap/zedboard_network_tap.tmp/gmii2axis_v1_1_project/gmii2axis_v1_1_project.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/zedboard_network_tap/zedboard_network_tap.tmp/gmii2axis_v1_1_project/gmii2axis_v1_1_project.runs/synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/zedboard_network_tap/zedboard_network_tap.tmp/gmii2axis_v1_1_project/gmii2axis_v1_1_project.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/gmii2axis_v1_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/gmii2axis_v1_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc] for cell 'gmii_to_rgmii/U0'
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'I_rgmii_rxc' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:1]
+WARNING: [Vivado 12-1008] No clocks found for command 'get_clocks -include_generated_clocks -of [get_ports I_rgmii_rxc]'. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:5]
+Resolution: Verify the create_clock command was called to create the clock object before it is referenced.
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:5]
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'gmii_to_rgmii_0_rgmii_rx_clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:8]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-fall_to [get_clocks -of_objects [get_ports I_rgmii_rxc]]'. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:19]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-rise_to [get_clocks -of_objects [get_ports I_rgmii_rxc]]'. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:20]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Designutils 20-1567] Use of 'set_false_path' with '-hold' is not supported by synthesis. The constraint will not be passed to synthesis. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:21]
+WARNING: [Designutils 20-1567] Use of 'set_false_path' with '-hold' is not supported by synthesis. The constraint will not be passed to synthesis. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:22]
+CRITICAL WARNING: [Vivado 12-4739] set_multicycle_path:No valid object(s) found for '-to [get_clocks -of_objects [get_ports I_rgmii_rxc]]'. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:25]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-1008] No clocks found for command 'get_clocks -include_generated_clocks -of_objects [get_pins -of [get_cells -hier -filter {name =~ *i_bufgmux_gmii_clk}] -filter {name =~ *O}]'. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:27]
+Resolution: Verify the create_clock command was called to create the clock object before it is referenced.
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:27]
+WARNING: [Vivado 12-627] No clocks matched 'gmii_clk_125m*'. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:28]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:28]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock not found. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:28]
+WARNING: [Vivado 12-627] No clocks matched 'rgmii_tx_clk'. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:31]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:31]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-fall_from [get_clocks -of_objects [get_pins gmii_to_rgmii/U0/i_gmii_to_rgmii_block/i_bufgmux_gmii_clk/O]]'. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:31]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'rgmii_tx_clk'. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:32]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:32]
+CRITICAL WARNING: [Vivado 12-4739] set_false_path:No valid object(s) found for '-rise_from [get_clocks -of_objects [get_pins gmii_to_rgmii/U0/i_gmii_to_rgmii_block/i_bufgmux_gmii_clk/O]]'. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:32]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Designutils 20-1567] Use of 'set_false_path' with '-hold' is not supported by synthesis. The constraint will not be passed to synthesis. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:33]
+WARNING: [Designutils 20-1567] Use of 'set_false_path' with '-hold' is not supported by synthesis. The constraint will not be passed to synthesis. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:34]
+WARNING: [Vivado 12-627] No clocks matched 'rgmii_tx_clk'. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:36]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:36]
+CRITICAL WARNING: [Vivado 12-4739] set_output_delay:No valid object(s) found for '-clock [get_clocks rgmii_tx_clk]'. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:36]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'rgmii_tx_clk'. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:37]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:37]
+CRITICAL WARNING: [Vivado 12-4739] set_output_delay:No valid object(s) found for '-clock [get_clocks rgmii_tx_clk]'. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:37]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'rgmii_tx_clk'. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:38]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:38]
+CRITICAL WARNING: [Vivado 12-4739] set_output_delay:No valid object(s) found for '-clock [get_clocks rgmii_tx_clk]'. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:38]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'rgmii_tx_clk'. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:39]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:39]
+CRITICAL WARNING: [Vivado 12-4739] set_output_delay:No valid object(s) found for '-clock [get_clocks rgmii_tx_clk]'. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:39]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'rgmii_tx_clk'. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:41]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:41]
+CRITICAL WARNING: [Vivado 12-4739] set_multicycle_path:No valid object(s) found for '-rise_from [get_clocks -of_objects [get_pins gmii_to_rgmii/U0/i_gmii_to_rgmii_block/i_bufgmux_gmii_clk/O]]'. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:41]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'rgmii_tx_clk'. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:42]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:42]
+CRITICAL WARNING: [Vivado 12-4739] set_multicycle_path:No valid object(s) found for '-fall_from [get_clocks -of_objects [get_pins gmii_to_rgmii/U0/i_gmii_to_rgmii_block/i_bufgmux_gmii_clk/O]]'. [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc:42]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+Finished Parsing XDC File [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc] for cell 'gmii_to_rgmii/U0'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/ip_repo/gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocks.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/gmii2axis_v1_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/gmii2axis_v1_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 61 instances were transformed.
+  BUFGMUX => BUFGCTRL (inverted pins: CE0): 2 instances
+  FD => FDRE: 12 instances
+  FDP => FDPE: 42 instances
+  IODELAYE1 => IDELAYE2: 5 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1436.293 ; gain = 0.000 ; free physical = 20245 ; free virtual = 54894
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1436.293 ; gain = 551.352 ; free physical = 20215 ; free virtual = 54868
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1436.293 ; gain = 551.352 ; free physical = 20215 ; free virtual = 54868
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for gmii_to_rgmii/U0. (constraint file  /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/zedboard_network_tap/zedboard_network_tap.tmp/gmii2axis_v1_1_project/gmii2axis_v1_1_project.runs/synth_1/dont_touch.xdc, line 8).
+Applied set_property DONT_TOUCH = true for gmii_to_rgmii. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1436.293 ; gain = 551.352 ; free physical = 20214 ; free virtual = 54867
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'idelay_reset_cnt_reg' in module 'gmii_to_rgmii_0_resets'
+INFO: [Synth 8-5544] ROM "idelayctrl_reset" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "idelay_reset_cnt" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'STATE_reg' in module 'MDIO_INTERFACE'
+INFO: [Synth 8-5544] ROM "BIT_COUNT_LOAD_VALUE" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "BIT_COUNT_LOAD_EN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "WE" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "RD" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ADDRESS_MATCH" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "NEW_STATE" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "NEW_STATE" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "NEW_STATE" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "NEW_STATE" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                             0000 |                             0000
+                 iSTATE0 |                             0001 |                             0001
+                 iSTATE1 |                             0010 |                             0010
+                 iSTATE2 |                             0011 |                             0011
+                 iSTATE3 |                             0100 |                             0100
+                 iSTATE4 |                             0101 |                             0101
+                 iSTATE5 |                             0110 |                             0110
+                 iSTATE6 |                             0111 |                             0111
+                 iSTATE7 |                             1000 |                             1000
+                 iSTATE8 |                             1001 |                             1001
+                 iSTATE9 |                             1010 |                             1010
+                iSTATE10 |                             1011 |                             1011
+                iSTATE11 |                             1100 |                             1100
+                iSTATE12 |                             1101 |                             1101
+                iSTATE13 |                             1110 |                             1110
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'idelay_reset_cnt_reg' using encoding 'sequential' in module 'gmii_to_rgmii_0_resets'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+        idle_or_preamble |                      00000000001 |                             0000
+          wait_for_start |                      00000000010 |                             0001
+                opcode_1 |                      00000000100 |                             0010
+                opcode_2 |                      00000001000 |                             0011
+                ld_phyad |                      00000010000 |                             0100
+                ld_regad |                      00000100000 |                             0101
+                    ta_1 |                      00001000000 |                             0110
+                    ta_2 |                      00010000000 |                             0111
+                  data_1 |                      00100000000 |                             1000
+                  data_2 |                      01000000000 |                             1001
+                  data_3 |                      10000000000 |                             1010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'STATE_reg' using encoding 'one-hot' in module 'MDIO_INTERFACE'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1436.293 ; gain = 551.352 ; free physical = 20210 ; free virtual = 54865
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 23    
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 2     
+	  17 Input     11 Bit        Muxes := 1     
+	  15 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	  15 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
+	   4 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module gmii_to_rgmii_0_resets 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	  15 Input      4 Bit        Muxes := 1     
+	  15 Input      1 Bit        Muxes := 1     
+Module MDIO_INTERFACE 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	  17 Input     11 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+	   4 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 2     
+Module MANAGEMENT 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+Module gmii_to_rgmii_core 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 1     
+Module gmii_to_rgmii 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1436.293 ; gain = 551.352 ; free physical = 20210 ; free virtual = 54865
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3331] design gmii2axis_v1_0 has unconnected port m00_axis_tstrb[0]
+WARNING: [Synth 8-3331] design gmii2axis_v1_0 has unconnected port m00_axis_tlast
+WARNING: [Synth 8-3331] design gmii2axis_v1_0 has unconnected port s00_axis_tready
+WARNING: [Synth 8-3331] design gmii2axis_v1_0 has unconnected port m00_axis_aresetn
+WARNING: [Synth 8-3331] design gmii2axis_v1_0 has unconnected port m00_axis_tready
+WARNING: [Synth 8-3331] design gmii2axis_v1_0 has unconnected port s00_axis_aresetn
+WARNING: [Synth 8-3331] design gmii2axis_v1_0 has unconnected port s00_axis_tstrb[0]
+WARNING: [Synth 8-3331] design gmii2axis_v1_0 has unconnected port s00_axis_tlast
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1436.293 ; gain = 551.352 ; free physical = 20209 ; free virtual = 54864
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1436.293 ; gain = 551.352 ; free physical = 20209 ; free virtual = 54864
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (i_gmii_to_rgmii/i_gmii_to_rgmii/i_reset_sync_tx_90_reset/reset_sync1) is unused and will be removed from module gmii_to_rgmii_v4_0_3.
+WARNING: [Synth 8-3332] Sequential element (i_gmii_to_rgmii/i_gmii_to_rgmii/i_reset_sync_tx_90_reset/reset_sync2) is unused and will be removed from module gmii_to_rgmii_v4_0_3.
+WARNING: [Synth 8-3332] Sequential element (i_gmii_to_rgmii/i_gmii_to_rgmii/i_reset_sync_tx_90_reset/reset_sync3) is unused and will be removed from module gmii_to_rgmii_v4_0_3.
+WARNING: [Synth 8-3332] Sequential element (i_gmii_to_rgmii/i_gmii_to_rgmii/i_reset_sync_tx_90_reset/reset_sync4) is unused and will be removed from module gmii_to_rgmii_v4_0_3.
+WARNING: [Synth 8-3332] Sequential element (i_gmii_to_rgmii/i_gmii_to_rgmii/i_reset_sync_tx_90_reset/reset_sync5) is unused and will be removed from module gmii_to_rgmii_v4_0_3.
+WARNING: [Synth 8-3332] Sequential element (i_gmii_to_rgmii/i_gmii_to_rgmii/i_reset_sync_tx_90_reset/reset_sync6) is unused and will be removed from module gmii_to_rgmii_v4_0_3.
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1436.293 ; gain = 551.352 ; free physical = 20205 ; free virtual = 54864
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1436.293 ; gain = 551.352 ; free physical = 20205 ; free virtual = 54864
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1436.293 ; gain = 551.352 ; free physical = 20175 ; free virtual = 54834
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1436.293 ; gain = 551.352 ; free physical = 20175 ; free virtual = 54834
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1436.293 ; gain = 551.352 ; free physical = 20158 ; free virtual = 54817
+---------------------------------------------------------------------------------
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1436.293 ; gain = 551.352 ; free physical = 20158 ; free virtual = 54817
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1436.293 ; gain = 551.352 ; free physical = 20158 ; free virtual = 54817
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1436.293 ; gain = 551.352 ; free physical = 20158 ; free virtual = 54817
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1436.293 ; gain = 551.352 ; free physical = 20158 ; free virtual = 54817
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1436.293 ; gain = 551.352 ; free physical = 20158 ; free virtual = 54817
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1436.293 ; gain = 551.352 ; free physical = 20158 ; free virtual = 54817
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1436.293 ; gain = 551.352 ; free physical = 20158 ; free virtual = 54817
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1436.293 ; gain = 551.352 ; free physical = 20158 ; free virtual = 54817
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++---------------------+-----------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name          | RTL Name                                                        | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++---------------------+-----------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|gmii_to_rgmii_v4_0_3 | i_gmii_to_rgmii/i_MANAGEMENT/MDIO_INTERFACE_1/SHIFT_REG_reg[12] | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
++---------------------+-----------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |BUFG       |     2|
+|2     |BUFGMUX    |     2|
+|3     |BUFR       |     1|
+|4     |BUFR_1     |     1|
+|5     |IDDR       |     5|
+|6     |IDELAYCTRL |     1|
+|7     |IODELAYE1  |     5|
+|8     |LUT2       |    14|
+|9     |LUT3       |    16|
+|10    |LUT4       |    11|
+|11    |LUT5       |    13|
+|12    |LUT6       |    17|
+|13    |MMCME2_ADV |     1|
+|14    |ODDR       |     6|
+|15    |SRL16E     |     1|
+|16    |FD         |    12|
+|17    |FDP        |    36|
+|18    |FDRE       |    70|
+|19    |FDSE       |     7|
+|20    |IBUF       |    21|
+|21    |OBUF       |    33|
+|22    |OBUFT      |     3|
++------+-----------+------+
+
+Report Instance Areas: 
++------+------------------------------------+---------------------------+------+
+|      |Instance                            |Module                     |Cells |
++------+------------------------------------+---------------------------+------+
+|1     |top                                 |                           |   278|
+|2     |  gmii_to_rgmii                     |gmii_to_rgmii_0            |   233|
+|3     |    U0                              |gmii_to_rgmii_0_support    |   233|
+|4     |      i_gmii_to_rgmii_0_clocking    |gmii_to_rgmii_0_clocking   |     4|
+|5     |      i_gmii_to_rgmii_0_resets      |gmii_to_rgmii_0_resets     |    17|
+|6     |        idelayctrl_reset_gen        |gmii_to_rgmii_0_reset_sync |     6|
+|7     |      i_gmii_to_rgmii_block         |gmii_to_rgmii_0_block      |   211|
+|8     |        gmii_to_rgmii_0_core        |gmii_to_rgmii_v4_0_3       |   197|
+|9     |          i_gmii_to_rgmii           |gmii_to_rgmii              |   197|
+|10    |            i_MANAGEMENT            |MANAGEMENT                 |   123|
+|11    |              MDIO_INTERFACE_1      |MDIO_INTERFACE             |    98|
+|12    |              SYNC_MDC              |sync_block                 |     7|
+|13    |              SYNC_MDIO_IN          |sync_block_4               |     6|
+|14    |            i_gmii_to_rgmii         |gmii_to_rgmii_core         |    53|
+|15    |              i_reset_sync_rx_reset |reset_sync_2               |     6|
+|16    |              i_reset_sync_tx_reset |reset_sync_3               |     6|
+|17    |            i_reset_sync_mgmt_reset |reset_sync                 |     6|
+|18    |            i_reset_sync_rx_reset   |reset_sync_0               |     7|
+|19    |            i_reset_sync_tx_reset   |reset_sync_1               |     6|
++------+------------------------------------+---------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1436.293 ; gain = 551.352 ; free physical = 20158 ; free virtual = 54817
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 14 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1436.293 ; gain = 89.441 ; free physical = 20166 ; free virtual = 54825
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1436.293 ; gain = 551.352 ; free physical = 20166 ; free virtual = 54826
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 90 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 55 instances were transformed.
+  BUFGMUX => BUFGCTRL (inverted pins: CE0): 2 instances
+  FD => FDRE: 12 instances
+  FDP => FDPE: 36 instances
+  IODELAYE1 => IDELAYE2: 5 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+89 Infos, 42 Warnings, 12 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1436.293 ; gain = 476.793 ; free physical = 20171 ; free virtual = 54830
+report_utilization: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.07 . Memory (MB): peak = 1468.312 ; gain = 0.000 ; free physical = 20169 ; free virtual = 54828
+INFO: [Common 17-206] Exiting Vivado at Tue Aug  2 14:45:03 2016...

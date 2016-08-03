@@ -1,7 +1,7 @@
 --Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
---Date        : Tue Jul 26 10:51:30 2016
+--Date        : Wed Aug  3 09:38:12 2016
 --Host        : wintermute running 64-bit Ubuntu 14.04.4 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -77,6 +77,10 @@ architecture STRUCTURE of design_1_wrapper is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
+    reset_port_0 : out STD_LOGIC;
+    reset_port_1 : out STD_LOGIC;
+    ref_clk_oe : out STD_LOGIC_VECTOR ( 0 to 0 );
+    ref_clk_fsel : out STD_LOGIC_VECTOR ( 0 to 0 );
     rgmii_port_0_rd : in STD_LOGIC_VECTOR ( 3 downto 0 );
     rgmii_port_0_rx_ctl : in STD_LOGIC;
     rgmii_port_0_rxc : in STD_LOGIC;
@@ -88,11 +92,7 @@ architecture STRUCTURE of design_1_wrapper is
     rgmii_port_1_rxc : in STD_LOGIC;
     rgmii_port_1_td : out STD_LOGIC_VECTOR ( 3 downto 0 );
     rgmii_port_1_tx_ctl : out STD_LOGIC;
-    rgmii_port_1_txc : out STD_LOGIC;
-    reset_port_0 : out STD_LOGIC;
-    reset_port_1 : out STD_LOGIC;
-    ref_clk_oe : out STD_LOGIC_VECTOR ( 0 to 0 );
-    ref_clk_fsel : out STD_LOGIC_VECTOR ( 0 to 0 )
+    rgmii_port_1_txc : out STD_LOGIC
   );
   end component design_1;
 begin
