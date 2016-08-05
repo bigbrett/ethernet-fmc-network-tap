@@ -1,0 +1,12 @@
+vhdl xil_defaultlib "../../../../gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_clocking.vhd" 
+vhdl xil_defaultlib "../../../../gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_resets.vhd" 
+vhdl xil_defaultlib "../../../../gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_support.vhd" 
+vhdl xil_defaultlib "../../../../gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_reset_sync.vhd" 
+vhdl xil_defaultlib "../../../../gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0_block.vhd" 
+vhdl xil_defaultlib "../../../../gmii2axis_1.0/src/gmii_to_rgmii_0/gmii_to_rgmii_0_resets.vhd" 
+vhdl xil_defaultlib "../../../../gmii2axis_1.0/src/gmii_to_rgmii_0/gmii_to_rgmii_0_support.vhd" 
+vhdl xil_defaultlib "../../../../gmii2axis_1.0/src/gmii_to_rgmii_0/gmii_to_rgmii_0/simulation/demo_tb.vhd" 
+vhdl gmii_to_rgmii_v4_0_3 "../../../ipstatic/gmii_to_rgmii_v4_0_3/hdl/gmii_to_rgmii_v4_0_vh_rfs.vhd" 
+vhdl xil_defaultlib "../../../../gmii2axis_1.0/src/gmii_to_rgmii_0/synth/gmii_to_rgmii_0.vhd" 
+
+nosort

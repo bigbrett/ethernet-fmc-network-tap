@@ -1,0 +1,987 @@
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
+| Date         : Thu Aug  4 09:24:08 2016
+| Host         : wintermute running 64-bit Ubuntu 14.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_gmii_to_rgmii_axis_wrapper_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_gmii_to_rgmii_axis_wrapper_0_2 from user.org:user:gmii_to_rgmii_axis_wrapper:1.2 (Rev. 1) to user.org:user:gmii_to_rgmii_axis_wrapper:3.0 (Rev. 2)
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
+| Date         : Thu Aug  4 09:00:17 2016
+| Host         : wintermute running 64-bit Ubuntu 14.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_gmii_to_rgmii_axis_wrapper_0_2'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_gmii_to_rgmii_axis_wrapper_0_2 from user.org:user:gmii_to_rgmii_axis_wrapper:1.2 (Rev. 1) to user.org:user:gmii_to_rgmii_axis_wrapper:2.1 (Rev. 2)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'design_1_gmii_to_rgmii_axis_wrapper_0_2'.
+
+
+-Upgrade has removed interface 'M_AXIS_GMII1_RX'
+
+-Upgrade has removed interface 'S_AXIS_GMII1_TX'
+
+-Upgrade has added interface 'GMII_1' (xilinx.com:interface:gmii:1.0)
+
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_gmii_to_rgmii_axis_wrapper_0_2'. These changes may impact your design.
+
+
+-Upgrade has removed port 'M_AXIS_GMII1_RX_tdata'
+
+-Upgrade has removed port 'M_AXIS_GMII1_RX_tready'
+
+-Upgrade has removed port 'M_AXIS_GMII1_RX_tvalid'
+
+-Upgrade has removed port 'S_AXIS_GMII1_TX_tdata'
+
+-Upgrade has removed port 'S_AXIS_GMII1_TX_tready'
+
+-Upgrade has removed port 'S_AXIS_GMII1_TX_tvalid'
+
+-Upgrade has renamed port 'gmii_0_rx_clk' as 'GMII_0_rx_clk'
+
+-Upgrade has renamed port 'gmii_0_rx_er' as 'GMII_0_rx_er'
+
+-Upgrade has renamed port 'gmii_0_tx_clk' as 'GMII_0_tx_clk'
+
+-Upgrade has renamed port 'gmii_0_tx_er' as 'GMII_0_tx_er'
+
+-Upgrade has renamed port 'gmii_1_rx_clk' as 'GMII_1_rx_clk'
+
+-Upgrade has renamed port 'gmii_1_rx_er' as 'GMII_1_rx_er'
+
+-Upgrade has renamed port 'gmii_1_tx_clk' as 'GMII_1_tx_clk'
+
+-Upgrade has renamed port 'gmii_1_tx_er' as 'GMII_1_tx_er'
+
+-Upgrade has added port 'GMII_1_col'
+
+-Upgrade has added port 'GMII_1_crs'
+
+-Upgrade has added port 'GMII_1_rx_dv'
+
+-Upgrade has added port 'GMII_1_rxd'
+
+-Upgrade has added port 'GMII_1_tx_en'
+
+-Upgrade has added port 'GMII_1_txd'
+
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
+| Date         : Wed Aug  3 13:01:16 2016
+| Host         : wintermute running 64-bit Ubuntu 14.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_gmii_to_rgmii_axis_wrapper_0_2'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_gmii_to_rgmii_axis_wrapper_0_2 from user.org:user:gmii_to_rgmii_axis_wrapper:1.1 (Rev. 1) to user.org:user:gmii_to_rgmii_axis_wrapper:1.2 (Rev. 1)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_gmii_to_rgmii_axis_wrapper_0_2'. These changes may impact your design.
+
+
+-Upgrade has added port 'gmii_1_rx_er'
+
+-Upgrade has added port 'gmii_1_tx_er'
+
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
+| Date         : Wed Aug  3 12:32:45 2016
+| Host         : wintermute running 64-bit Ubuntu 14.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_gmii_to_rgmii_axis_wrapper_0_2'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_gmii_to_rgmii_axis_wrapper_0_2 from user.org:user:gmii_to_rgmii_axis_wrapper:1.0 (Rev. 2) to user.org:user:gmii_to_rgmii_axis_wrapper:1.1 (Rev. 1)
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'design_1_gmii_to_rgmii_axis_wrapper_0_2'.
+
+
+-Upgrade has added interface 'MDIO_GEM' (xilinx.com:interface:mdio:1.0)
+
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
+| Date         : Wed Aug  3 11:45:02 2016
+| Host         : wintermute running 64-bit Ubuntu 14.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_gmii_to_rgmii_axis_wrapper_v2_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_gmii_to_rgmii_axis_wrapper_v2_0_0 (user.org:user:gmii_to_rgmii_axis_wrapper:2.1) from (Rev. 1) to (Rev. 2)
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
+| Date         : Wed Aug  3 11:39:20 2016
+| Host         : wintermute running 64-bit Ubuntu 14.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_gmii_to_rgmii_axis_wrapper_v2_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of design_1_gmii_to_rgmii_axis_wrapper_v2_0_0 (user.org:user:gmii_to_rgmii_axis_wrapper:2.1 (Rev. 1)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_gmii_to_rgmii_axis_wrapper_v2_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'GMII_0_rx_er'
+
+-Upgrade has added port 'GMII_0_tx_er'
+
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
+| Date         : Wed Aug  3 11:30:51 2016
+| Host         : wintermute running 64-bit Ubuntu 14.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_gmii_to_rgmii_axis_wrapper_v2_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_gmii_to_rgmii_axis_wrapper_v2_0_0 from user.org:user:gmii_to_rgmii_axis_wrapper_v2:2.0 (Rev. 2) to user.org:user:gmii_to_rgmii_axis_wrapper:2.1 (Rev. 1)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_gmii_to_rgmii_axis_wrapper_v2_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'GMII_0_rx_clk'
+
+-Upgrade has added port 'GMII_0_tx_clk'
+
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
+| Date         : Wed Aug  3 09:38:08 2016
+| Host         : wintermute running 64-bit Ubuntu 14.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_gmii_to_rgmii_axis_wrapper_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the update of design_1_gmii_to_rgmii_axis_wrapper_0_1 (user.org:user:gmii_to_rgmii_axis_wrapper:1.0 (Rev. 2)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
+| Date         : Wed Aug  3 09:37:17 2016
+| Host         : wintermute running 64-bit Ubuntu 14.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_gmii_to_rgmii_axis_wrapper_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_gmii_to_rgmii_axis_wrapper_0_1 (user.org:user:gmii_to_rgmii_axis_wrapper:1.0) from (Rev. 1) to (Rev. 2)
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
+| Date         : Tue Aug  2 15:01:20 2016
+| Host         : wintermute running 64-bit Ubuntu 14.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_gmii2axis_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_gmii2axis_0_0 (user.org:user:gmii2axis:1.0) from (Rev. 12) to (Rev. 13)
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'design_1_gmii2axis_0_0'.
+
+
+-Upgrade has added interface 'rgmii_rxc' (xilinx.com:signal:clock:1.0)
+
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
+| Date         : Mon Aug  1 15:02:35 2016
+| Host         : wintermute running 64-bit Ubuntu 14.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_axi_interfaces_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_axi_interfaces_0_0 from WebSensing.com:hls:axi_interfaces:2.1 (Rev. 1608011441) to WebSensing.com:hls:axi_interfaces:2.2 (Rev. 1608011459)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'design_1_axi_interfaces_0_0'.
+
+
+-Upgrade has removed interface 's_axi_AXILiteS'
+
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_axi_interfaces_0_0'. These changes may impact your design.
+
+
+-Upgrade has removed port 's_axi_AXILiteS_ARADDR'
+
+-Upgrade has removed port 's_axi_AXILiteS_ARREADY'
+
+-Upgrade has removed port 's_axi_AXILiteS_ARVALID'
+
+-Upgrade has removed port 's_axi_AXILiteS_AWADDR'
+
+-Upgrade has removed port 's_axi_AXILiteS_AWREADY'
+
+-Upgrade has removed port 's_axi_AXILiteS_AWVALID'
+
+-Upgrade has removed port 's_axi_AXILiteS_BREADY'
+
+-Upgrade has removed port 's_axi_AXILiteS_BRESP'
+
+-Upgrade has removed port 's_axi_AXILiteS_BVALID'
+
+-Upgrade has removed port 's_axi_AXILiteS_RDATA'
+
+-Upgrade has removed port 's_axi_AXILiteS_RREADY'
+
+-Upgrade has removed port 's_axi_AXILiteS_RRESP'
+
+-Upgrade has removed port 's_axi_AXILiteS_RVALID'
+
+-Upgrade has removed port 's_axi_AXILiteS_WDATA'
+
+-Upgrade has removed port 's_axi_AXILiteS_WREADY'
+
+-Upgrade has removed port 's_axi_AXILiteS_WSTRB'
+
+-Upgrade has removed port 's_axi_AXILiteS_WVALID'
+
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
+| Date         : Mon Aug  1 14:41:36 2016
+| Host         : wintermute running 64-bit Ubuntu 14.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_axi_interfaces_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_axi_interfaces_0_0 from WebSensing.com:hls:axi_interfaces:2.0 (Rev. 1608011415) to WebSensing.com:hls:axi_interfaces:2.1 (Rev. 1608011441)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'design_1_axi_interfaces_0_0'.
+
+
+-Upgrade has added interface 's_axi_AXILiteS' (xilinx.com:interface:aximm:1.0)
+
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_axi_interfaces_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 's_axi_AXILiteS_ARADDR'
+
+-Upgrade has added port 's_axi_AXILiteS_ARREADY'
+
+-Upgrade has added port 's_axi_AXILiteS_ARVALID'
+
+-Upgrade has added port 's_axi_AXILiteS_AWADDR'
+
+-Upgrade has added port 's_axi_AXILiteS_AWREADY'
+
+-Upgrade has added port 's_axi_AXILiteS_AWVALID'
+
+-Upgrade has added port 's_axi_AXILiteS_BREADY'
+
+-Upgrade has added port 's_axi_AXILiteS_BRESP'
+
+-Upgrade has added port 's_axi_AXILiteS_BVALID'
+
+-Upgrade has added port 's_axi_AXILiteS_RDATA'
+
+-Upgrade has added port 's_axi_AXILiteS_RREADY'
+
+-Upgrade has added port 's_axi_AXILiteS_RRESP'
+
+-Upgrade has added port 's_axi_AXILiteS_RVALID'
+
+-Upgrade has added port 's_axi_AXILiteS_WDATA'
+
+-Upgrade has added port 's_axi_AXILiteS_WREADY'
+
+-Upgrade has added port 's_axi_AXILiteS_WSTRB'
+
+-Upgrade has added port 's_axi_AXILiteS_WVALID'
+
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
+| Date         : Mon Aug  1 14:16:21 2016
+| Host         : wintermute running 64-bit Ubuntu 14.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_axi_interfaces_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_axi_interfaces_0_0 from WebSensing.com:hls:axi_interfaces:1.0 (Rev. 1608011408) to WebSensing.com:hls:axi_interfaces:2.0 (Rev. 1608011415)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'design_1_axi_interfaces_0_0'.
+
+
+-Upgrade has removed interface 'd_i_0'
+
+-Upgrade has removed interface 'd_i_1'
+
+-Upgrade has removed interface 'd_i_2'
+
+-Upgrade has removed interface 'd_i_3'
+
+-Upgrade has removed interface 'd_i_4'
+
+-Upgrade has removed interface 'd_i_5'
+
+-Upgrade has removed interface 'd_i_6'
+
+-Upgrade has removed interface 'd_i_7'
+
+-Upgrade has removed interface 'd_o_0'
+
+-Upgrade has removed interface 'd_o_1'
+
+-Upgrade has removed interface 'd_o_2'
+
+-Upgrade has removed interface 'd_o_3'
+
+-Upgrade has removed interface 'd_o_4'
+
+-Upgrade has removed interface 'd_o_5'
+
+-Upgrade has removed interface 'd_o_6'
+
+-Upgrade has removed interface 'd_o_7'
+
+-Upgrade has added interface 'd_i' (xilinx.com:interface:axis:1.0)
+
+-Upgrade has added interface 'd_o' (xilinx.com:interface:axis:1.0)
+
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_axi_interfaces_0_0'. These changes may impact your design.
+
+
+-Upgrade has removed port 'd_i_0_TDATA'
+
+-Upgrade has removed port 'd_i_0_TREADY'
+
+-Upgrade has removed port 'd_i_0_TVALID'
+
+-Upgrade has removed port 'd_i_1_TDATA'
+
+-Upgrade has removed port 'd_i_1_TREADY'
+
+-Upgrade has removed port 'd_i_1_TVALID'
+
+-Upgrade has removed port 'd_i_2_TDATA'
+
+-Upgrade has removed port 'd_i_2_TREADY'
+
+-Upgrade has removed port 'd_i_2_TVALID'
+
+-Upgrade has removed port 'd_i_3_TDATA'
+
+-Upgrade has removed port 'd_i_3_TREADY'
+
+-Upgrade has removed port 'd_i_3_TVALID'
+
+-Upgrade has removed port 'd_i_4_TDATA'
+
+-Upgrade has removed port 'd_i_4_TREADY'
+
+-Upgrade has removed port 'd_i_4_TVALID'
+
+-Upgrade has removed port 'd_i_5_TDATA'
+
+-Upgrade has removed port 'd_i_5_TREADY'
+
+-Upgrade has removed port 'd_i_5_TVALID'
+
+-Upgrade has removed port 'd_i_6_TDATA'
+
+-Upgrade has removed port 'd_i_6_TREADY'
+
+-Upgrade has removed port 'd_i_6_TVALID'
+
+-Upgrade has removed port 'd_i_7_TDATA'
+
+-Upgrade has removed port 'd_i_7_TREADY'
+
+-Upgrade has removed port 'd_i_7_TVALID'
+
+-Upgrade has removed port 'd_o_0_TDATA'
+
+-Upgrade has removed port 'd_o_0_TREADY'
+
+-Upgrade has removed port 'd_o_0_TVALID'
+
+-Upgrade has removed port 'd_o_1_TDATA'
+
+-Upgrade has removed port 'd_o_1_TREADY'
+
+-Upgrade has removed port 'd_o_1_TVALID'
+
+-Upgrade has removed port 'd_o_2_TDATA'
+
+-Upgrade has removed port 'd_o_2_TREADY'
+
+-Upgrade has removed port 'd_o_2_TVALID'
+
+-Upgrade has removed port 'd_o_3_TDATA'
+
+-Upgrade has removed port 'd_o_3_TREADY'
+
+-Upgrade has removed port 'd_o_3_TVALID'
+
+-Upgrade has removed port 'd_o_4_TDATA'
+
+-Upgrade has removed port 'd_o_4_TREADY'
+
+-Upgrade has removed port 'd_o_4_TVALID'
+
+-Upgrade has removed port 'd_o_5_TDATA'
+
+-Upgrade has removed port 'd_o_5_TREADY'
+
+-Upgrade has removed port 'd_o_5_TVALID'
+
+-Upgrade has removed port 'd_o_6_TDATA'
+
+-Upgrade has removed port 'd_o_6_TREADY'
+
+-Upgrade has removed port 'd_o_6_TVALID'
+
+-Upgrade has removed port 'd_o_7_TDATA'
+
+-Upgrade has removed port 'd_o_7_TREADY'
+
+-Upgrade has removed port 'd_o_7_TVALID'
+
+-Upgrade has added port 'd_i_TDATA'
+
+-Upgrade has added port 'd_i_TREADY'
+
+-Upgrade has added port 'd_i_TVALID'
+
+-Upgrade has added port 'd_o_TDATA'
+
+-Upgrade has added port 'd_o_TREADY'
+
+-Upgrade has added port 'd_o_TVALID'
+
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
+| Date         : Sat Jul 30 16:02:05 2016
+| Host         : wintermute running 64-bit Ubuntu 14.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_gmii2axis_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_gmii2axis_0_0 (user.org:user:gmii2axis:1.0) from (Rev. 11) to (Rev. 12)
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'design_1_gmii2axis_0_0'.
+
+
+-Upgrade has removed interface 'I_rgmii_rxc'
+
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
+| Date         : Sat Jul 30 15:08:44 2016
+| Host         : wintermute running 64-bit Ubuntu 14.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_gmii2axis_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_gmii2axis_0_0 (user.org:user:gmii2axis:1.0) from (Rev. 10) to (Rev. 11)
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'design_1_gmii2axis_0_0'.
+
+
+-Upgrade has removed interface 'I_clk200'
+
+-Upgrade has added interface 'I_rgmii_rxc' (xilinx.com:signal:clock:1.0)
+
+-Upgrade has added interface 'm00_axis_aclk_OUT' (xilinx.com:signal:clock:1.0)
+
+-Upgrade has added interface 's00_axis_aclk_OUT' (xilinx.com:signal:clock:1.0)
+
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
+| Date         : Fri Jul 29 17:18:42 2016
+| Host         : wintermute running 64-bit Ubuntu 14.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_gmii2axis_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_gmii2axis_0_0 (user.org:user:gmii2axis:1.0) from (Rev. 9) to (Rev. 10)
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
+| Date         : Fri Jul 29 17:09:07 2016
+| Host         : wintermute running 64-bit Ubuntu 14.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_gmii2axis_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_gmii2axis_0_0 (user.org:user:gmii2axis:1.0) from (Rev. 8) to (Rev. 9)
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'design_1_gmii2axis_0_0'.
+
+
+-Upgrade has added interface 'I_clk200' (xilinx.com:signal:clock:1.0)
+
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
+| Date         : Fri Jul 29 16:59:12 2016
+| Host         : wintermute running 64-bit Ubuntu 14.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_gmii2axis_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_gmii2axis_0_0 (user.org:user:gmii2axis:1.0) from (Rev. 7) to (Rev. 8)
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'design_1_gmii2axis_0_0'.
+
+
+-Upgrade has removed interface 'M00_AXIS_CLK'
+
+-Upgrade has added interface 'MDIO_GEM' (xilinx.com:interface:mdio:1.0)
+
+-Upgrade has added interface 'MDIO_PHY' (xilinx.com:interface:mdio:1.0)
+
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
+| Date         : Fri Jul 29 16:33:38 2016
+| Host         : wintermute running 64-bit Ubuntu 14.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_gmii2axis_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_gmii2axis_0_0 (user.org:user:gmii2axis:1.0) from (Rev. 6) to (Rev. 7)
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'design_1_gmii2axis_0_0'.
+
+
+-Upgrade has added interface 'RGMII' (xilinx.com:interface:rgmii:1.0)
+
+-Upgrade has added interface 'S00_AXIS' (xilinx.com:interface:axis:1.0)
+
+-Upgrade has added interface 'm00_axis_aresetn' (xilinx.com:signal:reset:1.0)
+
+-Upgrade has added interface 's00_axis_aresetn' (xilinx.com:signal:reset:1.0)
+
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
+| Date         : Fri Jul 29 16:08:16 2016
+| Host         : wintermute running 64-bit Ubuntu 14.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_gmii2axis_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_gmii2axis_0_0 (user.org:user:gmii2axis:1.0) from (Rev. 5) to (Rev. 6)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_gmii2axis_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'Q_ref_clk_out'
+
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
+| Date         : Fri Jul 29 15:42:25 2016
+| Host         : wintermute running 64-bit Ubuntu 14.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_gmii2axis_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_gmii2axis_0_0 (user.org:user:gmii2axis:1.0) from (Rev. 4) to (Rev. 5)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_gmii2axis_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'Q_gmii_clk_125m_out'
+
+-Upgrade has added port 'Q_gmii_clk_25m_out'
+
+-Upgrade has added port 'Q_gmii_clk_2_5m_out'
+
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
+| Date         : Fri Jul 29 15:30:49 2016
+| Host         : wintermute running 64-bit Ubuntu 14.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_gmii2axis_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_gmii2axis_0_0 (user.org:user:gmii2axis:1.0) from (Rev. 3) to (Rev. 4)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_gmii2axis_0_0'. These changes may impact your design.
+
+
+-Upgrade has removed port 'I_mdio_gem'
+
+-Upgrade has removed port 'I_mdio_gem_mdc'
+
+-Upgrade has removed port 'I_mdio_phy_i'
+
+-Upgrade has removed port 'Q_mdio_gem'
+
+-Upgrade has removed port 'Q_mdio_phy_mdc'
+
+-Upgrade has removed port 'Q_mdio_phy_o'
+
+-Upgrade has removed port 'Q_mdio_phy_t'
+
+-Upgrade has added port 'mdio_gem_i'
+
+-Upgrade has added port 'mdio_gem_mdc'
+
+-Upgrade has added port 'mdio_gem_o'
+
+-Upgrade has added port 'mdio_gem_t'
+
+-Upgrade has added port 'mdio_phy_i'
+
+-Upgrade has added port 'mdio_phy_mdc'
+
+-Upgrade has added port 'mdio_phy_o'
+
+-Upgrade has added port 'mdio_phy_t'
+
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
+| Date         : Fri Jul 29 15:20:26 2016
+| Host         : wintermute running 64-bit Ubuntu 14.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_gmii2axis_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_gmii2axis_0_0 (user.org:user:gmii2axis:1.0) from (Rev. 2) to (Rev. 3)
+
