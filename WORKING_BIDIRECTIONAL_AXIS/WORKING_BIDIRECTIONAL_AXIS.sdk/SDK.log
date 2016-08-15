@@ -1,0 +1,454 @@
+19:01:08 INFO  : Launching XSDB server: xsdb -n -interactive /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/temp_xsdb_launch_script.tcl
+19:01:11 INFO  : XSDB server has started successfully.
+19:01:11 INFO  : Processing command line option -hwspec /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+19:03:45 INFO  : BSP Project P/echo_server_bsp has been successfully migrated.
+19:04:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:04:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248445761" && level==0} -index 1' command is executed.
+19:04:24 INFO  : FPGA configured successfully with bitstream "/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+19:04:46 INFO  : Processor reset is completed for ps7_cortexa9_0
+19:06:19 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+19:06:21 INFO  : Processor reset is completed for ps7_cortexa9_0
+19:28:01 ERROR : Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+19:31:08 INFO  : Launching XSDB server: xsdb -n -interactive /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/temp_xsdb_launch_script.tcl
+19:31:10 INFO  : XSDB server has started successfully.
+19:31:10 INFO  : Processing command line option -hwspec /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+19:31:10 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+19:31:12 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1470957824000,  Project:1470956261000
+19:31:12 INFO  : The hardware specification for project 'design_1_wrapper_hw_platform_0' is different from /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+19:31:12 INFO  : Copied contents of /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_0/system.hdf.
+19:31:16 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+19:31:17 INFO  : 
+19:31:18 INFO  : Updating hardware inferred compiler options for echo_server.
+19:31:18 INFO  : Clearing existing target manager status.
+19:31:19 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+19:31:19 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+19:31:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:31:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248445761" && level==0} -index 1' command is executed.
+19:31:34 INFO  : FPGA configured successfully with bitstream "/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+19:32:05 INFO  : Processor reset is completed for ps7_cortexa9_0
+11:08:57 ERROR : Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+12:19:00 INFO  : Launching XSDB server: xsdb -n -interactive /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/temp_xsdb_launch_script.tcl
+12:19:01 INFO  : XSDB server has started successfully.
+12:19:01 INFO  : Processing command line option -hwspec /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+12:19:01 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+12:19:03 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1470959400000,  Project:1470957824000
+12:19:03 INFO  : The hardware specification for project 'design_1_wrapper_hw_platform_0' is different from /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+12:19:03 INFO  : Copied contents of /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_0/system.hdf.
+12:19:07 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+12:19:08 INFO  : 
+12:19:09 INFO  : Updating hardware inferred compiler options for echo_server.
+12:19:09 INFO  : Clearing existing target manager status.
+12:19:10 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+12:19:11 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+12:19:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:19:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248445761" && level==0} -index 1' command is executed.
+12:19:22 INFO  : FPGA configured successfully with bitstream "/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+12:20:27 INFO  : Processor reset is completed for ps7_cortexa9_0
+13:21:13 ERROR : Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+13:51:29 INFO  : Launching XSDB server: xsdb -n -interactive /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/temp_xsdb_launch_script.tcl
+13:51:30 INFO  : XSDB server has started successfully.
+13:51:30 INFO  : Processing command line option -hwspec /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+13:51:30 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+13:51:32 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1471024222000,  Project:1470959400000
+13:51:32 INFO  : The hardware specification for project 'design_1_wrapper_hw_platform_0' is different from /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+13:51:32 INFO  : Copied contents of /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_0/system.hdf.
+13:51:36 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+13:51:37 INFO  : 
+13:51:38 INFO  : Updating hardware inferred compiler options for echo_server.
+13:51:38 INFO  : Clearing existing target manager status.
+13:51:39 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+13:51:39 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+13:51:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:51:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248445761" && level==0} -index 1' command is executed.
+13:51:57 INFO  : FPGA configured successfully with bitstream "/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+13:52:05 INFO  : Processor reset is completed for ps7_cortexa9_0
+14:26:35 ERROR : Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+14:26:53 INFO  : Launching XSDB server: xsdb -n -interactive /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/temp_xsdb_launch_script.tcl
+14:26:55 INFO  : XSDB server has started successfully.
+14:26:55 INFO  : Processing command line option -hwspec /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+14:26:55 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+14:26:57 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1471026343000,  Project:1471024222000
+14:26:57 INFO  : The hardware specification for project 'design_1_wrapper_hw_platform_0' is different from /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+14:26:57 INFO  : Copied contents of /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_0/system.hdf.
+14:27:01 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+14:27:02 INFO  : 
+14:27:03 INFO  : Updating hardware inferred compiler options for echo_server.
+14:27:03 INFO  : Clearing existing target manager status.
+14:27:04 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+14:27:05 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+14:27:15 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:27:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248445761" && level==0} -index 1' command is executed.
+14:27:17 INFO  : FPGA configured successfully with bitstream "/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+14:27:23 INFO  : Processor reset is completed for ps7_cortexa9_0
+11:14:47 ERROR : Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+11:25:20 INFO  : Launching XSDB server: xsdb -n -interactive /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/temp_xsdb_launch_script.tcl
+11:25:21 INFO  : XSDB server has started successfully.
+11:25:21 INFO  : Processing command line option -hwspec /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+11:25:21 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+11:25:23 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1471101823000,  Project:1471026343000
+11:25:23 INFO  : The hardware specification for project 'design_1_wrapper_hw_platform_0' is different from /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+11:25:23 INFO  : Copied contents of /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_0/system.hdf.
+11:25:28 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+11:25:29 INFO  : 
+11:25:30 INFO  : Updating hardware inferred compiler options for echo_server.
+11:25:30 INFO  : Clearing existing target manager status.
+11:25:31 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+11:25:32 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+11:25:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:25:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248445761" && level==0} -index 1' command is executed.
+11:25:51 INFO  : FPGA configured successfully with bitstream "/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+11:25:57 INFO  : Processor reset is completed for ps7_cortexa9_0
+11:26:10 INFO  : Processor reset is completed for ps7_cortexa9_0
+11:55:18 ERROR : Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+12:17:04 INFO  : Launching XSDB server: xsdb -n -interactive /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/temp_xsdb_launch_script.tcl
+12:17:05 INFO  : XSDB server has started successfully.
+12:17:05 INFO  : Processing command line option -hwspec /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+12:17:05 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+12:17:08 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1471103965000,  Project:1471101823000
+12:17:08 INFO  : The hardware specification for project 'design_1_wrapper_hw_platform_0' is different from /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+12:17:08 INFO  : Copied contents of /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_0/system.hdf.
+12:17:13 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+12:17:14 INFO  : 
+12:17:15 INFO  : Updating hardware inferred compiler options for echo_server.
+12:17:15 INFO  : Clearing existing target manager status.
+12:17:16 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+12:17:16 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+12:17:28 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:17:29 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248445761" && level==0} -index 1' command is executed.
+12:17:31 INFO  : FPGA configured successfully with bitstream "/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+12:17:45 INFO  : Processor reset is completed for ps7_cortexa9_0
+12:28:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:28:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248445761" && level==0} -index 1' command is executed.
+12:28:50 INFO  : FPGA configured successfully with bitstream "/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+12:28:56 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+12:28:58 INFO  : Processor reset is completed for ps7_cortexa9_0
+13:49:02 INFO  : Launching XSDB server: xsdb -n -interactive /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/temp_xsdb_launch_script.tcl
+13:49:03 INFO  : XSDB server has started successfully.
+13:49:03 INFO  : Processing command line option -hwspec /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+13:49:04 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+13:49:06 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1471196482000,  Project:1471103965000
+13:49:06 INFO  : The hardware specification for project 'design_1_wrapper_hw_platform_0' is different from /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+13:49:06 INFO  : Copied contents of /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_0/system.hdf.
+13:49:10 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+13:49:11 INFO  : 
+13:49:11 INFO  : Updating hardware inferred compiler options for echo_server.
+13:49:11 INFO  : Clearing existing target manager status.
+13:49:14 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+13:49:14 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+13:49:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:49:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248445761" && level==0} -index 1' command is executed.
+13:49:34 INFO  : FPGA configured successfully with bitstream "/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+13:49:39 INFO  : ps7_init is completed.
+13:49:39 INFO  : ps7_post_config is completed.
+13:49:39 INFO  : Processor reset is completed for ps7_cortexa9_0
+14:29:37 ERROR : Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+14:30:05 INFO  : Launching XSDB server: xsdb -n -interactive /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/temp_xsdb_launch_script.tcl
+14:30:06 INFO  : XSDB server has started successfully.
+14:30:06 INFO  : Processing command line option -hwspec /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+14:30:06 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+14:30:08 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1471199350000,  Project:1471196482000
+14:30:08 INFO  : The hardware specification for project 'design_1_wrapper_hw_platform_0' is different from /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+14:30:08 INFO  : Copied contents of /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_0/system.hdf.
+14:30:12 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+14:30:13 INFO  : 
+14:30:14 INFO  : Updating hardware inferred compiler options for echo_server.
+14:30:14 INFO  : Clearing existing target manager status.
+14:30:15 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+14:30:15 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+14:31:06 INFO  : Processor reset is completed for ps7_cortexa9_0
+14:32:11 ERROR : Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+15:11:22 INFO  : Launching XSDB server: xsdb -n -interactive /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/temp_xsdb_launch_script.tcl
+15:11:23 INFO  : XSDB server has started successfully.
+15:11:23 INFO  : Processing command line option -hwspec /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+15:11:23 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+15:11:25 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1471200943000,  Project:1471199350000
+15:11:25 INFO  : The hardware specification for project 'design_1_wrapper_hw_platform_0' is different from /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+15:11:25 INFO  : Copied contents of /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_0/system.hdf.
+15:11:30 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+15:11:31 INFO  : 
+15:11:32 INFO  : Updating hardware inferred compiler options for echo_server.
+15:11:32 INFO  : Clearing existing target manager status.
+15:11:33 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+15:11:33 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+15:11:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:11:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248445761" && level==0} -index 1' command is executed.
+15:11:47 INFO  : FPGA configured successfully with bitstream "/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+15:11:54 INFO  : Processor reset is completed for ps7_cortexa9_0
+15:47:49 INFO  : Time out for XMD transaction is 60000
+If you want to increase the timeout value, goto Windows-> Preferences -> Xilinx SDK -> XMD Startup
+15:47:49 ERROR : Timeout occured while waiting to get reply for command "xdisconnect 64"
+15:47:49 ERROR : Disconnect target failed.
+15:47:49 ERROR : Disconnect target failed.No Target with ID 64 in the System
+
+
+15:47:49 ERROR : Unable to disconnect from existing targets
+java.lang.RuntimeException: No Target with ID 64 in the System
+
+
+	at com.xilinx.sdk.targetmanager.internal.TM.disconnectTarget(TM.java:329)
+	at com.xilinx.sdk.targetmanager.internal.TM.disconnectExistingTargets(TM.java:308)
+	at com.xilinx.sdk.targetmanager.internal.TM.terminate(TM.java:212)
+	at com.xilinx.sdk.targetmanager.TMPlugin.stop(TMPlugin.java:58)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:827)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:820)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:955)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:323)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:626)
+	at org.eclipse.osgi.container.Module.stop(Module.java:488)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1623)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1542)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:248)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:144)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:626)
+	at org.eclipse.osgi.container.Module.stop(Module.java:488)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:186)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:159)
+	at java.lang.Thread.run(Thread.java:745)
+15:47:49 ERROR : Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+16:00:26 INFO  : Launching XSDB server: xsdb -n -interactive /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/temp_xsdb_launch_script.tcl
+16:00:27 INFO  : XSDB server has started successfully.
+16:00:27 INFO  : Processing command line option -hwspec /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+16:00:27 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+16:00:30 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1471204539000,  Project:1471200943000
+16:00:30 INFO  : The hardware specification for project 'design_1_wrapper_hw_platform_0' is different from /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+16:00:30 INFO  : Copied contents of /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_0/system.hdf.
+16:00:37 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+16:00:38 INFO  : 
+16:00:39 INFO  : Updating hardware inferred compiler options for echo_server.
+16:00:39 INFO  : Clearing existing target manager status.
+16:00:40 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+16:00:41 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+16:00:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:00:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248445761" && level==0} -index 1' command is executed.
+16:01:01 INFO  : FPGA configured successfully with bitstream "/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+16:01:09 INFO  : Processor reset is completed for ps7_cortexa9_0
+16:12:55 ERROR : Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+16:18:12 INFO  : Launching XSDB server: xsdb -n -interactive /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/temp_xsdb_launch_script.tcl
+16:18:13 INFO  : XSDB server has started successfully.
+16:18:13 INFO  : Processing command line option -hwspec /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+16:18:13 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+16:18:16 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1471205855000,  Project:1471204539000
+16:18:16 INFO  : The hardware specification for project 'design_1_wrapper_hw_platform_0' is different from /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+16:18:16 INFO  : Copied contents of /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_0/system.hdf.
+16:18:22 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+16:18:23 INFO  : 
+16:18:24 INFO  : Updating hardware inferred compiler options for echo_server.
+16:18:24 INFO  : Clearing existing target manager status.
+16:18:25 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+16:18:26 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+16:18:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:18:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248445761" && level==0} -index 1' command is executed.
+16:18:38 INFO  : FPGA configured successfully with bitstream "/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+16:18:46 INFO  : Processor reset is completed for ps7_cortexa9_0
+16:31:37 ERROR : Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+16:31:55 INFO  : Launching XSDB server: xsdb -n -interactive /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/temp_xsdb_launch_script.tcl
+16:31:57 INFO  : XSDB server has started successfully.
+16:31:57 INFO  : Processing command line option -hwspec /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+16:31:57 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+16:31:59 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1471206686000,  Project:1471205855000
+16:31:59 INFO  : The hardware specification for project 'design_1_wrapper_hw_platform_0' is different from /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+16:31:59 INFO  : Copied contents of /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_0/system.hdf.
+16:32:04 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+16:32:05 INFO  : 
+16:32:06 INFO  : Updating hardware inferred compiler options for echo_server.
+16:32:06 INFO  : Clearing existing target manager status.
+16:32:07 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+16:32:07 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+16:32:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:32:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248445761" && level==0} -index 1' command is executed.
+16:32:27 INFO  : FPGA configured successfully with bitstream "/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+16:32:32 INFO  : Processor reset is completed for ps7_cortexa9_0
+16:43:32 ERROR : Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+16:43:50 INFO  : Launching XSDB server: xsdb -n -interactive /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/temp_xsdb_launch_script.tcl
+16:43:51 INFO  : XSDB server has started successfully.
+16:43:51 INFO  : Processing command line option -hwspec /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+16:43:51 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+16:43:54 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1471207369000,  Project:1471206686000
+16:43:54 INFO  : The hardware specification for project 'design_1_wrapper_hw_platform_0' is different from /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+16:43:54 INFO  : Copied contents of /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_0/system.hdf.
+16:43:59 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+16:44:00 INFO  : 
+16:44:00 INFO  : Updating hardware inferred compiler options for echo_server.
+16:44:00 INFO  : Clearing existing target manager status.
+16:44:02 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+16:44:02 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+16:44:12 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:44:12 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248445761" && level==0} -index 1' command is executed.
+16:44:15 INFO  : FPGA configured successfully with bitstream "/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+16:44:21 INFO  : Processor reset is completed for ps7_cortexa9_0
+08:56:15 ERROR : Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+08:56:31 INFO  : Launching XSDB server: xsdb -n -interactive /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/temp_xsdb_launch_script.tcl
+08:56:32 INFO  : XSDB server has started successfully.
+08:56:32 INFO  : Processing command line option -hwspec /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+08:56:32 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+08:56:34 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1471265548000,  Project:1471207369000
+08:56:34 INFO  : The hardware specification for project 'design_1_wrapper_hw_platform_0' is different from /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+08:56:34 INFO  : Copied contents of /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_0/system.hdf.
+08:56:39 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+08:56:40 INFO  : 
+08:56:41 INFO  : Updating hardware inferred compiler options for echo_server.
+08:56:41 INFO  : Clearing existing target manager status.
+08:56:42 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+08:56:42 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+08:56:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+08:56:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248445761" && level==0} -index 1' command is executed.
+08:56:56 INFO  : FPGA configured successfully with bitstream "/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+08:57:02 INFO  : Processor reset is completed for ps7_cortexa9_0
+09:21:47 ERROR : Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+09:22:12 INFO  : Launching XSDB server: xsdb -n -interactive /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/temp_xsdb_launch_script.tcl
+09:22:13 INFO  : XSDB server has started successfully.
+09:22:13 INFO  : Processing command line option -hwspec /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+09:22:13 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+09:22:16 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1471267038000,  Project:1471265548000
+09:22:16 INFO  : The hardware specification for project 'design_1_wrapper_hw_platform_0' is different from /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+09:22:16 INFO  : Copied contents of /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_0/system.hdf.
+09:22:21 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+09:22:22 INFO  : 
+09:22:22 INFO  : Updating hardware inferred compiler options for echo_server.
+09:22:22 INFO  : Clearing existing target manager status.
+09:22:23 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+09:22:24 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+09:22:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:22:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248445761" && level==0} -index 1' command is executed.
+09:22:35 INFO  : FPGA configured successfully with bitstream "/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+09:22:53 INFO  : Processor reset is completed for ps7_cortexa9_0
+09:48:46 ERROR : Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+09:53:28 INFO  : Launching XSDB server: xsdb -n -interactive /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/temp_xsdb_launch_script.tcl
+09:53:29 INFO  : XSDB server has started successfully.
+09:53:29 INFO  : Processing command line option -hwspec /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+09:53:29 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+09:53:31 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1471269157000,  Project:1471267038000
+09:53:31 INFO  : The hardware specification for project 'design_1_wrapper_hw_platform_0' is different from /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+09:53:32 INFO  : Copied contents of /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_0/system.hdf.
+09:53:36 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+09:53:37 INFO  : 
+09:53:38 INFO  : Updating hardware inferred compiler options for echo_server.
+09:53:38 INFO  : Clearing existing target manager status.
+09:53:39 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+09:53:40 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+09:53:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:53:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248445761" && level==0} -index 1' command is executed.
+09:54:01 INFO  : FPGA configured successfully with bitstream "/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+09:54:09 INFO  : Processor reset is completed for ps7_cortexa9_0
+10:28:17 ERROR : Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+10:28:38 INFO  : Launching XSDB server: xsdb -n -interactive /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/temp_xsdb_launch_script.tcl
+10:28:39 INFO  : XSDB server has started successfully.
+10:28:39 INFO  : Processing command line option -hwspec /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+10:28:39 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+10:28:41 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1471271287000,  Project:1471269157000
+10:28:41 INFO  : The hardware specification for project 'design_1_wrapper_hw_platform_0' is different from /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+10:28:41 INFO  : Copied contents of /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_0/system.hdf.
+10:28:46 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+10:28:47 INFO  : 
+10:28:48 INFO  : Updating hardware inferred compiler options for echo_server.
+10:28:48 INFO  : Clearing existing target manager status.
+10:28:49 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+10:28:49 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+10:29:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:29:07 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248445761" && level==0} -index 1' command is executed.
+10:29:10 INFO  : FPGA configured successfully with bitstream "/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+10:29:40 INFO  : Processor reset is completed for ps7_cortexa9_0
+11:08:02 ERROR : Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+11:19:39 INFO  : Launching XSDB server: xsdb -n -interactive /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/temp_xsdb_launch_script.tcl
+11:19:40 INFO  : XSDB server has started successfully.
+11:19:41 INFO  : Processing command line option -hwspec /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+11:19:41 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+11:19:43 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1471273974000,  Project:1471271287000
+11:19:43 INFO  : The hardware specification for project 'design_1_wrapper_hw_platform_0' is different from /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+11:19:43 INFO  : Copied contents of /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_0/system.hdf.
+11:19:47 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+11:19:48 INFO  : 
+11:19:49 INFO  : Updating hardware inferred compiler options for echo_server.
+11:19:49 INFO  : Clearing existing target manager status.
+11:19:50 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+11:19:51 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+11:20:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:20:12 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248445761" && level==0} -index 1' command is executed.
+11:20:14 INFO  : FPGA configured successfully with bitstream "/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+11:20:21 INFO  : Processor reset is completed for ps7_cortexa9_0
+11:47:13 ERROR : Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+11:55:04 INFO  : Launching XSDB server: xsdb -n -interactive /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/temp_xsdb_launch_script.tcl
+11:55:05 INFO  : XSDB server has started successfully.
+11:55:05 INFO  : Processing command line option -hwspec /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+11:55:05 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+11:55:07 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1471276360000,  Project:1471273974000
+11:55:07 INFO  : The hardware specification for project 'design_1_wrapper_hw_platform_0' is different from /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+11:55:07 INFO  : Copied contents of /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_0/system.hdf.
+11:55:12 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+11:55:13 INFO  : 
+11:55:14 INFO  : Updating hardware inferred compiler options for echo_server.
+11:55:14 INFO  : Clearing existing target manager status.
+11:55:15 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+11:55:15 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+11:55:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:55:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248445761" && level==0} -index 1' command is executed.
+11:55:51 INFO  : FPGA configured successfully with bitstream "/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+11:56:00 INFO  : Processor reset is completed for ps7_cortexa9_0
+12:36:30 ERROR : Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+13:12:36 INFO  : Launching XSDB server: xsdb -n -interactive /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/temp_xsdb_launch_script.tcl
+13:12:37 INFO  : XSDB server has started successfully.
+13:12:37 INFO  : Processing command line option -hwspec /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+13:12:37 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+13:12:40 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1471279361000,  Project:1471276360000
+13:12:40 INFO  : The hardware specification for project 'design_1_wrapper_hw_platform_0' is different from /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+13:12:40 INFO  : Copied contents of /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_0/system.hdf.
+13:12:44 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+13:12:45 INFO  : 
+13:12:46 INFO  : Updating hardware inferred compiler options for echo_server.
+13:12:46 INFO  : Clearing existing target manager status.
+13:12:47 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+13:12:48 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+13:12:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:12:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248445761" && level==0} -index 1' command is executed.
+13:13:00 INFO  : FPGA configured successfully with bitstream "/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+13:13:05 INFO  : Processor reset is completed for ps7_cortexa9_0
+13:23:47 ERROR : Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+13:38:39 INFO  : Launching XSDB server: xsdb -n -interactive /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/temp_xsdb_launch_script.tcl
+13:38:40 INFO  : XSDB server has started successfully.
+13:38:40 INFO  : Processing command line option -hwspec /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+13:38:40 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+13:38:42 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1471282131000,  Project:1471279361000
+13:38:42 INFO  : The hardware specification for project 'design_1_wrapper_hw_platform_0' is different from /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+13:38:42 INFO  : Copied contents of /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_0/system.hdf.
+13:38:47 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+13:38:48 INFO  : 
+13:38:49 INFO  : Updating hardware inferred compiler options for echo_server.
+13:38:49 INFO  : Clearing existing target manager status.
+13:38:50 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+13:38:50 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+13:38:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:38:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248445761" && level==0} -index 1' command is executed.
+13:39:01 INFO  : FPGA configured successfully with bitstream "/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+13:39:13 INFO  : Processor reset is completed for ps7_cortexa9_0
+13:39:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:39:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248445761" && level==0} -index 1' command is executed.
+13:40:02 INFO  : FPGA configured successfully with bitstream "/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+13:40:05 INFO  : Processor reset is completed for ps7_cortexa9_0
+13:49:44 ERROR : Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+13:56:20 INFO  : Launching XSDB server: xsdb -n -interactive /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/temp_xsdb_launch_script.tcl
+13:56:22 INFO  : XSDB server has started successfully.
+13:56:22 INFO  : Processing command line option -hwspec /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+13:56:22 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+13:56:24 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1471283722000,  Project:1471282131000
+13:56:24 INFO  : The hardware specification for project 'design_1_wrapper_hw_platform_0' is different from /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf.
+13:56:24 INFO  : Copied contents of /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper.hdf into /design_1_wrapper_hw_platform_0/system.hdf.
+13:56:29 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+13:56:30 INFO  : 
+13:56:30 INFO  : Updating hardware inferred compiler options for echo_server.
+13:56:30 INFO  : Clearing existing target manager status.
+13:56:32 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+13:56:32 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+13:56:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:56:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248445761" && level==0} -index 1' command is executed.
+13:56:44 INFO  : FPGA configured successfully with bitstream "/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+13:56:53 INFO  : Processor reset is completed for ps7_cortexa9_0
+14:06:35 INFO  : Launching XSDB server: xsdb -n -interactive /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/WORKING_BIDIRECTIONAL_AXIS/WORKING_BIDIRECTIONAL_AXIS.sdk/temp_xsdb_launch_script.tcl
+14:06:36 INFO  : XSDB server has started successfully.
+14:06:36 INFO  : Processing command line option -hwspec /home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/WORKING_BIDIRECTIONAL_AXIS/WORKING_BIDIRECTIONAL_AXIS.sdk/design_1_wrapper.hdf.
+14:06:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:06:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248445761" && level==0} -index 1' command is executed.
+14:07:01 INFO  : FPGA configured successfully with bitstream "/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/WORKING_BIDIRECTIONAL_AXIS/WORKING_BIDIRECTIONAL_AXIS.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+14:07:09 INFO  : Processor reset is completed for ps7_cortexa9_0
+14:31:05 ERROR : Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 

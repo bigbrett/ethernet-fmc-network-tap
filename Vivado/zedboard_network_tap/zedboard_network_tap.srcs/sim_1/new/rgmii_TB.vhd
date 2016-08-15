@@ -72,44 +72,43 @@ architecture behav of demo_tb is
   ------------------------------------------------------------------------------
   component design_1_wrapper is 
     port(
-      -- Synchronous resets
-      tx_reset                      : in    std_logic;
-      rx_reset                      : in    std_logic;
-      clkin_p                       : in    std_logic;
-      clkin_n                       : in    std_logic;
-    
-      -- Register interface: Status output
-      speed_mode                    : out   std_logic_vector(1 downto 0);
-      -- GMII Interface to GEM
-      gmii_tx_clk                   : out   std_logic;
-      gmii_tx_en                    : in    std_logic;
-      gmii_txd                      : in    std_logic_vector(7 downto 0);
-      gmii_tx_er                    : in    std_logic;
-      gmii_crs                      : out   std_logic;
-      gmii_col                      : out   std_logic;
-      gmii_rx_clk                   : out   std_logic;
-      gmii_rx_dv                    : out   std_logic;
-      gmii_rxd                      : out   std_logic_vector(7 downto 0);
-      gmii_rx_er                    : out   std_logic;
-      -- MDIO Interface to GEM
-      mdio_gem_mdc                  : in    std_logic;                        -- MDIO clock i/p from GEM
-      mdio_gem_i                    : out   std_logic;                        -- Connect this to the MDIO_I port of GEM 
-      mdio_gem_o                    : in    std_logic;                        -- Connect this to the MDIO_O Port of GEM 
-      mdio_gem_t                    : in    std_logic;                        -- Connect this to the MDIO_T port of GEM 
-      -- RGMII in-band status signals
-      link_status                   : out   std_logic;
-      clock_speed                   : out   std_logic_vector(1 downto 0);
-      duplex_status                 : out   std_logic;
-      -- RGMII Interface: Pins on the FPGA
-      rgmii_txc                     : out   std_logic;
-      rgmii_txd                     : out   std_logic_vector(3 downto 0);
-      rgmii_tx_ctl                  : out   std_logic;
-      rgmii_rxc                     : in    std_logic;
-      rgmii_rxd                     : in    std_logic_vector(3 downto 0);
-      rgmii_rx_ctl                  : in    std_logic;
-      -- MDIO Interface: Pins on the FPGA
-      mdio_phy_mdc                  : out   std_logic;
-      mdio_phy_mdio                 : inout std_logic 
+        DDR_addr : inout STD_LOGIC_VECTOR ( 14 downto 0 );
+    DDR_ba : inout STD_LOGIC_VECTOR ( 2 downto 0 );
+    DDR_cas_n : inout STD_LOGIC;
+    DDR_ck_n : inout STD_LOGIC;
+    DDR_ck_p : inout STD_LOGIC;
+    DDR_cke : inout STD_LOGIC;
+    DDR_cs_n : inout STD_LOGIC;
+    DDR_dm : inout STD_LOGIC_VECTOR ( 3 downto 0 );
+    DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
+    DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
+    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
+    DDR_odt : inout STD_LOGIC;
+    DDR_ras_n : inout STD_LOGIC;
+    DDR_reset_n : inout STD_LOGIC;
+    DDR_we_n : inout STD_LOGIC;
+    FIXED_IO_ddr_vrn : inout STD_LOGIC;
+    FIXED_IO_ddr_vrp : inout STD_LOGIC;
+    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
+    FIXED_IO_ps_clk : inout STD_LOGIC;
+    FIXED_IO_ps_porb : inout STD_LOGIC;
+    FIXED_IO_ps_srstb : inout STD_LOGIC;
+    ref_clk_fsel : out STD_LOGIC_VECTOR ( 0 to 0 );
+    ref_clk_oe : out STD_LOGIC_VECTOR ( 0 to 0 );
+    reset_port_0 : out STD_LOGIC;
+    reset_port_1 : out STD_LOGIC;
+    rgmii_port_0_rd : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    rgmii_port_0_rx_ctl : in STD_LOGIC;
+    rgmii_port_0_rxc : in STD_LOGIC;
+    rgmii_port_0_td : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    rgmii_port_0_tx_ctl : out STD_LOGIC;
+    rgmii_port_0_txc : out STD_LOGIC;
+    rgmii_port_1_rd : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    rgmii_port_1_rx_ctl : in STD_LOGIC;
+    rgmii_port_1_rxc : in STD_LOGIC;
+    rgmii_port_1_td : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    rgmii_port_1_tx_ctl : out STD_LOGIC;
+    rgmii_port_1_txc : out STD_LOGIC
     );
   end component;
 
@@ -669,7 +668,45 @@ begin
       mdio_phy_mdc            => open,
       mdio_phy_mdio           => open 
     );
-
+     port map (
+      DDR_addr(14 downto 0) => 
+      DDR_ba(2 downto 0) => 
+      DDR_cas_n => 
+      DDR_ck_n => 
+      DDR_ck_p => 
+      DDR_cke => 
+      DDR_cs_n =>
+      DDR_dm =>
+      DDR_dq => 
+      DDR_dqs_n=>
+      DDR_dqs_p=> 
+      DDR_odt => 
+      DDR_ras_n => 
+      DDR_reset_n => 
+      DDR_we_n => 
+      FIXED_IO_ddr_vrn => 
+      FIXED_IO_ddr_vrp => 
+      FIXED_IO_mio => 
+      FIXED_IO_ps_clk => 
+      FIXED_IO_ps_porb => 
+      FIXED_IO_ps_srstb => 
+      ref_clk_fsel => 
+      ref_clk_oe => 
+      reset_port_0 => tx_reset,
+      reset_port_1 => rx_reset,
+      rgmii_port_0_rd => rgmii_rxd,
+      rgmii_port_0_rx_ctl => rgmii_rx_ctl,
+      rgmii_port_0_rxc => rgmii_rxc,
+      rgmii_port_0_td => rgmii_txd,
+      rgmii_port_0_tx_ctl => rgmii_tx_ctl,
+      rgmii_port_0_txc => rgmii_txc,
+      rgmii_port_1_rd(3 downto 0) => open, 
+      rgmii_port_1_rx_ctl => open,
+      rgmii_port_1_rxc => open,
+      rgmii_port_1_td => open, 
+      rgmii_port_1_tx_ctl => open, 
+      rgmii_port_1_txc => open 
+    );
   ------------------------------------------------------------------------------
   -- If the simulation is still going after delay below
   -- then something has gone wrong: terminate with an error

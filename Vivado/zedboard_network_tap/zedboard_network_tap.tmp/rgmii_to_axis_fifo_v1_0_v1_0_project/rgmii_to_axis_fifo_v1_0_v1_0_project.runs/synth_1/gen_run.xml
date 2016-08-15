@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1470683360">
+  <File Type="VDS-TIMING-PB" Name="rgmii_to_axis_fifo_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="rgmii_to_axis_fifo_timing_summary_synth.rpt"/>
+  <File Type="RDS-RDS" Name="rgmii_to_axis_fifo.vds"/>
+  <File Type="PA-TCL" Name="rgmii_to_axis_fifo.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="rgmii_to_axis_fifo_drc_synth.rpt"/>
+  <File Type="RDS-UTIL" Name="rgmii_to_axis_fifo_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="rgmii_to_axis_fifo_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="rgmii_to_axis_fifo.dcp"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../../../../../network-tap-no-ps7/ip_repo/src/design_1_util_vector_logic_0_0/design_1_util_vector_logic_0_0.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="ProcessingOrder" Val="EARLY"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../../../network-tap-no-ps7/ip_repo/src/design_1_gmii_to_rgmii_0_0/design_1_gmii_to_rgmii_0_0.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="ProcessingOrder" Val="EARLY"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../../../network-tap-no-ps7/ip_repo/src/design_1_gmii_to_rgmii_1_0/design_1_gmii_to_rgmii_1_0.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="ProcessingOrder" Val="EARLY"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../../../network-tap-no-ps7/ip_repo/src/design_1_fifo_generator_0_0/design_1_fifo_generator_0_0.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="ProcessingOrder" Val="EARLY"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../../../network-tap-no-ps7/ip_repo/src/design_1_fifo_generator_1_0/design_1_fifo_generator_1_0.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="ProcessingOrder" Val="EARLY"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../../../network-tap-no-ps7/ip_repo/src/design_1_link_status_and_gate_0/design_1_link_status_and_gate_0.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="ProcessingOrder" Val="EARLY"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../../../network-tap-no-ps7/ip_repo/src/design_1_or_gate_wr_en_fifo_0_0/design_1_or_gate_wr_en_fifo_0_0.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="ProcessingOrder" Val="EARLY"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../../../network-tap-no-ps7/ip_repo/src/design_1_or_gate_wr_en_fifo_1_0/design_1_or_gate_wr_en_fifo_1_0.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="ProcessingOrder" Val="EARLY"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../../../network-tap-no-ps7/ip_repo/src/design_1_not_gate_full_fifo_0_0/design_1_not_gate_full_fifo_0_0.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="ProcessingOrder" Val="EARLY"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../../../network-tap-no-ps7/ip_repo/src/design_1_not_gate_full_fifo_1_0/design_1_not_gate_full_fifo_1_0.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="ProcessingOrder" Val="EARLY"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../../../network-tap-no-ps7/ip_repo/src/design_1_fifo_generator_1_1/design_1_fifo_generator_1_1.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="ProcessingOrder" Val="EARLY"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../../../network-tap-no-ps7/ip_repo/src/design_1_fifo_generator_1_2/design_1_fifo_generator_1_2.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="ProcessingOrder" Val="EARLY"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../../../network-tap-no-ps7/ip_repo/src/design_1_util_vector_logic_0_1/design_1_util_vector_logic_0_1.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="ProcessingOrder" Val="EARLY"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../../../network-tap-no-ps7/ip_repo/src/design_1_util_vector_logic_1_0/design_1_util_vector_logic_1_0.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+        <Attr Name="ProcessingOrder" Val="EARLY"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../../../network-tap-no-ps7/ip_repo/src/rgmii_to_axis_fifo.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../../../network-tap-no-ps7/ip_repo/src/design_1.hwdef">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="hw_handoff"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../../../network-tap-no-ps7/ip_repo/component.xml">
+      <FileInfo SFType="IPXACT"/>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="rgmii_to_axis_fifo"/>
+      <Option Name="TopRTLFile" Val="$PPRDIR/../../../../../network-tap-no-ps7/ip_repo/src/design_1.vhd"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/../../../../../network-tap-no-ps7/ip_repo/src/design_1_ooc.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="out_of_context"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="synth_1" LaunchDir="/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap/Vivado/zedboard_network_tap/zedboard_network_tap.tmp/rgmii_to_axis_fifo_v1_0_v1_0_project/rgmii_to_axis_fifo_v1_0_v1_0_project.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+</Runs>
+

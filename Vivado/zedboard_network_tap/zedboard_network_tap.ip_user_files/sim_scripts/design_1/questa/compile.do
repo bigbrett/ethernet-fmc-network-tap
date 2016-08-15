@@ -4,20 +4,18 @@ vlib msim
 vlib msim/xil_defaultlib
 vlib msim/xpm
 vlib msim/processing_system7_bfm_v2_0_5
-vlib msim/util_vector_logic_v2_0
-vlib msim/gmii_to_rgmii_v4_0_3
 vlib msim/util_reduced_logic_v2_0
 vlib msim/fifo_generator_v13_1_1
-vlib msim/axis_protocol_checker_v1_1_9
+vlib msim/gmii_to_rgmii_v4_0_3
+vlib msim/util_vector_logic_v2_0
 
 vmap xil_defaultlib msim/xil_defaultlib
 vmap xpm msim/xpm
 vmap processing_system7_bfm_v2_0_5 msim/processing_system7_bfm_v2_0_5
-vmap util_vector_logic_v2_0 msim/util_vector_logic_v2_0
-vmap gmii_to_rgmii_v4_0_3 msim/gmii_to_rgmii_v4_0_3
 vmap util_reduced_logic_v2_0 msim/util_reduced_logic_v2_0
 vmap fifo_generator_v13_1_1 msim/fifo_generator_v13_1_1
-vmap axis_protocol_checker_v1_1_9 msim/axis_protocol_checker_v1_1_9
+vmap gmii_to_rgmii_v4_0_3 msim/gmii_to_rgmii_v4_0_3
+vmap util_vector_logic_v2_0 msim/util_vector_logic_v2_0
 
 vlog -work xil_defaultlib -64 -sv "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" \
 "/opt/Xilinx/Vivado/2016.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
@@ -60,29 +58,6 @@ vlog -work processing_system7_bfm_v2_0_5 -64 "+incdir+../../../ipstatic/processi
 vlog -work xil_defaultlib -64 "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" \
 "../../../bd/design_1/ip/design_1_processing_system7_0_0/sim/design_1_processing_system7_0_0.v" \
 
-vcom -work util_vector_logic_v2_0 -64 \
-"../../../bd/design_1/ipshared/xilinx.com/util_vector_logic_v2_0/hdl/util_vector_logic.vhd" \
-
-vcom -work xil_defaultlib -64 \
-"../../../bd/design_1/ip/design_1_util_vector_logic_0_0/sim/design_1_util_vector_logic_0_0.vhd" \
-"../../../bd/design_1/ip/design_1_gmii_to_rgmii_0_0/synth/design_1_gmii_to_rgmii_0_0_clocking.vhd" \
-"../../../bd/design_1/ip/design_1_gmii_to_rgmii_0_0/synth/design_1_gmii_to_rgmii_0_0_resets.vhd" \
-"../../../bd/design_1/ip/design_1_gmii_to_rgmii_0_0/synth/design_1_gmii_to_rgmii_0_0_support.vhd" \
-"../../../bd/design_1/ip/design_1_gmii_to_rgmii_0_0/synth/design_1_gmii_to_rgmii_0_0_reset_sync.vhd" \
-"../../../bd/design_1/ip/design_1_gmii_to_rgmii_0_0/synth/design_1_gmii_to_rgmii_0_0_block.vhd" \
-"../../../bd/design_1/ip/design_1_gmii_to_rgmii_0_0/design_1_gmii_to_rgmii_0_0/simulation/demo_tb.vhd" \
-
-vcom -work gmii_to_rgmii_v4_0_3 -64 \
-"../../../ipstatic/gmii_to_rgmii_v4_0/hdl/gmii_to_rgmii_v4_0_vh_rfs.vhd" \
-
-vcom -work xil_defaultlib -64 \
-"../../../bd/design_1/ip/design_1_gmii_to_rgmii_0_0/synth/design_1_gmii_to_rgmii_0_0.vhd" \
-"../../../bd/design_1/ip/design_1_gmii_to_rgmii_1_0/example_design/support/design_1_gmii_to_rgmii_1_0_clocking.vhd" \
-"../../../bd/design_1/ip/design_1_gmii_to_rgmii_1_0/example_design/support/design_1_gmii_to_rgmii_1_0_support.vhd" \
-"../../../bd/design_1/ip/design_1_gmii_to_rgmii_1_0/synth/design_1_gmii_to_rgmii_1_0_block.vhd" \
-"../../../bd/design_1/ip/design_1_gmii_to_rgmii_1_0/design_1_gmii_to_rgmii_1_0/simulation/demo_tb.vhd" \
-"../../../bd/design_1/ip/design_1_gmii_to_rgmii_1_0/synth/design_1_gmii_to_rgmii_1_0.vhd" \
-
 vcom -work util_reduced_logic_v2_0 -64 \
 "../../../bd/design_1/ipshared/xilinx.com/util_reduced_logic_v2_0/hdl/util_reduced_logic.vhd" \
 
@@ -101,34 +76,45 @@ vcom -work fifo_generator_v13_1_1 -64 \
 
 vlog -work fifo_generator_v13_1_1 -64 "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" \
 "../../../ipstatic/fifo_generator_v13_1/hdl/fifo_generator_v13_1_rfs.v" \
-
-vlog -work xil_defaultlib -64 "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" \
-"../../../bd/design_1/ip/design_1_fifo_generator_0_0/sim/design_1_fifo_generator_0_0.v" \
-"../../../bd/design_1/ip/design_1_fifo_generator_1_0/sim/design_1_fifo_generator_1_0.v" \
+"../../../bd/design_1/ip/design_1_gmii_to_rgmii_axis_0_0/src/gmii_to_rgmii_axis_fifo_generator_1_0/sim/gmii_to_rgmii_axis_fifo_generator_1_0.v" \
+"../../../bd/design_1/ip/design_1_gmii_to_rgmii_axis_0_0/src/gmii_to_rgmii_axis_fifo_generator_2_0/sim/gmii_to_rgmii_axis_fifo_generator_2_0.v" \
+"../../../bd/design_1/ip/design_1_gmii_to_rgmii_axis_0_0/src/gmii_to_rgmii_axis_fifo_generator_3_0/sim/gmii_to_rgmii_axis_fifo_generator_3_0.v" \
+"../../../bd/design_1/ip/design_1_gmii_to_rgmii_axis_0_0/src/gmii_to_rgmii_axis_gmii_0_rx_fifo_0/sim/gmii_to_rgmii_axis_gmii_0_rx_fifo_0.v" \
 
 vcom -work xil_defaultlib -64 \
-"../../../bd/design_1/ip/design_1_link_status_and_gate_0/sim/design_1_link_status_and_gate_0.vhd" \
-"../../../bd/design_1/ip/design_1_or_gate_wr_en_fifo_0_0/sim/design_1_or_gate_wr_en_fifo_0_0.vhd" \
-"../../../bd/design_1/ip/design_1_or_gate_wr_en_fifo_1_0/sim/design_1_or_gate_wr_en_fifo_1_0.vhd" \
-"../../../bd/design_1/ip/design_1_not_gate_full_fifo_0_0/sim/design_1_not_gate_full_fifo_0_0.vhd" \
-"../../../bd/design_1/ip/design_1_not_gate_full_fifo_1_0/sim/design_1_not_gate_full_fifo_1_0.vhd" \
+"../../../bd/design_1/ip/design_1_gmii_to_rgmii_axis_0_0/src/gmii_to_rgmii_axis_gmii_to_rgmii_0_0/synth/gmii_to_rgmii_axis_gmii_to_rgmii_0_0_clocking.vhd" \
+"../../../bd/design_1/ip/design_1_gmii_to_rgmii_axis_0_0/src/gmii_to_rgmii_axis_gmii_to_rgmii_0_0/synth/gmii_to_rgmii_axis_gmii_to_rgmii_0_0_resets.vhd" \
+"../../../bd/design_1/ip/design_1_gmii_to_rgmii_axis_0_0/src/gmii_to_rgmii_axis_gmii_to_rgmii_0_0/synth/gmii_to_rgmii_axis_gmii_to_rgmii_0_0_support.vhd" \
+"../../../bd/design_1/ip/design_1_gmii_to_rgmii_axis_0_0/src/gmii_to_rgmii_axis_gmii_to_rgmii_0_0/synth/gmii_to_rgmii_axis_gmii_to_rgmii_0_0_reset_sync.vhd" \
+"../../../bd/design_1/ip/design_1_gmii_to_rgmii_axis_0_0/src/gmii_to_rgmii_axis_gmii_to_rgmii_0_0/synth/gmii_to_rgmii_axis_gmii_to_rgmii_0_0_block.vhd" \
+"../../../bd/design_1/ip/design_1_gmii_to_rgmii_axis_0_0/src/gmii_to_rgmii_axis_gmii_to_rgmii_0_0/gmii_to_rgmii_axis_gmii_to_rgmii_0_0/simulation/demo_tb.vhd" \
+
+vcom -work gmii_to_rgmii_v4_0_3 -64 \
+"../../../ipstatic/gmii_to_rgmii_v4_0/hdl/gmii_to_rgmii_v4_0_vh_rfs.vhd" \
+
+vcom -work xil_defaultlib -64 \
+"../../../bd/design_1/ip/design_1_gmii_to_rgmii_axis_0_0/src/gmii_to_rgmii_axis_gmii_to_rgmii_0_0/synth/gmii_to_rgmii_axis_gmii_to_rgmii_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_gmii_to_rgmii_axis_0_0/src/gmii_to_rgmii_axis_gmii_to_rgmii_1_0/example_design/support/gmii_to_rgmii_axis_gmii_to_rgmii_1_0_clocking.vhd" \
+"../../../bd/design_1/ip/design_1_gmii_to_rgmii_axis_0_0/src/gmii_to_rgmii_axis_gmii_to_rgmii_1_0/example_design/support/gmii_to_rgmii_axis_gmii_to_rgmii_1_0_support.vhd" \
+"../../../bd/design_1/ip/design_1_gmii_to_rgmii_axis_0_0/src/gmii_to_rgmii_axis_gmii_to_rgmii_1_0/synth/gmii_to_rgmii_axis_gmii_to_rgmii_1_0_block.vhd" \
+"../../../bd/design_1/ip/design_1_gmii_to_rgmii_axis_0_0/src/gmii_to_rgmii_axis_gmii_to_rgmii_1_0/gmii_to_rgmii_axis_gmii_to_rgmii_1_0/simulation/demo_tb.vhd" \
+"../../../bd/design_1/ip/design_1_gmii_to_rgmii_axis_0_0/src/gmii_to_rgmii_axis_gmii_to_rgmii_1_0/synth/gmii_to_rgmii_axis_gmii_to_rgmii_1_0.vhd" \
+
+vcom -work util_vector_logic_v2_0 -64 \
+"../../../bd/design_1/ip/design_1_gmii_to_rgmii_axis_0_0/ipshared/xilinx.com/util_vector_logic_v2_0/hdl/util_vector_logic.vhd" \
+"../../../bd/design_1/ip/design_1_gmii_to_rgmii_axis_0_0/src/gmii_to_rgmii_axis_link_status_and_gate_0/sim/gmii_to_rgmii_axis_link_status_and_gate_0.vhd" \
+"../../../bd/design_1/ip/design_1_gmii_to_rgmii_axis_0_0/src/gmii_to_rgmii_axis_not_gate_full_fifo_0_0/sim/gmii_to_rgmii_axis_not_gate_full_fifo_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_gmii_to_rgmii_axis_0_0/src/gmii_to_rgmii_axis_not_gate_full_fifo_1_0/sim/gmii_to_rgmii_axis_not_gate_full_fifo_1_0.vhd" \
+"../../../bd/design_1/ip/design_1_gmii_to_rgmii_axis_0_0/src/gmii_to_rgmii_axis_or_gate_wr_en_fifo_0_0/sim/gmii_to_rgmii_axis_or_gate_wr_en_fifo_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_gmii_to_rgmii_axis_0_0/src/gmii_to_rgmii_axis_or_gate_wr_en_fifo_1_0/sim/gmii_to_rgmii_axis_or_gate_wr_en_fifo_1_0.vhd" \
+"../../../bd/design_1/ip/design_1_gmii_to_rgmii_axis_0_0/src/gmii_to_rgmii_axis_util_vector_logic_0_0/sim/gmii_to_rgmii_axis_util_vector_logic_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_gmii_to_rgmii_axis_0_0/src/gmii_to_rgmii_axis_util_vector_logic_1_0/sim/gmii_to_rgmii_axis_util_vector_logic_1_0.vhd" \
+"../../../bd/design_1/ip/design_1_gmii_to_rgmii_axis_0_0/src/gmii_to_rgmii_axis_util_vector_logic_2_0/sim/gmii_to_rgmii_axis_util_vector_logic_2_0.vhd" \
+
+vcom -work xil_defaultlib -64 \
+"../../../bd/design_1/ipshared/user.org/gmii_to_rgmii_axis_v1_0/src/gmii_to_rgmii_axis.vhd" \
+"../../../bd/design_1/ip/design_1_gmii_to_rgmii_axis_0_0/sim/design_1_gmii_to_rgmii_axis_0_0.vhd" \
 "../../../bd/design_1/hdl/design_1.vhd" \
-
-vlog -work xil_defaultlib -64 "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" \
-"../../../bd/design_1/ip/design_1_fifo_generator_1_1/sim/design_1_fifo_generator_1_1.v" \
-"../../../bd/design_1/ip/design_1_fifo_generator_1_2/sim/design_1_fifo_generator_1_2.v" \
-
-vcom -work xil_defaultlib -64 \
-"../../../bd/design_1/ip/design_1_util_vector_logic_0_1/sim/design_1_util_vector_logic_0_1.vhd" \
-"../../../bd/design_1/ip/design_1_util_vector_logic_1_0/sim/design_1_util_vector_logic_1_0.vhd" \
-
-vlog -work axis_protocol_checker_v1_1_9 -64 "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" \
-"../../../ipstatic/axis_protocol_checker_v1_1/hdl/verilog/axis_protocol_checker_v1_1_asr_inline.v" \
-"../../../ipstatic/axis_protocol_checker_v1_1/hdl/verilog/axis_protocol_checker_v1_1_reporter.v" \
-"../../../ipstatic/axis_protocol_checker_v1_1/hdl/verilog/axis_protocol_checker_v1_1_top.v" \
-
-vlog -work xil_defaultlib -64 "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" \
-"../../../bd/design_1/ip/design_1_axis_protocol_checker_0_0/sim/design_1_axis_protocol_checker_0_0.v" \
 
 vlog -work xil_defaultlib "glbl.v"
 

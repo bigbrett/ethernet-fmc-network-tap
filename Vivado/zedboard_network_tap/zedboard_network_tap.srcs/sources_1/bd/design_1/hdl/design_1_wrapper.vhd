@@ -1,8 +1,8 @@
 --Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
---Date        : Fri Aug  5 08:34:40 2016
---Host        : wintermute running 64-bit Ubuntu 14.04.4 LTS
+--Date        : Thu Aug 11 17:11:23 2016
+--Host        : wintermute running 64-bit Ubuntu 14.04.5 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
 --Purpose     : IP block netlist
@@ -34,28 +34,8 @@ entity design_1_wrapper is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
-    M_AXIS_gmii_0_rx_fifo_tdata : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    M_AXIS_gmii_0_rx_fifo_tready : in STD_LOGIC;
-    M_AXIS_gmii_0_rx_fifo_tuser : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    M_AXIS_gmii_0_rx_fifo_tvalid : out STD_LOGIC;
-    M_AXIS_gmii_1_rx_fifo_tdata : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    M_AXIS_gmii_1_rx_fifo_tready : in STD_LOGIC;
-    M_AXIS_gmii_1_rx_fifo_tuser : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    M_AXIS_gmii_1_rx_fifo_tvalid : out STD_LOGIC;
-    S_AXIS_gmii_0_tx_fifo_tdata : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    S_AXIS_gmii_0_tx_fifo_tready : out STD_LOGIC;
-    S_AXIS_gmii_0_tx_fifo_tuser : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    S_AXIS_gmii_0_tx_fifo_tvalid : in STD_LOGIC;
-    S_AXIS_gmii_1_tx_fifo_tdata : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    S_AXIS_gmii_1_tx_fifo_tready : out STD_LOGIC;
-    S_AXIS_gmii_1_tx_fifo_tuser : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    S_AXIS_gmii_1_tx_fifo_tvalid : in STD_LOGIC;
-    gmii_0_rx_fifo_prog_empty : out STD_LOGIC;
-    gmii_1_rx_fifo_prog_empty : out STD_LOGIC;
-    m_aclk_gmii_0_rx_fifo : in STD_LOGIC;
-    m_aclk_gmii_1_rx_fifo : in STD_LOGIC;
-    pc_asserted : out STD_LOGIC;
-    pc_status : out STD_LOGIC_VECTOR ( 10 downto 0 );
+    led_dbg_0 : out STD_LOGIC;
+    led_dbg_1 : out STD_LOGIC;
     ref_clk_fsel : out STD_LOGIC_VECTOR ( 0 to 0 );
     ref_clk_oe : out STD_LOGIC_VECTOR ( 0 to 0 );
     reset_port_0 : out STD_LOGIC;
@@ -71,9 +51,7 @@ entity design_1_wrapper is
     rgmii_port_1_rxc : in STD_LOGIC;
     rgmii_port_1_td : out STD_LOGIC_VECTOR ( 3 downto 0 );
     rgmii_port_1_tx_ctl : out STD_LOGIC;
-    rgmii_port_1_txc : out STD_LOGIC;
-    s_aclk_gmii_0_tx_fifo : in STD_LOGIC;
-    s_aclk_gmii_1_tx_fifo : in STD_LOGIC
+    rgmii_port_1_txc : out STD_LOGIC
   );
 end design_1_wrapper;
 
@@ -117,30 +95,8 @@ architecture STRUCTURE of design_1_wrapper is
     reset_port_1 : out STD_LOGIC;
     ref_clk_oe : out STD_LOGIC_VECTOR ( 0 to 0 );
     ref_clk_fsel : out STD_LOGIC_VECTOR ( 0 to 0 );
-    gmii_0_rx_fifo_prog_empty : out STD_LOGIC;
-    M_AXIS_gmii_0_rx_fifo_tdata : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    M_AXIS_gmii_0_rx_fifo_tready : in STD_LOGIC;
-    M_AXIS_gmii_0_rx_fifo_tuser : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    M_AXIS_gmii_0_rx_fifo_tvalid : out STD_LOGIC;
-    m_aclk_gmii_0_rx_fifo : in STD_LOGIC;
-    S_AXIS_gmii_0_tx_fifo_tdata : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    S_AXIS_gmii_0_tx_fifo_tready : out STD_LOGIC;
-    S_AXIS_gmii_0_tx_fifo_tuser : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    S_AXIS_gmii_0_tx_fifo_tvalid : in STD_LOGIC;
-    s_aclk_gmii_0_tx_fifo : in STD_LOGIC;
-    M_AXIS_gmii_1_rx_fifo_tdata : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    M_AXIS_gmii_1_rx_fifo_tready : in STD_LOGIC;
-    M_AXIS_gmii_1_rx_fifo_tuser : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    M_AXIS_gmii_1_rx_fifo_tvalid : out STD_LOGIC;
-    m_aclk_gmii_1_rx_fifo : in STD_LOGIC;
-    s_aclk_gmii_1_tx_fifo : in STD_LOGIC;
-    S_AXIS_gmii_1_tx_fifo_tdata : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    S_AXIS_gmii_1_tx_fifo_tready : out STD_LOGIC;
-    S_AXIS_gmii_1_tx_fifo_tuser : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    S_AXIS_gmii_1_tx_fifo_tvalid : in STD_LOGIC;
-    gmii_1_rx_fifo_prog_empty : out STD_LOGIC;
-    pc_status : out STD_LOGIC_VECTOR ( 10 downto 0 );
-    pc_asserted : out STD_LOGIC
+    led_dbg_0 : out STD_LOGIC;
+    led_dbg_1 : out STD_LOGIC
   );
   end component design_1;
 begin
@@ -167,28 +123,8 @@ design_1_i: component design_1
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
-      M_AXIS_gmii_0_rx_fifo_tdata(7 downto 0) => M_AXIS_gmii_0_rx_fifo_tdata(7 downto 0),
-      M_AXIS_gmii_0_rx_fifo_tready => M_AXIS_gmii_0_rx_fifo_tready,
-      M_AXIS_gmii_0_rx_fifo_tuser(3 downto 0) => M_AXIS_gmii_0_rx_fifo_tuser(3 downto 0),
-      M_AXIS_gmii_0_rx_fifo_tvalid => M_AXIS_gmii_0_rx_fifo_tvalid,
-      M_AXIS_gmii_1_rx_fifo_tdata(7 downto 0) => M_AXIS_gmii_1_rx_fifo_tdata(7 downto 0),
-      M_AXIS_gmii_1_rx_fifo_tready => M_AXIS_gmii_1_rx_fifo_tready,
-      M_AXIS_gmii_1_rx_fifo_tuser(3 downto 0) => M_AXIS_gmii_1_rx_fifo_tuser(3 downto 0),
-      M_AXIS_gmii_1_rx_fifo_tvalid => M_AXIS_gmii_1_rx_fifo_tvalid,
-      S_AXIS_gmii_0_tx_fifo_tdata(7 downto 0) => S_AXIS_gmii_0_tx_fifo_tdata(7 downto 0),
-      S_AXIS_gmii_0_tx_fifo_tready => S_AXIS_gmii_0_tx_fifo_tready,
-      S_AXIS_gmii_0_tx_fifo_tuser(3 downto 0) => S_AXIS_gmii_0_tx_fifo_tuser(3 downto 0),
-      S_AXIS_gmii_0_tx_fifo_tvalid => S_AXIS_gmii_0_tx_fifo_tvalid,
-      S_AXIS_gmii_1_tx_fifo_tdata(7 downto 0) => S_AXIS_gmii_1_tx_fifo_tdata(7 downto 0),
-      S_AXIS_gmii_1_tx_fifo_tready => S_AXIS_gmii_1_tx_fifo_tready,
-      S_AXIS_gmii_1_tx_fifo_tuser(3 downto 0) => S_AXIS_gmii_1_tx_fifo_tuser(3 downto 0),
-      S_AXIS_gmii_1_tx_fifo_tvalid => S_AXIS_gmii_1_tx_fifo_tvalid,
-      gmii_0_rx_fifo_prog_empty => gmii_0_rx_fifo_prog_empty,
-      gmii_1_rx_fifo_prog_empty => gmii_1_rx_fifo_prog_empty,
-      m_aclk_gmii_0_rx_fifo => m_aclk_gmii_0_rx_fifo,
-      m_aclk_gmii_1_rx_fifo => m_aclk_gmii_1_rx_fifo,
-      pc_asserted => pc_asserted,
-      pc_status(10 downto 0) => pc_status(10 downto 0),
+      led_dbg_0 => led_dbg_0,
+      led_dbg_1 => led_dbg_1,
       ref_clk_fsel(0) => ref_clk_fsel(0),
       ref_clk_oe(0) => ref_clk_oe(0),
       reset_port_0 => reset_port_0,
@@ -204,8 +140,6 @@ design_1_i: component design_1
       rgmii_port_1_rxc => rgmii_port_1_rxc,
       rgmii_port_1_td(3 downto 0) => rgmii_port_1_td(3 downto 0),
       rgmii_port_1_tx_ctl => rgmii_port_1_tx_ctl,
-      rgmii_port_1_txc => rgmii_port_1_txc,
-      s_aclk_gmii_0_tx_fifo => s_aclk_gmii_0_tx_fifo,
-      s_aclk_gmii_1_tx_fifo => s_aclk_gmii_1_tx_fifo
+      rgmii_port_1_txc => rgmii_port_1_txc
     );
 end STRUCTURE;

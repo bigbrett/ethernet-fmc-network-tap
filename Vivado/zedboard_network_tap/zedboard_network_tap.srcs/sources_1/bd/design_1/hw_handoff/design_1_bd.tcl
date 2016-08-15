@@ -156,294 +156,19 @@ proc create_root_design { parentCell } {
   # Create interface ports
   set DDR [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:ddrx_rtl:1.0 DDR ]
   set FIXED_IO [ create_bd_intf_port -mode Master -vlnv xilinx.com:display_processing_system7:fixedio_rtl:1.0 FIXED_IO ]
-  set M_AXIS_gmii_0_rx_fifo [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:axis_rtl:1.0 M_AXIS_gmii_0_rx_fifo ]
-  set_property -dict [ list \
-CONFIG.CLK_DOMAIN {design_1_processing_system7_0_0_FCLK_CLK1} \
-CONFIG.FREQ_HZ {200000000} \
- ] $M_AXIS_gmii_0_rx_fifo
-  set M_AXIS_gmii_1_rx_fifo [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:axis_rtl:1.0 M_AXIS_gmii_1_rx_fifo ]
-  set_property -dict [ list \
-CONFIG.CLK_DOMAIN {design_1_processing_system7_0_0_FCLK_CLK1} \
-CONFIG.FREQ_HZ {200000000} \
- ] $M_AXIS_gmii_1_rx_fifo
-  set S_AXIS_gmii_0_tx_fifo [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:axis_rtl:1.0 S_AXIS_gmii_0_tx_fifo ]
-  set_property -dict [ list \
-CONFIG.CLK_DOMAIN {design_1_processing_system7_0_0_FCLK_CLK1} \
-CONFIG.FREQ_HZ {200000000} \
-CONFIG.HAS_TKEEP {0} \
-CONFIG.HAS_TLAST {0} \
-CONFIG.HAS_TREADY {1} \
-CONFIG.HAS_TSTRB {0} \
-CONFIG.LAYERED_METADATA {undef} \
-CONFIG.TDATA_NUM_BYTES {1} \
-CONFIG.TDEST_WIDTH {0} \
-CONFIG.TID_WIDTH {0} \
-CONFIG.TUSER_WIDTH {4} \
- ] $S_AXIS_gmii_0_tx_fifo
-  set S_AXIS_gmii_1_tx_fifo [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:axis_rtl:1.0 S_AXIS_gmii_1_tx_fifo ]
-  set_property -dict [ list \
-CONFIG.CLK_DOMAIN {design_1_processing_system7_0_0_FCLK_CLK1} \
-CONFIG.FREQ_HZ {200000000} \
-CONFIG.HAS_TKEEP {0} \
-CONFIG.HAS_TLAST {0} \
-CONFIG.HAS_TREADY {1} \
-CONFIG.HAS_TSTRB {0} \
-CONFIG.LAYERED_METADATA {undef} \
-CONFIG.TDATA_NUM_BYTES {1} \
-CONFIG.TDEST_WIDTH {0} \
-CONFIG.TID_WIDTH {0} \
-CONFIG.TUSER_WIDTH {4} \
- ] $S_AXIS_gmii_1_tx_fifo
   set rgmii_port_0 [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:rgmii_rtl:1.0 rgmii_port_0 ]
   set rgmii_port_1 [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:rgmii_rtl:1.0 rgmii_port_1 ]
 
   # Create ports
-  set gmii_0_rx_fifo_prog_empty [ create_bd_port -dir O gmii_0_rx_fifo_prog_empty ]
-  set gmii_1_rx_fifo_prog_empty [ create_bd_port -dir O gmii_1_rx_fifo_prog_empty ]
-  set m_aclk_gmii_0_rx_fifo [ create_bd_port -dir I -type clk m_aclk_gmii_0_rx_fifo ]
-  set_property -dict [ list \
-CONFIG.ASSOCIATED_BUSIF {M_AXIS_gmii_0_rx_fifo} \
-CONFIG.CLK_DOMAIN {design_1_processing_system7_0_0_FCLK_CLK1} \
-CONFIG.FREQ_HZ {200000000} \
- ] $m_aclk_gmii_0_rx_fifo
-  set m_aclk_gmii_1_rx_fifo [ create_bd_port -dir I -type clk m_aclk_gmii_1_rx_fifo ]
-  set_property -dict [ list \
-CONFIG.ASSOCIATED_BUSIF {M_AXIS_gmii_1_rx_fifo} \
-CONFIG.CLK_DOMAIN {design_1_processing_system7_0_0_FCLK_CLK1} \
-CONFIG.FREQ_HZ {200000000} \
- ] $m_aclk_gmii_1_rx_fifo
-  set pc_asserted [ create_bd_port -dir O pc_asserted ]
-  set pc_status [ create_bd_port -dir O -from 10 -to 0 pc_status ]
+  set led_dbg_0 [ create_bd_port -dir O led_dbg_0 ]
+  set led_dbg_1 [ create_bd_port -dir O led_dbg_1 ]
   set ref_clk_fsel [ create_bd_port -dir O -from 0 -to 0 ref_clk_fsel ]
   set ref_clk_oe [ create_bd_port -dir O -from 0 -to 0 ref_clk_oe ]
   set reset_port_0 [ create_bd_port -dir O reset_port_0 ]
   set reset_port_1 [ create_bd_port -dir O reset_port_1 ]
-  set s_aclk_gmii_0_tx_fifo [ create_bd_port -dir I -type clk s_aclk_gmii_0_tx_fifo ]
-  set_property -dict [ list \
-CONFIG.ASSOCIATED_BUSIF {S_AXIS_gmii_0_tx_fifo} \
-CONFIG.CLK_DOMAIN {design_1_processing_system7_0_0_FCLK_CLK1} \
-CONFIG.FREQ_HZ {200000000} \
- ] $s_aclk_gmii_0_tx_fifo
-  set s_aclk_gmii_1_tx_fifo [ create_bd_port -dir I -type clk s_aclk_gmii_1_tx_fifo ]
-  set_property -dict [ list \
-CONFIG.ASSOCIATED_BUSIF {S_AXIS_gmii_1_tx_fifo} \
-CONFIG.CLK_DOMAIN {design_1_processing_system7_0_0_FCLK_CLK1} \
-CONFIG.FREQ_HZ {200000000} \
- ] $s_aclk_gmii_1_tx_fifo
 
-  # Create instance: axis_protocol_checker_0, and set properties
-  set axis_protocol_checker_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axis_protocol_checker:1.1 axis_protocol_checker_0 ]
-  set_property -dict [ list \
-CONFIG.HAS_TREADY {0} \
- ] $axis_protocol_checker_0
-
-  # Create instance: fifo_generator_1, and set properties
-  set fifo_generator_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:fifo_generator:13.1 fifo_generator_1 ]
-  set_property -dict [ list \
-CONFIG.Clock_Type_AXI {Independent_Clock} \
-CONFIG.Empty_Threshold_Assert_Value {2} \
-CONFIG.Empty_Threshold_Assert_Value_axis {1000} \
-CONFIG.Empty_Threshold_Assert_Value_rach {13} \
-CONFIG.Empty_Threshold_Assert_Value_rdch {1021} \
-CONFIG.Empty_Threshold_Assert_Value_wach {13} \
-CONFIG.Empty_Threshold_Assert_Value_wdch {1021} \
-CONFIG.Empty_Threshold_Assert_Value_wrch {13} \
-CONFIG.Empty_Threshold_Negate_Value {3} \
-CONFIG.Enable_Data_Counts_axis {true} \
-CONFIG.FIFO_Implementation_axis {Independent_Clocks_Block_RAM} \
-CONFIG.FIFO_Implementation_rach {Independent_Clocks_Distributed_RAM} \
-CONFIG.FIFO_Implementation_rdch {Independent_Clocks_Block_RAM} \
-CONFIG.FIFO_Implementation_wach {Independent_Clocks_Distributed_RAM} \
-CONFIG.FIFO_Implementation_wdch {Independent_Clocks_Block_RAM} \
-CONFIG.FIFO_Implementation_wrch {Independent_Clocks_Distributed_RAM} \
-CONFIG.Fifo_Implementation {Independent_Clocks_Block_RAM} \
-CONFIG.Full_Flags_Reset_Value {1} \
-CONFIG.Full_Threshold_Assert_Value {1021} \
-CONFIG.Full_Threshold_Assert_Value_axis {4000} \
-CONFIG.Full_Threshold_Assert_Value_rach {15} \
-CONFIG.Full_Threshold_Assert_Value_wach {15} \
-CONFIG.Full_Threshold_Assert_Value_wrch {15} \
-CONFIG.Full_Threshold_Negate_Value {1020} \
-CONFIG.INTERFACE_TYPE {AXI_STREAM} \
-CONFIG.Input_Data_Width {10} \
-CONFIG.Input_Depth_axis {4096} \
-CONFIG.Output_Data_Width {10} \
-CONFIG.Programmable_Empty_Type {No_Programmable_Empty_Threshold} \
-CONFIG.Programmable_Empty_Type_axis {Single_Programmable_Empty_Threshold_Constant} \
-CONFIG.Programmable_Full_Type {No_Programmable_Full_Threshold} \
-CONFIG.Programmable_Full_Type_axis {Single_Programmable_Full_Threshold_Constant} \
-CONFIG.Reset_Type {Asynchronous_Reset} \
-CONFIG.Valid_Flag {true} \
-CONFIG.Write_Acknowledge_Flag {false} \
- ] $fifo_generator_1
-
-  # Create instance: fifo_generator_2, and set properties
-  set fifo_generator_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:fifo_generator:13.1 fifo_generator_2 ]
-  set_property -dict [ list \
-CONFIG.Clock_Type_AXI {Independent_Clock} \
-CONFIG.Empty_Threshold_Assert_Value {2} \
-CONFIG.Empty_Threshold_Assert_Value_axis {1000} \
-CONFIG.Empty_Threshold_Assert_Value_rach {13} \
-CONFIG.Empty_Threshold_Assert_Value_rdch {1021} \
-CONFIG.Empty_Threshold_Assert_Value_wach {13} \
-CONFIG.Empty_Threshold_Assert_Value_wdch {1021} \
-CONFIG.Empty_Threshold_Assert_Value_wrch {13} \
-CONFIG.Empty_Threshold_Negate_Value {3} \
-CONFIG.Enable_Data_Counts_axis {true} \
-CONFIG.FIFO_Implementation_axis {Independent_Clocks_Block_RAM} \
-CONFIG.FIFO_Implementation_rach {Independent_Clocks_Distributed_RAM} \
-CONFIG.FIFO_Implementation_rdch {Independent_Clocks_Block_RAM} \
-CONFIG.FIFO_Implementation_wach {Independent_Clocks_Distributed_RAM} \
-CONFIG.FIFO_Implementation_wdch {Independent_Clocks_Block_RAM} \
-CONFIG.FIFO_Implementation_wrch {Independent_Clocks_Distributed_RAM} \
-CONFIG.Fifo_Implementation {Independent_Clocks_Block_RAM} \
-CONFIG.Full_Flags_Reset_Value {1} \
-CONFIG.Full_Threshold_Assert_Value {1021} \
-CONFIG.Full_Threshold_Assert_Value_axis {4000} \
-CONFIG.Full_Threshold_Assert_Value_rach {15} \
-CONFIG.Full_Threshold_Assert_Value_wach {15} \
-CONFIG.Full_Threshold_Assert_Value_wrch {15} \
-CONFIG.Full_Threshold_Negate_Value {1020} \
-CONFIG.INTERFACE_TYPE {AXI_STREAM} \
-CONFIG.Input_Data_Width {10} \
-CONFIG.Input_Depth_axis {4096} \
-CONFIG.Output_Data_Width {10} \
-CONFIG.Programmable_Empty_Type {No_Programmable_Empty_Threshold} \
-CONFIG.Programmable_Empty_Type_axis {Single_Programmable_Empty_Threshold_Constant} \
-CONFIG.Programmable_Full_Type {No_Programmable_Full_Threshold} \
-CONFIG.Programmable_Full_Type_axis {Single_Programmable_Full_Threshold_Constant} \
-CONFIG.Reset_Type {Asynchronous_Reset} \
-CONFIG.Valid_Flag {true} \
-CONFIG.Write_Acknowledge_Flag {false} \
- ] $fifo_generator_2
-
-  # Create instance: fifo_generator_3, and set properties
-  set fifo_generator_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:fifo_generator:13.1 fifo_generator_3 ]
-  set_property -dict [ list \
-CONFIG.Clock_Type_AXI {Independent_Clock} \
-CONFIG.Empty_Threshold_Assert_Value {2} \
-CONFIG.Empty_Threshold_Assert_Value_axis {1000} \
-CONFIG.Empty_Threshold_Assert_Value_rach {13} \
-CONFIG.Empty_Threshold_Assert_Value_rdch {1021} \
-CONFIG.Empty_Threshold_Assert_Value_wach {13} \
-CONFIG.Empty_Threshold_Assert_Value_wdch {1021} \
-CONFIG.Empty_Threshold_Assert_Value_wrch {13} \
-CONFIG.Empty_Threshold_Negate_Value {3} \
-CONFIG.Enable_Data_Counts_axis {true} \
-CONFIG.FIFO_Implementation_axis {Independent_Clocks_Block_RAM} \
-CONFIG.FIFO_Implementation_rach {Independent_Clocks_Distributed_RAM} \
-CONFIG.FIFO_Implementation_rdch {Independent_Clocks_Block_RAM} \
-CONFIG.FIFO_Implementation_wach {Independent_Clocks_Distributed_RAM} \
-CONFIG.FIFO_Implementation_wdch {Independent_Clocks_Block_RAM} \
-CONFIG.FIFO_Implementation_wrch {Independent_Clocks_Distributed_RAM} \
-CONFIG.Fifo_Implementation {Independent_Clocks_Block_RAM} \
-CONFIG.Full_Flags_Reset_Value {1} \
-CONFIG.Full_Threshold_Assert_Value {1021} \
-CONFIG.Full_Threshold_Assert_Value_axis {4000} \
-CONFIG.Full_Threshold_Assert_Value_rach {15} \
-CONFIG.Full_Threshold_Assert_Value_wach {15} \
-CONFIG.Full_Threshold_Assert_Value_wrch {15} \
-CONFIG.Full_Threshold_Negate_Value {1020} \
-CONFIG.INTERFACE_TYPE {AXI_STREAM} \
-CONFIG.Input_Data_Width {10} \
-CONFIG.Input_Depth_axis {4096} \
-CONFIG.Output_Data_Width {10} \
-CONFIG.Programmable_Empty_Type {No_Programmable_Empty_Threshold} \
-CONFIG.Programmable_Empty_Type_axis {Single_Programmable_Empty_Threshold_Constant} \
-CONFIG.Programmable_Full_Type {No_Programmable_Full_Threshold} \
-CONFIG.Programmable_Full_Type_axis {Single_Programmable_Full_Threshold_Constant} \
-CONFIG.Reset_Type {Asynchronous_Reset} \
-CONFIG.Valid_Flag {true} \
-CONFIG.Write_Acknowledge_Flag {false} \
- ] $fifo_generator_3
-
-  # Create instance: gmii_0_rx_fifo, and set properties
-  set gmii_0_rx_fifo [ create_bd_cell -type ip -vlnv xilinx.com:ip:fifo_generator:13.1 gmii_0_rx_fifo ]
-  set_property -dict [ list \
-CONFIG.Clock_Type_AXI {Independent_Clock} \
-CONFIG.Empty_Threshold_Assert_Value {2} \
-CONFIG.Empty_Threshold_Assert_Value_axis {100} \
-CONFIG.Empty_Threshold_Assert_Value_rach {13} \
-CONFIG.Empty_Threshold_Assert_Value_rdch {1021} \
-CONFIG.Empty_Threshold_Assert_Value_wach {13} \
-CONFIG.Empty_Threshold_Assert_Value_wdch {1021} \
-CONFIG.Empty_Threshold_Assert_Value_wrch {13} \
-CONFIG.Empty_Threshold_Negate_Value {3} \
-CONFIG.Enable_Data_Counts_axis {true} \
-CONFIG.FIFO_Implementation_axis {Independent_Clocks_Block_RAM} \
-CONFIG.FIFO_Implementation_rach {Independent_Clocks_Distributed_RAM} \
-CONFIG.FIFO_Implementation_rdch {Independent_Clocks_Block_RAM} \
-CONFIG.FIFO_Implementation_wach {Independent_Clocks_Distributed_RAM} \
-CONFIG.FIFO_Implementation_wdch {Independent_Clocks_Block_RAM} \
-CONFIG.FIFO_Implementation_wrch {Independent_Clocks_Distributed_RAM} \
-CONFIG.Fifo_Implementation {Independent_Clocks_Block_RAM} \
-CONFIG.Full_Flags_Reset_Value {1} \
-CONFIG.Full_Threshold_Assert_Value {1021} \
-CONFIG.Full_Threshold_Assert_Value_axis {4000} \
-CONFIG.Full_Threshold_Assert_Value_rach {15} \
-CONFIG.Full_Threshold_Assert_Value_wach {15} \
-CONFIG.Full_Threshold_Assert_Value_wrch {15} \
-CONFIG.Full_Threshold_Negate_Value {1020} \
-CONFIG.INTERFACE_TYPE {AXI_STREAM} \
-CONFIG.Input_Data_Width {10} \
-CONFIG.Input_Depth_axis {4096} \
-CONFIG.Output_Data_Width {10} \
-CONFIG.Programmable_Empty_Type {No_Programmable_Empty_Threshold} \
-CONFIG.Programmable_Empty_Type_axis {Single_Programmable_Empty_Threshold_Constant} \
-CONFIG.Programmable_Full_Type {No_Programmable_Full_Threshold} \
-CONFIG.Programmable_Full_Type_axis {Single_Programmable_Full_Threshold_Constant} \
-CONFIG.Reset_Type {Asynchronous_Reset} \
-CONFIG.Valid_Flag {true} \
-CONFIG.Write_Acknowledge_Flag {false} \
- ] $gmii_0_rx_fifo
-
-  # Create instance: gmii_to_rgmii_0, and set properties
-  set gmii_to_rgmii_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:gmii_to_rgmii:4.0 gmii_to_rgmii_0 ]
-  set_property -dict [ list \
-CONFIG.C_PHYADDR {7} \
-CONFIG.SupportLevel {Include_Shared_Logic_in_Core} \
- ] $gmii_to_rgmii_0
-
-  # Create instance: gmii_to_rgmii_1, and set properties
-  set gmii_to_rgmii_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:gmii_to_rgmii:4.0 gmii_to_rgmii_1 ]
-  set_property -dict [ list \
-CONFIG.C_PHYADDR {8} \
-CONFIG.C_USE_IDELAY_CTRL {false} \
- ] $gmii_to_rgmii_1
-
-  # Create instance: link_status_and_gate, and set properties
-  set link_status_and_gate [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 link_status_and_gate ]
-  set_property -dict [ list \
-CONFIG.C_SIZE {1} \
- ] $link_status_and_gate
-
-  # Create instance: not_gate_full_fifo_0, and set properties
-  set not_gate_full_fifo_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 not_gate_full_fifo_0 ]
-  set_property -dict [ list \
-CONFIG.C_OPERATION {not} \
-CONFIG.C_SIZE {1} \
- ] $not_gate_full_fifo_0
-
-  # Create instance: not_gate_full_fifo_1, and set properties
-  set not_gate_full_fifo_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 not_gate_full_fifo_1 ]
-  set_property -dict [ list \
-CONFIG.C_OPERATION {not} \
-CONFIG.C_SIZE {1} \
- ] $not_gate_full_fifo_1
-
-  # Create instance: or_gate_wr_en_fifo_0, and set properties
-  set or_gate_wr_en_fifo_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 or_gate_wr_en_fifo_0 ]
-  set_property -dict [ list \
-CONFIG.C_OPERATION {or} \
-CONFIG.C_SIZE {1} \
- ] $or_gate_wr_en_fifo_0
-
-  # Create instance: or_gate_wr_en_fifo_1, and set properties
-  set or_gate_wr_en_fifo_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 or_gate_wr_en_fifo_1 ]
-  set_property -dict [ list \
-CONFIG.C_OPERATION {or} \
-CONFIG.C_SIZE {1} \
- ] $or_gate_wr_en_fifo_1
+  # Create instance: gmii_to_rgmii_axis_0, and set properties
+  set gmii_to_rgmii_axis_0 [ create_bd_cell -type ip -vlnv user.org:user:gmii_to_rgmii_axis:1.0 gmii_to_rgmii_axis_0 ]
 
   # Create instance: processing_system7_0, and set properties
   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
@@ -1737,87 +1462,25 @@ CONFIG.C_SIZE {1} \
 CONFIG.C_SIZE {1} \
  ] $util_reduced_logic_1
 
-  # Create instance: util_vector_logic_0, and set properties
-  set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
-  set_property -dict [ list \
-CONFIG.C_OPERATION {not} \
-CONFIG.C_SIZE {1} \
- ] $util_vector_logic_0
-
-  # Create instance: util_vector_logic_1, and set properties
-  set util_vector_logic_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_1 ]
-  set_property -dict [ list \
-CONFIG.C_OPERATION {not} \
-CONFIG.C_SIZE {1} \
- ] $util_vector_logic_1
-
-  # Create instance: util_vector_logic_2, and set properties
-  set util_vector_logic_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_2 ]
-  set_property -dict [ list \
-CONFIG.C_OPERATION {not} \
-CONFIG.C_SIZE {1} \
- ] $util_vector_logic_2
-
   # Create interface connections
-  connect_bd_intf_net -intf_net S_AXIS_1 [get_bd_intf_ports S_AXIS_gmii_0_tx_fifo] [get_bd_intf_pins fifo_generator_2/S_AXIS]
-  connect_bd_intf_net -intf_net S_AXIS_2 [get_bd_intf_ports S_AXIS_gmii_1_tx_fifo] [get_bd_intf_pins fifo_generator_3/S_AXIS]
-  connect_bd_intf_net -intf_net fifo_generator_0_M_AXIS [get_bd_intf_ports M_AXIS_gmii_0_rx_fifo] [get_bd_intf_pins gmii_0_rx_fifo/M_AXIS]
-connect_bd_intf_net -intf_net [get_bd_intf_nets fifo_generator_0_M_AXIS] [get_bd_intf_ports M_AXIS_gmii_0_rx_fifo] [get_bd_intf_pins axis_protocol_checker_0/PC_AXIS]
-  connect_bd_intf_net -intf_net fifo_generator_1_M_AXIS [get_bd_intf_ports M_AXIS_gmii_1_rx_fifo] [get_bd_intf_pins fifo_generator_1/M_AXIS]
-  connect_bd_intf_net -intf_net gmii_to_rgmii_0_RGMII [get_bd_intf_ports rgmii_port_0] [get_bd_intf_pins gmii_to_rgmii_0/RGMII]
-  connect_bd_intf_net -intf_net gmii_to_rgmii_1_MDIO_PHY [get_bd_intf_pins gmii_to_rgmii_0/MDIO_GEM] [get_bd_intf_pins gmii_to_rgmii_1/MDIO_PHY]
-  connect_bd_intf_net -intf_net gmii_to_rgmii_1_RGMII [get_bd_intf_ports rgmii_port_1] [get_bd_intf_pins gmii_to_rgmii_1/RGMII]
+  connect_bd_intf_net -intf_net gmii_to_rgmii_axis_0_M_AXIS_gmii_0_rx_fifo [get_bd_intf_pins gmii_to_rgmii_axis_0/M_AXIS_gmii_0_rx_fifo] [get_bd_intf_pins gmii_to_rgmii_axis_0/S_AXIS_gmii_1_tx_fifo]
+  connect_bd_intf_net -intf_net gmii_to_rgmii_axis_0_M_AXIS_gmii_1_rx_fifo [get_bd_intf_pins gmii_to_rgmii_axis_0/M_AXIS_gmii_1_rx_fifo] [get_bd_intf_pins gmii_to_rgmii_axis_0/S_AXIS_gmii_0_tx_fifo]
+  connect_bd_intf_net -intf_net gmii_to_rgmii_axis_0_rgmii_port_0 [get_bd_intf_ports rgmii_port_0] [get_bd_intf_pins gmii_to_rgmii_axis_0/rgmii_port_0]
+  connect_bd_intf_net -intf_net gmii_to_rgmii_axis_0_rgmii_port_1 [get_bd_intf_ports rgmii_port_1] [get_bd_intf_pins gmii_to_rgmii_axis_0/rgmii_port_1]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
-  connect_bd_intf_net -intf_net processing_system7_0_MDIO_ETHERNET_1 [get_bd_intf_pins gmii_to_rgmii_1/MDIO_GEM] [get_bd_intf_pins processing_system7_0/MDIO_ETHERNET_1]
+  connect_bd_intf_net -intf_net processing_system7_0_MDIO_ETHERNET_1 [get_bd_intf_pins gmii_to_rgmii_axis_0/MDIO_GEM] [get_bd_intf_pins processing_system7_0/MDIO_ETHERNET_1]
 
   # Create port connections
-  connect_bd_net -net axis_protocol_checker_0_pc_asserted [get_bd_ports pc_asserted] [get_bd_pins axis_protocol_checker_0/pc_asserted]
-  connect_bd_net -net axis_protocol_checker_0_pc_status [get_bd_ports pc_status] [get_bd_pins axis_protocol_checker_0/pc_status]
-  connect_bd_net -net fifo_generator_0_axis_prog_empty [get_bd_ports gmii_0_rx_fifo_prog_empty] [get_bd_pins gmii_0_rx_fifo/axis_prog_empty]
-  connect_bd_net -net fifo_generator_0_axis_prog_full [get_bd_pins gmii_0_rx_fifo/axis_prog_full] [get_bd_pins not_gate_full_fifo_0/Op1]
-  connect_bd_net -net fifo_generator_1_axis_prog_empty [get_bd_ports gmii_1_rx_fifo_prog_empty] [get_bd_pins fifo_generator_1/axis_prog_empty]
-  connect_bd_net -net fifo_generator_1_axis_prog_full [get_bd_pins fifo_generator_1/axis_prog_full] [get_bd_pins not_gate_full_fifo_1/Op1]
-  connect_bd_net -net fifo_generator_2_axis_prog_empty [get_bd_pins fifo_generator_2/axis_prog_empty] [get_bd_pins util_vector_logic_1/Op1]
-  connect_bd_net -net fifo_generator_2_m_axis_tdata [get_bd_pins fifo_generator_2/m_axis_tdata] [get_bd_pins gmii_to_rgmii_0/gmii_txd]
-  connect_bd_net -net fifo_generator_2_m_axis_tvalid [get_bd_pins fifo_generator_2/m_axis_tvalid] [get_bd_pins gmii_to_rgmii_0/gmii_tx_en]
-  connect_bd_net -net fifo_generator_3_axis_prog_empty [get_bd_pins fifo_generator_3/axis_prog_empty] [get_bd_pins util_vector_logic_2/Op1]
-  connect_bd_net -net fifo_generator_3_m_axis_tdata [get_bd_pins fifo_generator_3/m_axis_tdata] [get_bd_pins gmii_to_rgmii_1/gmii_txd]
-  connect_bd_net -net fifo_generator_3_m_axis_tvalid [get_bd_pins fifo_generator_3/m_axis_tvalid] [get_bd_pins gmii_to_rgmii_1/gmii_tx_en]
-  connect_bd_net -net gmii_clk_125m_out [get_bd_pins gmii_to_rgmii_0/gmii_clk_125m_out] [get_bd_pins gmii_to_rgmii_1/gmii_clk_125m_in]
-  connect_bd_net -net gmii_to_rgmii_0_gmii_clk_25m_out [get_bd_pins gmii_to_rgmii_0/gmii_clk_25m_out] [get_bd_pins gmii_to_rgmii_1/gmii_clk_25m_in]
-  connect_bd_net -net gmii_to_rgmii_0_gmii_clk_2_5m_out [get_bd_pins gmii_to_rgmii_0/gmii_clk_2_5m_out] [get_bd_pins gmii_to_rgmii_1/gmii_clk_2_5m_in]
-  connect_bd_net -net gmii_to_rgmii_0_gmii_rx_clk [get_bd_pins gmii_0_rx_fifo/s_aclk] [get_bd_pins gmii_to_rgmii_0/gmii_rx_clk]
-  connect_bd_net -net gmii_to_rgmii_0_gmii_rx_dv [get_bd_pins gmii_to_rgmii_0/gmii_rx_dv] [get_bd_pins or_gate_wr_en_fifo_0/Op2]
-  connect_bd_net -net gmii_to_rgmii_0_gmii_rxd [get_bd_pins gmii_0_rx_fifo/s_axis_tdata] [get_bd_pins gmii_to_rgmii_0/gmii_rxd]
-  connect_bd_net -net gmii_to_rgmii_0_gmii_tx_clk [get_bd_pins fifo_generator_2/m_aclk] [get_bd_pins gmii_to_rgmii_0/gmii_tx_clk]
-  connect_bd_net -net gmii_to_rgmii_0_link_status [get_bd_pins gmii_to_rgmii_0/link_status] [get_bd_pins link_status_and_gate/Op1]
-  connect_bd_net -net gmii_to_rgmii_0_mmcm_locked_out [get_bd_pins gmii_to_rgmii_0/mmcm_locked_out] [get_bd_pins gmii_to_rgmii_1/mmcm_locked_in]
-  connect_bd_net -net gmii_to_rgmii_0_ref_clk_out [get_bd_pins gmii_to_rgmii_0/ref_clk_out] [get_bd_pins gmii_to_rgmii_1/ref_clk_in]
-  connect_bd_net -net gmii_to_rgmii_1_gmii_rx_clk [get_bd_pins fifo_generator_1/s_aclk] [get_bd_pins gmii_to_rgmii_1/gmii_rx_clk]
-  connect_bd_net -net gmii_to_rgmii_1_gmii_rx_dv [get_bd_pins gmii_to_rgmii_1/gmii_rx_dv] [get_bd_pins or_gate_wr_en_fifo_1/Op2]
-  connect_bd_net -net gmii_to_rgmii_1_gmii_rxd [get_bd_pins fifo_generator_1/s_axis_tdata] [get_bd_pins gmii_to_rgmii_1/gmii_rxd]
-  connect_bd_net -net gmii_to_rgmii_1_gmii_tx_clk [get_bd_pins fifo_generator_3/m_aclk] [get_bd_pins gmii_to_rgmii_1/gmii_tx_clk]
-  connect_bd_net -net gmii_to_rgmii_1_link_status [get_bd_pins gmii_to_rgmii_1/link_status] [get_bd_pins link_status_and_gate/Op2]
-  connect_bd_net -net link_status_and_gate_Res [get_bd_pins axis_protocol_checker_0/aresetn] [get_bd_pins fifo_generator_1/s_aresetn] [get_bd_pins fifo_generator_2/s_aresetn] [get_bd_pins fifo_generator_3/s_aresetn] [get_bd_pins gmii_0_rx_fifo/s_aresetn] [get_bd_pins link_status_and_gate/Res]
-  connect_bd_net -net m_aclk_1 [get_bd_ports m_aclk_gmii_0_rx_fifo] [get_bd_pins axis_protocol_checker_0/aclk] [get_bd_pins gmii_0_rx_fifo/m_aclk]
-  connect_bd_net -net m_aclk_2 [get_bd_ports m_aclk_gmii_1_rx_fifo] [get_bd_pins fifo_generator_1/m_aclk]
-  connect_bd_net -net not_gate_full_fifo_0_Res [get_bd_pins not_gate_full_fifo_0/Res] [get_bd_pins or_gate_wr_en_fifo_0/Op1]
-  connect_bd_net -net not_gate_full_fifo_1_Res [get_bd_pins not_gate_full_fifo_1/Res] [get_bd_pins or_gate_wr_en_fifo_1/Op1]
-  connect_bd_net -net or_gate_wr_en_fifo_0_Res [get_bd_pins gmii_0_rx_fifo/s_axis_tvalid] [get_bd_pins or_gate_wr_en_fifo_0/Res]
-  connect_bd_net -net or_gate_wr_en_fifo_1_Res [get_bd_pins fifo_generator_1/s_axis_tvalid] [get_bd_pins or_gate_wr_en_fifo_1/Res]
+  connect_bd_net -net gmii_to_rgmii_axis_0_M_AXIS_gmii_0_rx_fifo_tvalid [get_bd_ports led_dbg_1] [get_bd_pins gmii_to_rgmii_axis_0/M_AXIS_gmii_0_rx_fifo_tvalid] [get_bd_pins gmii_to_rgmii_axis_0/S_AXIS_gmii_1_tx_fifo_tvalid]
+  connect_bd_net -net gmii_to_rgmii_axis_0_led_dbg_0 [get_bd_ports led_dbg_0] [get_bd_pins gmii_to_rgmii_axis_0/led_dbg_0]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK]
-  connect_bd_net -net processing_system7_0_FCLK_CLK1 [get_bd_pins gmii_to_rgmii_0/clkin] [get_bd_pins processing_system7_0/FCLK_CLK1]
-  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins util_reduced_logic_0/Op1] [get_bd_pins util_reduced_logic_1/Op1] [get_bd_pins util_vector_logic_0/Op1]
+  connect_bd_net -net processing_system7_0_FCLK_CLK1 [get_bd_pins gmii_to_rgmii_axis_0/clkin200] [get_bd_pins gmii_to_rgmii_axis_0/m_aclk_gmii_0_rx_fifo] [get_bd_pins gmii_to_rgmii_axis_0/m_aclk_gmii_1_rx_fifo] [get_bd_pins gmii_to_rgmii_axis_0/s_aclk_gmii_0_tx_fifo] [get_bd_pins gmii_to_rgmii_axis_0/s_aclk_gmii_1_tx_fifo] [get_bd_pins processing_system7_0/FCLK_CLK1]
+  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins gmii_to_rgmii_axis_0/FCLK_RESET0_N] [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins util_reduced_logic_0/Op1] [get_bd_pins util_reduced_logic_1/Op1]
   connect_bd_net -net ref_clk_fsel_dout [get_bd_ports ref_clk_fsel] [get_bd_pins ref_clk_fsel/dout]
   connect_bd_net -net ref_clk_oe_dout [get_bd_ports ref_clk_oe] [get_bd_pins ref_clk_oe/dout]
-  connect_bd_net -net s_aclk_1 [get_bd_ports s_aclk_gmii_0_tx_fifo] [get_bd_pins fifo_generator_2/s_aclk]
-  connect_bd_net -net s_aclk_2 [get_bd_ports s_aclk_gmii_1_tx_fifo] [get_bd_pins fifo_generator_3/s_aclk]
   connect_bd_net -net util_reduced_logic_0_Res [get_bd_ports reset_port_0] [get_bd_pins util_reduced_logic_0/Res]
   connect_bd_net -net util_reduced_logic_1_Res [get_bd_ports reset_port_1] [get_bd_pins util_reduced_logic_1/Res]
-  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins gmii_to_rgmii_0/rx_reset] [get_bd_pins gmii_to_rgmii_0/tx_reset] [get_bd_pins gmii_to_rgmii_1/rx_reset] [get_bd_pins gmii_to_rgmii_1/tx_reset] [get_bd_pins util_vector_logic_0/Res]
-  connect_bd_net -net util_vector_logic_1_Res [get_bd_pins fifo_generator_2/m_axis_tready] [get_bd_pins util_vector_logic_1/Res]
-  connect_bd_net -net util_vector_logic_2_Res [get_bd_pins fifo_generator_3/m_axis_tready] [get_bd_pins util_vector_logic_2/Res]
 
   # Create address segments
 
@@ -1825,98 +1488,39 @@ connect_bd_intf_net -intf_net [get_bd_intf_nets fifo_generator_0_M_AXIS] [get_bd
   regenerate_bd_layout -layout_string {
    guistr: "# # String gsaved with Nlview 6.5.12  2016-01-29 bk=1.3547 VDI=39 GEI=35 GUI=JA:1.6
 #  -string -flagsOSRD
-preplace port gmii_1_rx_fifo_prog_empty -pg 1 -y 170 -defaultsOSRD
-preplace port m_aclk_gmii_1_rx_fifo -pg 1 -y 160 -defaultsOSRD
-preplace port S_AXIS_gmii_1_tx_fifo -pg 1 -y 480 -defaultsOSRD
-preplace port DDR -pg 1 -y 1180 -defaultsOSRD
-preplace port S_AXIS_gmii_0_tx_fifo -pg 1 -y 810 -defaultsOSRD
-preplace port rgmii_port_0 -pg 1 -y 910 -defaultsOSRD
-preplace port rgmii_port_1 -pg 1 -y 630 -defaultsOSRD
-preplace port s_aclk_gmii_0_tx_fifo -pg 1 -y 850 -defaultsOSRD
-preplace port reset_port_0 -pg 1 -y 1430 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -y 1200 -defaultsOSRD
-preplace port reset_port_1 -pg 1 -y 1340 -defaultsOSRD
-preplace port s_aclk_gmii_1_tx_fifo -pg 1 -y 520 -defaultsOSRD
-preplace port m_aclk_gmii_0_rx_fifo -pg 1 -y 540 -defaultsOSRD
-preplace port M_AXIS_gmii_1_rx_fifo -pg 1 -y 90 -defaultsOSRD
-preplace port gmii_0_rx_fifo_prog_empty -pg 1 -y 800 -defaultsOSRD
-preplace port M_AXIS_gmii_0_rx_fifo -pg 1 -y 470 -defaultsOSRD
-preplace portBus ref_clk_fsel -pg 1 -y 960 -defaultsOSRD
-preplace portBus ref_clk_oe -pg 1 -y 1520 -defaultsOSRD
-preplace inst fifo_generator_3 -pg 1 -lvl 4 -y 510 -defaultsOSRD
-preplace inst not_gate_full_fifo_0 -pg 1 -lvl 3 -y 960 -defaultsOSRD
-preplace inst not_gate_full_fifo_1 -pg 1 -lvl 3 -y 60 -defaultsOSRD
-preplace inst or_gate_wr_en_fifo_0 -pg 1 -lvl 4 -y 850 -defaultsOSRD
-preplace inst or_gate_wr_en_fifo_1 -pg 1 -lvl 4 -y 70 -defaultsOSRD
-preplace inst ref_clk_fsel -pg 1 -lvl 5 -y 1110 -defaultsOSRD
-preplace inst ref_clk_oe -pg 1 -lvl 5 -y 1520 -defaultsOSRD
-preplace inst util_vector_logic_0 -pg 1 -lvl 5 -y 1250 -defaultsOSRD
-preplace inst util_vector_logic_1 -pg 1 -lvl 2 -y 1080 -defaultsOSRD
-preplace inst util_vector_logic_2 -pg 1 -lvl 5 -y 320 -defaultsOSRD
-preplace inst util_reduced_logic_0 -pg 1 -lvl 5 -y 1430 -defaultsOSRD
-preplace inst util_reduced_logic_1 -pg 1 -lvl 5 -y 1340 -defaultsOSRD
-preplace inst link_status_and_gate -pg 1 -lvl 3 -y 1380 -defaultsOSRD
-preplace inst gmii_to_rgmii_0 -pg 1 -lvl 2 -y 680 -defaultsOSRD -orient R180
-preplace inst fifo_generator_1 -pg 1 -lvl 5 -y 130 -defaultsOSRD
-preplace inst gmii_to_rgmii_1 -pg 1 -lvl 3 -y 350 -defaultsOSRD -orient R180
-preplace inst fifo_generator_2 -pg 1 -lvl 5 -y 840 -defaultsOSRD
-preplace inst gmii_0_rx_fifo -pg 1 -lvl 5 -y 490 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 1 -y 1250 -defaultsOSRD
-preplace netloc fifo_generator_1_M_AXIS 1 5 1 N
-preplace netloc processing_system7_0_DDR 1 1 5 NJ 1180 NJ 1180 NJ 1180 NJ 1180 NJ
-preplace netloc m_aclk_1 1 0 5 NJ 400 NJ 400 NJ 720 NJ 720 NJ
-preplace netloc gmii_to_rgmii_1_gmii_tx_clk 1 3 1 1430
-preplace netloc ref_clk_fsel_dout 1 5 1 NJ
-preplace netloc util_reduced_logic_1_Res 1 5 1 NJ
-preplace netloc m_aclk_2 1 0 5 NJ 120 NJ 120 NJ 120 NJ 160 NJ
-preplace netloc fifo_generator_2_axis_prog_empty 1 1 5 420 420 NJ 710 NJ 710 NJ 710 2400
-preplace netloc or_gate_wr_en_fifo_0_Res 1 4 1 1900
-preplace netloc gmii_to_rgmii_0_gmii_clk_2_5m_out 1 1 3 470 440 NJ 590 1350
-preplace netloc fifo_generator_3_m_axis_tvalid 1 3 2 NJ 350 1850
-preplace netloc fifo_generator_2_m_axis_tdata 1 2 4 NJ 690 NJ 690 NJ 690 2390
-preplace netloc fifo_generator_0_axis_prog_empty 1 5 1 NJ
-preplace netloc gmii_to_rgmii_1_gmii_rx_dv 1 3 1 1380
-preplace netloc fifo_generator_1_axis_prog_empty 1 5 1 N
-preplace netloc gmii_to_rgmii_0_gmii_rx_clk 1 2 3 N 740 NJ 740 1930
-preplace netloc or_gate_wr_en_fifo_1_Res 1 4 1 1940
-preplace netloc fifo_generator_0_axis_prog_full 1 2 4 940 910 NJ 920 NJ 970 2440
-preplace netloc gmii_to_rgmii_0_gmii_rxd 1 2 3 NJ 670 NJ 670 NJ
-preplace netloc gmii_to_rgmii_0_ref_clk_out 1 1 3 460 490 NJ 610 1340
-preplace netloc fifo_generator_3_m_axis_tdata 1 3 2 NJ 310 1860
-preplace netloc util_vector_logic_0_Res 1 2 4 840 660 1410 660 NJ 660 2430
-preplace netloc gmii_to_rgmii_0_mmcm_locked_out 1 1 3 450 450 NJ 600 1320
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 4 NJ 1320 NJ 1320 NJ 1320 1900
-preplace netloc fifo_generator_0_M_AXIS 1 5 1 2440
-preplace netloc s_aclk_1 1 0 5 NJ 850 NJ 870 NJ 790 NJ 790 NJ
-preplace netloc fifo_generator_3_axis_prog_empty 1 4 1 NJ
-preplace netloc fifo_generator_1_axis_prog_full 1 2 4 940 10 NJ 10 NJ 10 2390
-preplace netloc ref_clk_oe_dout 1 5 1 NJ
-preplace netloc gmii_to_rgmii_0_RGMII 1 1 5 480 880 NJ 880 NJ 960 NJ 960 NJ
-preplace netloc s_aclk_2 1 0 4 NJ 410 NJ 410 NJ 620 NJ
-preplace netloc not_gate_full_fifo_0_Res 1 3 1 NJ
-preplace netloc link_status_and_gate_Res 1 3 2 1440 640 1940
-preplace netloc gmii_to_rgmii_1_RGMII 1 2 4 940 630 NJ 630 NJ 630 NJ
-preplace netloc gmii_to_rgmii_0_gmii_rx_dv 1 2 2 NJ 730 NJ
-preplace netloc processing_system7_0_FIXED_IO 1 1 5 NJ 1200 NJ 1200 NJ 1200 NJ 1200 NJ
-preplace netloc gmii_to_rgmii_1_MDIO_PHY 1 2 1 NJ
-preplace netloc processing_system7_0_MDIO_ETHERNET_1 1 1 3 NJ 1160 NJ 1160 1330
-preplace netloc gmii_to_rgmii_1_link_status 1 2 1 930
-preplace netloc gmii_to_rgmii_0_link_status 1 1 2 440 1370 NJ
-preplace netloc util_reduced_logic_0_Res 1 5 1 NJ
-preplace netloc S_AXIS_1 1 0 5 NJ 810 NJ 900 NJ 900 NJ 910 NJ
-preplace netloc not_gate_full_fifo_1_Res 1 3 1 NJ
-preplace netloc gmii_to_rgmii_0_gmii_clk_25m_out 1 1 3 480 460 NJ 640 1370
-preplace netloc gmii_clk_125m_out 1 1 3 430 110 NJ 110 1360
-preplace netloc S_AXIS_2 1 0 4 NJ 470 NJ 470 NJ 580 NJ
-preplace netloc util_vector_logic_2_Res 1 4 2 NJ 590 2390
-preplace netloc util_vector_logic_1_Res 1 2 4 NJ 1080 NJ 1080 NJ 1160 2410
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 2 -30 1410 400
-preplace netloc fifo_generator_2_m_axis_tvalid 1 2 4 NJ 650 N 650 NJ 650 2420
-preplace netloc gmii_to_rgmii_1_gmii_rxd 1 3 2 NJ 130 1850
-preplace netloc processing_system7_0_FCLK_CLK1 1 1 2 NJ 1340 780
-preplace netloc gmii_to_rgmii_0_gmii_tx_clk 1 2 3 NJ 680 NJ 680 1920
-preplace netloc gmii_to_rgmii_1_gmii_rx_clk 1 3 2 NJ 180 N
-levelinfo -pg 1 -60 190 630 1180 1670 2180 2480 -top 0 -bot 1570
+preplace port DDR -pg 1 -y 280 -defaultsOSRD
+preplace port rgmii_port_0 -pg 1 -y 70 -defaultsOSRD
+preplace port rgmii_port_1 -pg 1 -y 110 -defaultsOSRD
+preplace port reset_port_0 -pg 1 -y 350 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y 300 -defaultsOSRD
+preplace port led_dbg_0 -pg 1 -y 170 -defaultsOSRD
+preplace port reset_port_1 -pg 1 -y 440 -defaultsOSRD
+preplace port led_dbg_1 -pg 1 -y 90 -defaultsOSRD
+preplace portBus ref_clk_fsel -pg 1 -y 530 -defaultsOSRD
+preplace portBus ref_clk_oe -pg 1 -y 620 -defaultsOSRD
+preplace inst ref_clk_fsel -pg 1 -lvl 3 -y 530 -defaultsOSRD
+preplace inst ref_clk_oe -pg 1 -lvl 3 -y 620 -defaultsOSRD
+preplace inst util_reduced_logic_0 -pg 1 -lvl 3 -y 350 -defaultsOSRD
+preplace inst util_reduced_logic_1 -pg 1 -lvl 3 -y 440 -defaultsOSRD
+preplace inst gmii_to_rgmii_axis_0 -pg 1 -lvl 1 -y 160 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 2 -y 350 -defaultsOSRD
+preplace netloc gmii_to_rgmii_axis_0_rgmii_port_1 1 1 3 NJ 110 NJ 110 NJ
+preplace netloc processing_system7_0_DDR 1 2 2 NJ 280 NJ
+preplace netloc ref_clk_fsel_dout 1 3 1 NJ
+preplace netloc util_reduced_logic_1_Res 1 3 1 NJ
+preplace netloc gmii_to_rgmii_axis_0_M_AXIS_gmii_0_rx_fifo_tvalid 1 0 4 -180 -90 390 90 NJ 90 NJ
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 3 -160 530 NJ 530 880
+preplace netloc ref_clk_oe_dout 1 3 1 NJ
+preplace netloc processing_system7_0_FIXED_IO 1 2 2 NJ 300 NJ
+preplace netloc processing_system7_0_MDIO_ETHERNET_1 1 0 3 -170 -80 NJ -80 880
+preplace netloc gmii_to_rgmii_axis_0_led_dbg_0 1 1 3 NJ 190 NJ 190 NJ
+preplace netloc util_reduced_logic_0_Res 1 3 1 NJ
+preplace netloc gmii_to_rgmii_axis_0_M_AXIS_gmii_1_rx_fifo 1 0 2 -150 -60 370
+preplace netloc processing_system7_0_FCLK_CLK0 1 1 2 410 510 870
+preplace netloc gmii_to_rgmii_axis_0_M_AXIS_gmii_0_rx_fifo 1 0 2 -160 -70 380
+preplace netloc processing_system7_0_FCLK_CLK1 1 0 3 -150 380 NJ 520 860
+preplace netloc gmii_to_rgmii_axis_0_rgmii_port_0 1 1 3 400 70 NJ 70 NJ
+levelinfo -pg 1 -200 110 650 1080 1200 -top -100 -bot 670
 ",
 }
 

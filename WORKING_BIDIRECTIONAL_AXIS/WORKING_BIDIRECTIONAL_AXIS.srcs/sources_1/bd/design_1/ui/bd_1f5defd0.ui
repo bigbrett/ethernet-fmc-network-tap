@@ -1,0 +1,104 @@
+{
+   guistr: "# # String gsaved with Nlview 6.5.12  2016-01-29 bk=1.3547 VDI=39 GEI=35 GUI=JA:1.6
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -y 1050 -defaultsOSRD
+preplace port rgmii_port_0 -pg 1 -y 600 -defaultsOSRD
+preplace port rgmii_port_1 -pg 1 -y 180 -defaultsOSRD
+preplace port reset_port_0 -pg 1 -y 1140 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y 1070 -defaultsOSRD
+preplace port reset_port_1 -pg 1 -y 1230 -defaultsOSRD
+preplace portBus ref_clk_fsel -pg 1 -y 1320 -defaultsOSRD
+preplace portBus ref_clk_oe -pg 1 -y 1410 -defaultsOSRD
+preplace inst fifo_generator_3 -pg 1 -lvl 5 -y 410 -defaultsOSRD
+preplace inst vio_0 -pg 1 -lvl 3 -y 630 -defaultsOSRD
+preplace inst xlslice_data_0 -pg 1 -lvl 6 -y 300 -defaultsOSRD
+preplace inst not_gate_full_fifo_0 -pg 1 -lvl 3 -y 340 -defaultsOSRD
+preplace inst xlslice_data_1 -pg 1 -lvl 7 -y 780 -defaultsOSRD
+preplace inst not_gate_full_fifo_1 -pg 1 -lvl 4 -y 800 -defaultsOSRD
+preplace inst or_gate_rd_en_fifo_0 -pg 1 -lvl 7 -y 480 -defaultsOSRD
+preplace inst or_gate_wr_en_fifo_0 -pg 1 -lvl 4 -y 350 -defaultsOSRD
+preplace inst link_status_not_gate1 -pg 1 -lvl 4 -y 620 -defaultsOSRD
+preplace inst or_gate_rd_en_fifo_1 -pg 1 -lvl 8 -y 920 -defaultsOSRD
+preplace inst or_gate_wr_en_fifo_1 -pg 1 -lvl 5 -y 810 -defaultsOSRD
+preplace inst ref_clk_fsel -pg 1 -lvl 8 -y 1320 -defaultsOSRD
+preplace inst ref_clk_oe -pg 1 -lvl 8 -y 1410 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 4 -y 480 -defaultsOSRD
+preplace inst link_status_not_gate -pg 1 -lvl 2 -y 640 -defaultsOSRD
+preplace inst util_vector_logic_0 -pg 1 -lvl 6 -y 1420 -defaultsOSRD
+preplace inst xlconcat_1 -pg 1 -lvl 5 -y 220 -defaultsOSRD
+preplace inst util_reduced_logic_0 -pg 1 -lvl 8 -y 1140 -defaultsOSRD
+preplace inst xlslice_valid_0 -pg 1 -lvl 6 -y 1330 -defaultsOSRD
+preplace inst util_reduced_logic_1 -pg 1 -lvl 8 -y 1230 -defaultsOSRD
+preplace inst not_gate_empty_fifo_0 -pg 1 -lvl 6 -y 490 -defaultsOSRD
+preplace inst xlslice_valid_1 -pg 1 -lvl 7 -y 1000 -defaultsOSRD
+preplace inst xlslice_error_0 -pg 1 -lvl 6 -y 210 -defaultsOSRD
+preplace inst link_status_and_gate -pg 1 -lvl 1 -y 500 -defaultsOSRD
+preplace inst not_gate_empty_fifo_1 -pg 1 -lvl 7 -y 910 -defaultsOSRD
+preplace inst xlslice_error_1 -pg 1 -lvl 7 -y 690 -defaultsOSRD
+preplace inst gmii_to_rgmii_0 -pg 1 -lvl 8 -y 680 -defaultsOSRD
+preplace inst gmii_to_rgmii_1 -pg 1 -lvl 7 -y 210 -defaultsOSRD
+preplace inst fifo_generator_2 -pg 1 -lvl 6 -y 820 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 6 -y 1120 -defaultsOSRD
+preplace netloc processing_system7_0_DDR 1 6 3 NJ 1050 NJ 1050 NJ
+preplace netloc or_gate_rd_en_fifo_0_Res 1 5 3 NJ 370 NJ 590 2450
+preplace netloc gmii_to_rgmii_1_gmii_tx_clk 1 4 3 1110 150 NJ 150 NJ
+preplace netloc ref_clk_fsel_dout 1 8 1 NJ
+preplace netloc util_reduced_logic_1_Res 1 8 1 NJ
+preplace netloc fifo_generator_2_axis_prog_empty 1 6 1 2060
+preplace netloc or_gate_wr_en_fifo_0_Res 1 4 1 1060
+preplace netloc gmii_to_rgmii_0_gmii_clk_2_5m_out 1 6 3 2170 550 NJ 470 2890
+preplace netloc gmii_to_rgmii_1_gmii_rx_dv 1 4 3 1090 100 NJ 100 NJ
+preplace netloc gmii_to_rgmii_1_gmii_rx_er 1 4 3 1100 120 NJ 120 NJ
+preplace netloc fifo_generator_2_axis_prog_full 1 3 4 810 950 NJ 950 NJ 950 2050
+preplace netloc or_gate_wr_en_fifo_1_Res 1 5 1 N
+preplace netloc gmii_to_rgmii_0_gmii_rx_clk 1 2 6 510 550 NJ 550 1070 550 NJ 550 NJ 600 NJ
+preplace netloc gmii_to_rgmii_0_gmii_rxd 1 3 5 800 570 NJ 570 NJ 570 NJ 630 NJ
+preplace netloc gmii_to_rgmii_0_ref_clk_out 1 6 3 2130 570 NJ 510 2840
+preplace netloc xlconcat_1_dout 1 5 1 1580
+preplace netloc util_vector_logic_0_Res 1 6 2 2120 830 2510
+preplace netloc gmii_to_rgmii_0_mmcm_locked_out 1 6 3 2140 420 NJ 420 2870
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 5 3 1600 1470 2060 1230 2490
+preplace netloc fifo_generator_3_axis_prog_empty 1 5 1 NJ
+preplace netloc xlslice_valid_1_Dout 1 7 1 2500
+preplace netloc ref_clk_oe_dout 1 8 1 NJ
+preplace netloc gmii_to_rgmii_0_RGMII 1 8 1 NJ
+preplace netloc fifo_generator_3_axis_prog_full 1 2 4 510 410 NJ 410 NJ 540 1560
+preplace netloc vio_0_probe_out0 1 3 1 NJ
+preplace netloc not_gate_empty_fifo_0_Res 1 6 1 2080
+preplace netloc not_gate_full_fifo_0_Res 1 3 1 NJ
+preplace netloc link_status_and_gate_Res 1 1 1 270
+preplace netloc gmii_to_rgmii_1_RGMII 1 7 2 NJ 180 NJ
+preplace netloc not_gate_empty_fifo_1_Res 1 7 1 NJ
+preplace netloc xlslice_data_0_Dout 1 6 1 NJ
+preplace netloc xlslice_data_1_Dout 1 7 1 NJ
+preplace netloc gmii_to_rgmii_0_gmii_rx_dv 1 3 5 790 560 NJ 560 NJ 560 NJ 620 N
+preplace netloc xlconcat_0_dout 1 4 1 1050
+preplace netloc processing_system7_0_FIXED_IO 1 6 3 NJ 1070 NJ 1070 NJ
+preplace netloc gmii_to_rgmii_1_MDIO_PHY 1 7 1 2520
+preplace netloc processing_system7_0_MDIO_ETHERNET_1 1 6 1 2070
+preplace netloc gmii_to_rgmii_1_link_status 1 0 8 30 700 NJ 700 NJ 700 NJ 700 NJ 690 NJ 690 NJ 610 2460
+preplace netloc gmii_to_rgmii_0_link_status 1 0 9 20 690 NJ 690 NJ 690 NJ 690 NJ 580 NJ 580 NJ 580 NJ 480 2880
+preplace netloc util_reduced_logic_0_Res 1 8 1 NJ
+preplace netloc link_status_not_gate1_Res 1 4 2 1080 620 NJ
+preplace netloc not_gate_full_fifo_1_Res 1 4 1 NJ
+preplace netloc xlslice_error_0_Dout 1 6 1 NJ
+preplace netloc fifo_generator_1_dout 1 6 1 2170
+preplace netloc fifo_generator_0_dout 1 5 1 1570
+preplace netloc gmii_to_rgmii_0_gmii_clk_25m_out 1 6 3 2150 560 NJ 500 2850
+preplace netloc gmii_clk_125m_out 1 6 3 2160 540 NJ 460 2860
+preplace netloc processing_system7_0_FCLK_CLK0 1 5 2 1600 1280 2050
+preplace netloc link_status_not_gate_Res 1 2 1 NJ
+preplace netloc xlslice_error_1_Dout 1 7 1 NJ
+preplace netloc gmii_to_rgmii_1_gmii_rxd 1 4 3 1120 140 NJ 140 NJ
+preplace netloc processing_system7_0_FCLK_CLK1 1 6 2 NJ 860 2520
+preplace netloc gmii_to_rgmii_1_gmii_rx_clk 1 5 2 1590 90 NJ
+preplace netloc gmii_to_rgmii_0_gmii_tx_clk 1 5 3 1600 960 NJ 1060 2480
+preplace netloc or_gate_rd_en_fifo_1_Res 1 6 3 2050 850 NJ 850 2840
+preplace netloc xlslice_valid_0_Dout 1 6 1 2090
+preplace netloc gmii_to_rgmii_0_gmii_rx_er 1 3 5 810 670 NJ 640 NJ 640 NJ 640 NJ
+levelinfo -pg 1 0 150 390 650 930 1340 1830 2310 2690 2910 -top 0 -bot 1480
+",
+}
+{
+   da_ps7_cnt: "1",
+}
