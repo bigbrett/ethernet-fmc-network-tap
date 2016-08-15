@@ -58,7 +58,7 @@ USE work.xlslice;
 
 ENTITY design_1_xlslice_data_1_0 IS
   PORT (
-    Din : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+    Din : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     Dout : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
   );
 END design_1_xlslice_data_1_0;
@@ -73,14 +73,14 @@ ARCHITECTURE design_1_xlslice_data_1_0_arch OF design_1_xlslice_data_1_0 IS
       DIN_TO : INTEGER
     );
     PORT (
-      Din : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+      Din : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
       Dout : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
     );
   END COMPONENT xlslice;
 BEGIN
   U0 : xlslice
     GENERIC MAP (
-      DIN_WIDTH => 10,
+      DIN_WIDTH => 16,
       DIN_FROM => 7,
       DIN_TO => 0
     )

@@ -1,8 +1,8 @@
 --Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
---Date        : Tue Jul 26 10:50:44 2016
---Host        : wintermute running 64-bit Ubuntu 14.04.4 LTS
+--Date        : Thu Aug 11 18:38:26 2016
+--Host        : wintermute running 64-bit Ubuntu 14.04.5 LTS
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
 --Purpose     : IP block netlist
@@ -11,7 +11,6 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-
 entity design_1_wrapper is
   port (
     DDR_addr : inout STD_LOGIC_VECTOR ( 14 downto 0 );

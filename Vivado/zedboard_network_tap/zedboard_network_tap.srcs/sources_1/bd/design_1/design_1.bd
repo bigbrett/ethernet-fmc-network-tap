@@ -212,6 +212,15 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
+        <spirit:instanceName>gmii_to_rgmii_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="gmii_to_rgmii" spirit:vendor="xilinx.com" spirit:version="4.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_gmii_to_rgmii_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PHYADDR">7</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="SupportLevel">Include_Shared_Logic_in_Core</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
         <spirit:instanceName>gmii_to_rgmii_1</spirit:instanceName>
         <spirit:componentRef spirit:library="ip" spirit:name="gmii_to_rgmii" spirit:vendor="xilinx.com" spirit:version="4.0"/>
         <spirit:configurableElementValues>
@@ -256,32 +265,16 @@
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_fifo_generator_0_0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Fifo_Implementation">Independent_Clocks_Block_RAM</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Performance_Options">First_Word_Fall_Through</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Input_Data_Width">10</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Output_Data_Width">10</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Full_Flags_Reset_Value">1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Valid_Flag">true</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Write_Acknowledge_Flag">false</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Programmable_Full_Type">Single_Programmable_Full_Threshold_Constant</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Full_Threshold_Assert_Value">600</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Full_Threshold_Assert_Value">1023</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Programmable_Empty_Type">Single_Programmable_Empty_Threshold_Constant</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Empty_Threshold_Assert_Value">400</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>fifo_generator_1</spirit:instanceName>
-        <spirit:componentRef spirit:library="ip" spirit:name="fifo_generator" spirit:vendor="xilinx.com" spirit:version="13.1"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_fifo_generator_1_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Fifo_Implementation">Independent_Clocks_Block_RAM</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Input_Data_Width">10</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Output_Data_Width">10</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Full_Flags_Reset_Value">1</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Valid_Flag">true</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Write_Acknowledge_Flag">false</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Programmable_Full_Type">Single_Programmable_Full_Threshold_Constant</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Full_Threshold_Assert_Value">600</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Programmable_Empty_Type">Single_Programmable_Empty_Threshold_Constant</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Empty_Threshold_Assert_Value">400</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Empty_Threshold_Assert_Value">4</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -362,7 +355,7 @@
           <spirit:configurableElementValue spirit:referenceId="DOUT_WIDTH">8</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="DIN_TO">0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="DIN_FROM">7</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="DIN_WIDTH">10</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="DIN_WIDTH">16</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -373,7 +366,7 @@
           <spirit:configurableElementValue spirit:referenceId="DOUT_WIDTH">1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="DIN_TO">8</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="DIN_FROM">8</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="DIN_WIDTH">10</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="DIN_WIDTH">16</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -384,7 +377,7 @@
           <spirit:configurableElementValue spirit:referenceId="DOUT_WIDTH">1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="DIN_TO">9</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="DIN_FROM">9</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="DIN_WIDTH">10</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="DIN_WIDTH">16</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -460,33 +453,239 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>gmii2axis_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="user" spirit:name="gmii2axis" spirit:vendor="user.org" spirit:version="1.0"/>
+        <spirit:instanceName>fifo_generator_1</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="fifo_generator" spirit:vendor="xilinx.com" spirit:version="13.1"/>
         <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_gmii2axis_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_fifo_generator_0_1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Fifo_Implementation">Independent_Clocks_Block_RAM</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Performance_Options">First_Word_Fall_Through</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Input_Data_Width">10</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Output_Data_Width">10</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Full_Flags_Reset_Value">1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Valid_Flag">true</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Write_Acknowledge_Flag">false</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Write_Data_Count">true</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Read_Data_Count">true</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Programmable_Full_Type">Single_Programmable_Full_Threshold_Constant</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Full_Threshold_Assert_Value">600</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Programmable_Empty_Type">Single_Programmable_Empty_Threshold_Constant</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Empty_Threshold_Assert_Value">400</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>xlconstant_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="ip" spirit:name="xlconstant" spirit:vendor="xilinx.com" spirit:version="1.1"/>
+        <spirit:instanceName>fifo_generator_2</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="fifo_generator" spirit:vendor="xilinx.com" spirit:version="13.1"/>
         <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_xlconstant_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_fifo_generator_1_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Fifo_Implementation">Independent_Clocks_Block_RAM</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="INTERFACE_TYPE">AXI_STREAM</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Input_Data_Width">10</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Output_Data_Width">10</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Full_Flags_Reset_Value">1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Valid_Flag">true</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Write_Acknowledge_Flag">false</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Programmable_Full_Type">No_Programmable_Full_Threshold</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Programmable_Empty_Type">No_Programmable_Empty_Threshold</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Clock_Type_AXI">Independent_Clock</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="TDATA_NUM_BYTES">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="FIFO_Implementation_wach">Independent_Clocks_Distributed_RAM</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="FIFO_Implementation_wdch">Independent_Clocks_Block_RAM</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="FIFO_Implementation_wrch">Independent_Clocks_Distributed_RAM</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="FIFO_Implementation_rach">Independent_Clocks_Distributed_RAM</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="FIFO_Implementation_rdch">Independent_Clocks_Block_RAM</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="FIFO_Implementation_axis">Independent_Clocks_Block_RAM</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Enable_Data_Counts_axis">true</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Programmable_Full_Type_axis">Single_Programmable_Full_Threshold_Constant</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Full_Threshold_Assert_Value_axis">600</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Programmable_Empty_Type_axis">Single_Programmable_Empty_Threshold_Constant</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Empty_Threshold_Assert_Value_axis">400</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>not_gate_full_fifo_2</spirit:instanceName>
+        <spirit:instanceName>both_data</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="ila" spirit:vendor="xilinx.com" spirit:version="6.1"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_axis_read_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE5_WIDTH">10</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE4_WIDTH">10</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE3_WIDTH">10</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE2_WIDTH">11</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE1_WIDTH">11</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE0_WIDTH">10</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_NUM_OF_PROBES">16</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_TRIGOUT_EN">false</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_EN_STRG_QUAL">1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_ADV_TRIGGER">true</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE56_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE55_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE54_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE53_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE52_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE51_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE50_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE49_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE48_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE47_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE46_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE45_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE44_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE43_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE42_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE41_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE40_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE39_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE38_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE37_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE36_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE35_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE34_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE33_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE32_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE31_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE30_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE29_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE28_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE27_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE26_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE25_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE24_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE23_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE22_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE21_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE20_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE19_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE18_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE17_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE16_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE15_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE14_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE13_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE12_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE11_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE10_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE9_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE8_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE7_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE6_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE5_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE4_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE3_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE2_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE1_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE0_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="ALL_PROBE_SAME_MU_CNT">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_ENABLE_ILA_AXI_MON">false</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_MONITOR_TYPE">Native</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>vio_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="vio" spirit:vendor="xilinx.com" spirit:version="3.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_vio_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_PROBE_OUT1_WIDTH">11</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_NUM_PROBE_OUT">2</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>link_status_not_gate1</spirit:instanceName>
         <spirit:componentRef spirit:library="ip" spirit:name="util_vector_logic" spirit:vendor="xilinx.com" spirit:version="2.0"/>
         <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_not_gate_full_fifo_1_1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_link_status_not_gate_1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_SIZE">1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="C_OPERATION">not</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>axi_interfaces_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="hls" spirit:name="axi_interfaces" spirit:vendor="WebSensing.com" spirit:version="2.2"/>
+        <spirit:instanceName>mux_and_2</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="util_vector_logic" spirit:vendor="xilinx.com" spirit:version="2.0"/>
         <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_axi_interfaces_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_util_vector_logic_1_2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_SIZE">11</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>mux_and</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="util_vector_logic" spirit:vendor="xilinx.com" spirit:version="2.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_util_vector_logic_1_3</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_SIZE">11</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>mux_or</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="util_vector_logic" spirit:vendor="xilinx.com" spirit:version="2.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_util_vector_logic_1_4</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_SIZE">11</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_OPERATION">or</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>mux_not</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="util_vector_logic" spirit:vendor="xilinx.com" spirit:version="2.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_util_vector_logic_3_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_SIZE">11</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="C_OPERATION">not</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>xlconcat_2</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="xlconcat" spirit:vendor="xilinx.com" spirit:version="2.1"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_xlconcat_2_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="IN0_WIDTH">10</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="IN1_WIDTH">1</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>xlconcat_3</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="xlconcat" spirit:vendor="xilinx.com" spirit:version="2.1"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_xlconcat_2_1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="IN0_WIDTH">10</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="IN1_WIDTH">1</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>xlslice_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="xlslice" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_xlslice_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="DOUT_WIDTH">1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="DIN_TO">10</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="DIN_FROM">10</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="DIN_WIDTH">11</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>fifo_generator_3</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="fifo_generator" spirit:vendor="xilinx.com" spirit:version="13.1"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_fifo_generator_2_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Fifo_Implementation">Independent_Clocks_Block_RAM</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="INTERFACE_TYPE">AXI_STREAM</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Input_Data_Width">10</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Output_Data_Width">10</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Full_Flags_Reset_Value">1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Valid_Flag">true</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Write_Acknowledge_Flag">false</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Programmable_Full_Type">No_Programmable_Full_Threshold</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Programmable_Empty_Type">No_Programmable_Empty_Threshold</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Clock_Type_AXI">Independent_Clock</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="TDATA_NUM_BYTES">2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="FIFO_Implementation_wach">Independent_Clocks_Distributed_RAM</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="FIFO_Implementation_wdch">Independent_Clocks_Block_RAM</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="FIFO_Implementation_wrch">Independent_Clocks_Distributed_RAM</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="FIFO_Implementation_rach">Independent_Clocks_Distributed_RAM</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="FIFO_Implementation_rdch">Independent_Clocks_Block_RAM</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="FIFO_Implementation_axis">Independent_Clocks_Block_RAM</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Enable_Data_Counts_axis">true</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Programmable_Full_Type_axis">Single_Programmable_Full_Threshold_Constant</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Full_Threshold_Assert_Value_axis">600</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Programmable_Empty_Type_axis">Single_Programmable_Empty_Threshold_Constant</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Empty_Threshold_Assert_Value_axis">400</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
     </spirit:componentInstances>
@@ -499,7 +698,7 @@
       <spirit:interconnection>
         <spirit:name>gmii_to_rgmii_1_MDIO_PHY</spirit:name>
         <spirit:activeInterface spirit:busRef="MDIO_PHY" spirit:componentRef="gmii_to_rgmii_1"/>
-        <spirit:activeInterface spirit:busRef="MDIO_GEM" spirit:componentRef="gmii2axis_0"/>
+        <spirit:activeInterface spirit:busRef="MDIO_GEM" spirit:componentRef="gmii_to_rgmii_0"/>
       </spirit:interconnection>
     </spirit:interconnections>
     <spirit:adHocConnections>
@@ -526,6 +725,44 @@
         <spirit:externalPortReference spirit:portRef="reset_port_1"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
+        <spirit:name>gmii_to_rgmii_0_ref_clk_out</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="ref_clk_out"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="ref_clk_in"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>gmii_to_rgmii_0_mmcm_locked_out</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="mmcm_locked_out"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="mmcm_locked_in"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>gmii_clk_125m_out</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="gmii_clk_125m_out"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="gmii_clk_125m_in"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>gmii_to_rgmii_0_gmii_clk_25m_out</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="gmii_clk_25m_out"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="gmii_clk_25m_in"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>gmii_to_rgmii_0_gmii_clk_2_5m_out</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="gmii_clk_2_5m_out"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="gmii_clk_2_5m_in"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>processing_system7_0_FCLK_CLK1</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="FCLK_CLK1"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="clkin"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>util_vector_logic_0_Res</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="util_vector_logic_0" spirit:portRef="Res"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="tx_reset"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="rx_reset"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="tx_reset"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="rx_reset"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
         <spirit:name>ref_clk_oe_dout</spirit:name>
         <spirit:internalPortReference spirit:componentRef="ref_clk_oe" spirit:portRef="dout"/>
         <spirit:externalPortReference spirit:portRef="ref_clk_oe"/>
@@ -534,6 +771,11 @@
         <spirit:name>ref_clk_fsel_dout</spirit:name>
         <spirit:internalPortReference spirit:componentRef="ref_clk_fsel" spirit:portRef="dout"/>
         <spirit:externalPortReference spirit:portRef="ref_clk_fsel"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>gmii_to_rgmii_0_link_status</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="link_status"/>
+        <spirit:internalPortReference spirit:componentRef="link_status_and_gate" spirit:portRef="Op1"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>gmii_to_rgmii_1_link_status</spirit:name>
@@ -546,34 +788,52 @@
         <spirit:internalPortReference spirit:componentRef="link_status_not_gate" spirit:portRef="Op1"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>link_status_not_gate_Res</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="link_status_not_gate" spirit:portRef="Res"/>
-        <spirit:internalPortReference spirit:componentRef="fifo_generator_0" spirit:portRef="rst"/>
-        <spirit:internalPortReference spirit:componentRef="fifo_generator_1" spirit:portRef="rst"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
         <spirit:name>fifo_generator_0_dout</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="fifo_generator_0" spirit:portRef="dout"/>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_3" spirit:portRef="m_axis_tdata"/>
         <spirit:internalPortReference spirit:componentRef="xlslice_data_0" spirit:portRef="Din"/>
         <spirit:internalPortReference spirit:componentRef="xlslice_error_0" spirit:portRef="Din"/>
         <spirit:internalPortReference spirit:componentRef="xlslice_valid_0" spirit:portRef="Din"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>fifo_generator_1_dout</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="fifo_generator_1" spirit:portRef="dout"/>
+        <spirit:internalPortReference spirit:componentRef="mux_or" spirit:portRef="Res"/>
         <spirit:internalPortReference spirit:componentRef="xlslice_data_1" spirit:portRef="Din"/>
         <spirit:internalPortReference spirit:componentRef="xlslice_error_1" spirit:portRef="Din"/>
         <spirit:internalPortReference spirit:componentRef="xlslice_valid_1" spirit:portRef="Din"/>
+        <spirit:internalPortReference spirit:componentRef="both_data" spirit:portRef="probe14"/>
+        <spirit:internalPortReference spirit:componentRef="xlslice_0" spirit:portRef="Din"/>
+        <bd:hdl_attributes>
+          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
+        </bd:hdl_attributes>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>xlconcat_0_dout</spirit:name>
         <spirit:internalPortReference spirit:componentRef="xlconcat_0" spirit:portRef="dout"/>
         <spirit:internalPortReference spirit:componentRef="fifo_generator_0" spirit:portRef="din"/>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_3" spirit:portRef="s_axis_tdata"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>xlconcat_1_dout</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="xlconcat_1" spirit:portRef="dout"/>
-        <spirit:internalPortReference spirit:componentRef="fifo_generator_1" spirit:portRef="din"/>
+        <spirit:name>gmii_to_rgmii_0_gmii_rxd</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="gmii_rxd"/>
+        <spirit:internalPortReference spirit:componentRef="xlconcat_0" spirit:portRef="In0"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>gmii_to_rgmii_0_gmii_rx_er</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="gmii_rx_er"/>
+        <spirit:internalPortReference spirit:componentRef="xlconcat_0" spirit:portRef="In1"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>gmii_to_rgmii_0_gmii_rx_dv</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="gmii_rx_dv"/>
+        <spirit:internalPortReference spirit:componentRef="xlconcat_0" spirit:portRef="In2"/>
+        <spirit:internalPortReference spirit:componentRef="or_gate_wr_en_fifo_0" spirit:portRef="Op2"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>gmii_to_rgmii_0_gmii_rx_clk</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="gmii_rx_clk"/>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_0" spirit:portRef="wr_clk"/>
+        <spirit:internalPortReference spirit:componentRef="vio_0" spirit:portRef="clk"/>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_3" spirit:portRef="s_aclk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>gmii_to_rgmii_1_gmii_rxd</spirit:name>
@@ -592,9 +852,20 @@
         <spirit:internalPortReference spirit:componentRef="or_gate_wr_en_fifo_1" spirit:portRef="Op2"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>gmii_to_rgmii_1_gmii_rx_clk</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="gmii_rx_clk"/>
-        <spirit:internalPortReference spirit:componentRef="fifo_generator_1" spirit:portRef="wr_clk"/>
+        <spirit:name>xlslice_data_1_Dout</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="xlslice_data_1" spirit:portRef="Dout"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="gmii_txd"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>xlslice_error_1_Dout</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="xlslice_error_1" spirit:portRef="Dout"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="gmii_tx_er"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>xlslice_valid_1_Dout</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="xlslice_valid_1" spirit:portRef="Dout"/>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="gmii_tx_en"/>
+        <spirit:internalPortReference spirit:componentRef="or_gate_rd_en_fifo_1" spirit:portRef="Op2"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>xlslice_data_0_Dout</spirit:name>
@@ -616,11 +887,7 @@
         <spirit:name>gmii_to_rgmii_1_gmii_tx_clk</spirit:name>
         <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="gmii_tx_clk"/>
         <spirit:internalPortReference spirit:componentRef="fifo_generator_0" spirit:portRef="rd_clk"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>fifo_generator_0_prog_full</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="fifo_generator_0" spirit:portRef="prog_full"/>
-        <spirit:internalPortReference spirit:componentRef="not_gate_full_fifo_0" spirit:portRef="Op1"/>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_3" spirit:portRef="m_aclk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>not_gate_full_fifo_0_Res</spirit:name>
@@ -628,29 +895,14 @@
         <spirit:internalPortReference spirit:componentRef="or_gate_wr_en_fifo_0" spirit:portRef="Op1"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>fifo_generator_1_prog_full</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="fifo_generator_1" spirit:portRef="prog_full"/>
-        <spirit:internalPortReference spirit:componentRef="not_gate_full_fifo_1" spirit:portRef="Op1"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
         <spirit:name>not_gate_full_fifo_1_Res</spirit:name>
         <spirit:internalPortReference spirit:componentRef="not_gate_full_fifo_1" spirit:portRef="Res"/>
         <spirit:internalPortReference spirit:componentRef="or_gate_wr_en_fifo_1" spirit:portRef="Op1"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>fifo_generator_0_prog_empty</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="fifo_generator_0" spirit:portRef="prog_empty"/>
-        <spirit:internalPortReference spirit:componentRef="not_gate_empty_fifo_0" spirit:portRef="Op1"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
         <spirit:name>not_gate_empty_fifo_0_Res</spirit:name>
         <spirit:internalPortReference spirit:componentRef="not_gate_empty_fifo_0" spirit:portRef="Res"/>
         <spirit:internalPortReference spirit:componentRef="or_gate_rd_en_fifo_0" spirit:portRef="Op1"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>fifo_generator_1_prog_empty</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="fifo_generator_1" spirit:portRef="prog_empty"/>
-        <spirit:internalPortReference spirit:componentRef="not_gate_empty_fifo_1" spirit:portRef="Op1"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>not_gate_empty_fifo_1_Res</spirit:name>
@@ -661,133 +913,207 @@
         <spirit:name>or_gate_rd_en_fifo_0_Res</spirit:name>
         <spirit:internalPortReference spirit:componentRef="or_gate_rd_en_fifo_0" spirit:portRef="Res"/>
         <spirit:internalPortReference spirit:componentRef="fifo_generator_0" spirit:portRef="rd_en"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>or_gate_rd_en_fifo_1_Res</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="or_gate_rd_en_fifo_1" spirit:portRef="Res"/>
-        <spirit:internalPortReference spirit:componentRef="fifo_generator_1" spirit:portRef="rd_en"/>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_3" spirit:portRef="m_axis_tready"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>or_gate_wr_en_fifo_0_Res</spirit:name>
         <spirit:internalPortReference spirit:componentRef="or_gate_wr_en_fifo_0" spirit:portRef="Res"/>
         <spirit:internalPortReference spirit:componentRef="fifo_generator_0" spirit:portRef="wr_en"/>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_3" spirit:portRef="s_axis_tvalid"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>xlconcat_1_dout</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="xlconcat_1" spirit:portRef="dout"/>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_1" spirit:portRef="din"/>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_2" spirit:portRef="s_axis_tdata"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>or_gate_wr_en_fifo_1_Res</spirit:name>
         <spirit:internalPortReference spirit:componentRef="or_gate_wr_en_fifo_1" spirit:portRef="Res"/>
         <spirit:internalPortReference spirit:componentRef="fifo_generator_1" spirit:portRef="wr_en"/>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_2" spirit:portRef="s_axis_tvalid"/>
+        <spirit:internalPortReference spirit:componentRef="both_data" spirit:portRef="probe7"/>
+        <bd:hdl_attributes>
+          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
+        </bd:hdl_attributes>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>gmii2axis_0_Q_gmii_rx_er</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="Q_gmii_rx_er"/>
-        <spirit:internalPortReference spirit:componentRef="xlconcat_0" spirit:portRef="In1"/>
+        <spirit:name>or_gate_rd_en_fifo_1_Res</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="or_gate_rd_en_fifo_1" spirit:portRef="Res"/>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_1" spirit:portRef="rd_en"/>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_2" spirit:portRef="m_axis_tready"/>
+        <spirit:internalPortReference spirit:componentRef="both_data" spirit:portRef="probe6"/>
+        <bd:hdl_attributes>
+          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
+        </bd:hdl_attributes>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>gmii2axis_0_Q_mmcm_locked</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="Q_mmcm_locked"/>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="mmcm_locked_in"/>
+        <spirit:name>fifo_generator_2_m_axis_tdata</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_2" spirit:portRef="m_axis_tdata"/>
+        <spirit:internalPortReference spirit:componentRef="both_data" spirit:portRef="probe0"/>
+        <spirit:internalPortReference spirit:componentRef="xlconcat_3" spirit:portRef="In0"/>
+        <bd:hdl_attributes>
+          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
+        </bd:hdl_attributes>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>gmii2axis_0_Q_gmii_clk_2_5m_out</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="Q_gmii_clk_2_5m_out"/>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="gmii_clk_2_5m_in"/>
+        <spirit:name>fifo_generator_2_axis_wr_data_count</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_2" spirit:portRef="axis_wr_data_count"/>
+        <spirit:internalPortReference spirit:componentRef="both_data" spirit:portRef="probe1"/>
+        <bd:hdl_attributes>
+          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
+        </bd:hdl_attributes>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>gmii2axis_0_Q_gmii_clk_125m_out</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="Q_gmii_clk_125m_out"/>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="gmii_clk_125m_in"/>
+        <spirit:name>fifo_generator_2_axis_rd_data_count</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_2" spirit:portRef="axis_rd_data_count"/>
+        <spirit:internalPortReference spirit:componentRef="both_data" spirit:portRef="probe2"/>
+        <bd:hdl_attributes>
+          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
+        </bd:hdl_attributes>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>gmii2axis_0_Q_gmii_clk_25m_out</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="Q_gmii_clk_25m_out"/>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="gmii_clk_25m_in"/>
+        <spirit:name>fifo_generator_1_rd_data_count</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_1" spirit:portRef="rd_data_count"/>
+        <spirit:internalPortReference spirit:componentRef="both_data" spirit:portRef="probe5"/>
+        <bd:hdl_attributes>
+          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
+        </bd:hdl_attributes>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>xlslice_valid_1_Dout</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="xlslice_valid_1" spirit:portRef="Dout"/>
-        <spirit:internalPortReference spirit:componentRef="or_gate_rd_en_fifo_1" spirit:portRef="Op2"/>
-        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="s00_axis_tvalid"/>
+        <spirit:name>fifo_generator_1_wr_data_count</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_1" spirit:portRef="wr_data_count"/>
+        <spirit:internalPortReference spirit:componentRef="both_data" spirit:portRef="probe4"/>
+        <bd:hdl_attributes>
+          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
+        </bd:hdl_attributes>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>gmii2axis_0_Q_link_status</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="Q_link_status"/>
-        <spirit:internalPortReference spirit:componentRef="link_status_and_gate" spirit:portRef="Op1"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>gmii2axis_0_m00_axis_tdata</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="m00_axis_tdata"/>
-        <spirit:internalPortReference spirit:componentRef="axi_interfaces_0" spirit:portRef="d_i_TDATA"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>xlslice_error_1_Dout</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="xlslice_error_1" spirit:portRef="Dout"/>
-        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="I_gmii_tx_er"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>xlslice_data_1_Dout</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="xlslice_data_1" spirit:portRef="Dout"/>
-        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="s00_axis_tdata"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>gmii2axis_0_s00_axis_aclk_OUT</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="s00_axis_aclk_OUT"/>
+        <spirit:name>gmii_to_rgmii_0_gmii_tx_clk</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_0" spirit:portRef="gmii_tx_clk"/>
         <spirit:internalPortReference spirit:componentRef="fifo_generator_1" spirit:portRef="rd_clk"/>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_2" spirit:portRef="m_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="both_data" spirit:portRef="clk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>gmii2axis_0_Q_ref_clk_out</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="Q_ref_clk_out"/>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="ref_clk_in"/>
+        <spirit:name>gmii_to_rgmii_1_gmii_rx_clk</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="gmii_rx_clk"/>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_1" spirit:portRef="wr_clk"/>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_2" spirit:portRef="s_aclk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>gmii2axis_0_m00_axis_aclk_OUT</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="m00_axis_aclk_OUT"/>
-        <spirit:internalPortReference spirit:componentRef="fifo_generator_0" spirit:portRef="wr_clk"/>
-        <spirit:internalPortReference spirit:componentRef="axi_interfaces_0" spirit:portRef="ap_clk"/>
+        <spirit:name>fifo_generator_2_prog_full</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_1" spirit:portRef="prog_full"/>
+        <spirit:internalPortReference spirit:componentRef="both_data" spirit:portRef="probe8"/>
+        <spirit:internalPortReference spirit:componentRef="xlconcat_2" spirit:portRef="In1"/>
+        <bd:hdl_attributes>
+          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
+        </bd:hdl_attributes>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>processing_system7_0_FCLK_CLK1</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="FCLK_CLK1"/>
-        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="I_clk200"/>
+        <spirit:name>link_status_not_gate_Res</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="link_status_not_gate" spirit:portRef="Res"/>
+        <spirit:internalPortReference spirit:componentRef="vio_0" spirit:portRef="probe_in0"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>xlconstant_0_dout</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="xlconstant_0" spirit:portRef="dout"/>
-        <spirit:internalPortReference spirit:componentRef="axi_interfaces_0" spirit:portRef="ap_start"/>
+        <spirit:name>vio_0_probe_out0</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="vio_0" spirit:portRef="probe_out0"/>
+        <spirit:internalPortReference spirit:componentRef="link_status_not_gate1" spirit:portRef="Op1"/>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_0" spirit:portRef="rst"/>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_1" spirit:portRef="rst"/>
+        <spirit:internalPortReference spirit:componentRef="both_data" spirit:portRef="probe10"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>axi_interfaces_0_d_o_TVALID</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="axi_interfaces_0" spirit:portRef="d_o_TVALID"/>
-        <spirit:internalPortReference spirit:componentRef="xlconcat_0" spirit:portRef="In2"/>
-        <spirit:internalPortReference spirit:componentRef="or_gate_wr_en_fifo_0" spirit:portRef="Op2"/>
+        <spirit:name>link_status_not_gate1_Res</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="link_status_not_gate1" spirit:portRef="Res"/>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_2" spirit:portRef="s_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_3" spirit:portRef="s_aresetn"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>gmii2axis_0_m00_axis_tvalid</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="m00_axis_tvalid"/>
-        <spirit:internalPortReference spirit:componentRef="axi_interfaces_0" spirit:portRef="d_i_TVALID"/>
+        <spirit:name>fifo_generator_2_s_axis_tready</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_2" spirit:portRef="s_axis_tready"/>
+        <spirit:internalPortReference spirit:componentRef="both_data" spirit:portRef="probe11"/>
+        <bd:hdl_attributes>
+          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
+        </bd:hdl_attributes>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>axi_interfaces_0_d_o_TDATA</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="axi_interfaces_0" spirit:portRef="d_o_TDATA"/>
-        <spirit:internalPortReference spirit:componentRef="xlconcat_0" spirit:portRef="In0"/>
+        <spirit:name>fifo_generator_2_axis_prog_full</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_2" spirit:portRef="axis_prog_full"/>
+        <spirit:internalPortReference spirit:componentRef="both_data" spirit:portRef="probe12"/>
+        <spirit:internalPortReference spirit:componentRef="xlconcat_3" spirit:portRef="In1"/>
+        <bd:hdl_attributes>
+          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
+        </bd:hdl_attributes>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>axi_interfaces_0_d_i_TREADY</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="axi_interfaces_0" spirit:portRef="d_i_TREADY"/>
-        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="m00_axis_tready"/>
+        <spirit:name>fifo_generator_2_axis_prog_empty</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_2" spirit:portRef="axis_prog_empty"/>
+        <spirit:internalPortReference spirit:componentRef="both_data" spirit:portRef="probe13"/>
+        <spirit:internalPortReference spirit:componentRef="not_gate_empty_fifo_1" spirit:portRef="Op1"/>
+        <spirit:internalPortReference spirit:componentRef="both_data" spirit:portRef="probe9"/>
+        <bd:hdl_attributes>
+          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
+        </bd:hdl_attributes>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>util_vector_logic_0_Res</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="util_vector_logic_0" spirit:portRef="Res"/>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="tx_reset"/>
-        <spirit:internalPortReference spirit:componentRef="gmii_to_rgmii_1" spirit:portRef="rx_reset"/>
-        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="s00_axis_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="gmii2axis_0" spirit:portRef="m00_axis_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="not_gate_full_fifo_2" spirit:portRef="Op1"/>
+        <spirit:name>vio_0_probe_out1</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="vio_0" spirit:portRef="probe_out1"/>
+        <spirit:internalPortReference spirit:componentRef="mux_not" spirit:portRef="Op1"/>
+        <spirit:internalPortReference spirit:componentRef="mux_and_2" spirit:portRef="Op2"/>
+        <bd:hdl_attributes>
+          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
+        </bd:hdl_attributes>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>not_gate_full_fifo_2_Res</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="not_gate_full_fifo_2" spirit:portRef="Res"/>
-        <spirit:internalPortReference spirit:componentRef="axi_interfaces_0" spirit:portRef="ap_rst_n"/>
+        <spirit:name>util_vector_logic_2_Res</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="mux_and" spirit:portRef="Res"/>
+        <spirit:internalPortReference spirit:componentRef="mux_or" spirit:portRef="Op2"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>util_vector_logic_1_Res</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="mux_and_2" spirit:portRef="Res"/>
+        <spirit:internalPortReference spirit:componentRef="mux_or" spirit:portRef="Op1"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>fifo_generator_1_dout1</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_1" spirit:portRef="dout"/>
+        <spirit:internalPortReference spirit:componentRef="both_data" spirit:portRef="probe3"/>
+        <spirit:internalPortReference spirit:componentRef="xlconcat_2" spirit:portRef="In0"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>mux_not_Res</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="mux_not" spirit:portRef="Res"/>
+        <spirit:internalPortReference spirit:componentRef="mux_and" spirit:portRef="Op1"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>xlconcat_2_dout</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="xlconcat_2" spirit:portRef="dout"/>
+        <spirit:internalPortReference spirit:componentRef="mux_and" spirit:portRef="Op2"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>xlconcat_3_dout</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="xlconcat_3" spirit:portRef="dout"/>
+        <spirit:internalPortReference spirit:componentRef="mux_and_2" spirit:portRef="Op1"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>xlslice_0_Dout</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="xlslice_0" spirit:portRef="Dout"/>
+        <spirit:internalPortReference spirit:componentRef="not_gate_full_fifo_1" spirit:portRef="Op1"/>
+        <spirit:internalPortReference spirit:componentRef="both_data" spirit:portRef="probe15"/>
+        <bd:hdl_attributes>
+          <bd:hdl_attribute bd:name="MARK_DEBUG" bd:value="true"/>
+        </bd:hdl_attributes>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>fifo_generator_3_axis_prog_full</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_3" spirit:portRef="axis_prog_full"/>
+        <spirit:internalPortReference spirit:componentRef="not_gate_full_fifo_0" spirit:portRef="Op1"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>fifo_generator_3_axis_prog_empty</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="fifo_generator_3" spirit:portRef="axis_prog_empty"/>
+        <spirit:internalPortReference spirit:componentRef="not_gate_empty_fifo_0" spirit:portRef="Op1"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>
@@ -797,8 +1123,8 @@
       <spirit:hierConnection spirit:interfaceRef="FIXED_IO/processing_system7_0_FIXED_IO">
         <spirit:activeInterface spirit:busRef="FIXED_IO" spirit:componentRef="processing_system7_0"/>
       </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="rgmii_port_0/gmii2axis_0_RGMII">
-        <spirit:activeInterface spirit:busRef="RGMII" spirit:componentRef="gmii2axis_0"/>
+      <spirit:hierConnection spirit:interfaceRef="rgmii_port_0/gmii_to_rgmii_0_RGMII">
+        <spirit:activeInterface spirit:busRef="RGMII" spirit:componentRef="gmii_to_rgmii_0"/>
       </spirit:hierConnection>
       <spirit:hierConnection spirit:interfaceRef="rgmii_port_1/gmii_to_rgmii_1_RGMII">
         <spirit:activeInterface spirit:busRef="RGMII" spirit:componentRef="gmii_to_rgmii_1"/>

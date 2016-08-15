@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/brett/workspace/Vivado_WS/ethernet-fmc-network-tap-2/Vivado/zedboard_network_tap/zedboard_network_tap.hw/hw_1/wave/hw_ila_data_4/hw_ila_data_4.wdb" id="1">
+         <top_modules>
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="8371fs"></ZoomEndTime>
+      <Cursor1Time time="0fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="2" />
+   <wvobject type="array" fp_name="design_1_i/fifo_generator_1_dout">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">design_1_i/fifo_generator_1_dout[9:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_generator_1_dout[9:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="design_1_i/or_gate_rd_en_fifo_1_Res_1">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">design_1_i/or_gate_rd_en_fifo_1_Res_1</obj_property>
+      <obj_property name="ObjectShortName">or_gate_rd_en_fifo_1_Res_1</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+</wave_config>

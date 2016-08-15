@@ -1,8 +1,8 @@
 --Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
---Date        : Mon Aug  1 15:04:07 2016
---Host        : wintermute running 64-bit Ubuntu 14.04.4 LTS
+--Date        : Mon Aug 15 13:49:26 2016
+--Host        : wintermute running 64-bit Ubuntu 14.04.5 LTS
 --Command     : generate_target design_1.bd
 --Design      : design_1
 --Purpose     : IP block netlist
@@ -52,7 +52,7 @@ entity design_1 is
     rgmii_port_1_txc : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=31,numReposBlks=31,numNonXlnxBlks=2,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=1,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_board_cnt=1,da_ps7_cnt=1,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=40,numReposBlks=40,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_ps7_cnt=1,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
@@ -152,6 +152,46 @@ architecture STRUCTURE of design_1 is
     Res : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component design_1_util_vector_logic_0_0;
+  component design_1_gmii_to_rgmii_0_0 is
+  port (
+    tx_reset : in STD_LOGIC;
+    rx_reset : in STD_LOGIC;
+    clkin : in STD_LOGIC;
+    ref_clk_out : out STD_LOGIC;
+    mmcm_locked_out : out STD_LOGIC;
+    gmii_clk_125m_out : out STD_LOGIC;
+    gmii_clk_25m_out : out STD_LOGIC;
+    gmii_clk_2_5m_out : out STD_LOGIC;
+    rgmii_txd : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    rgmii_tx_ctl : out STD_LOGIC;
+    rgmii_txc : out STD_LOGIC;
+    rgmii_rxd : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    rgmii_rx_ctl : in STD_LOGIC;
+    rgmii_rxc : in STD_LOGIC;
+    link_status : out STD_LOGIC;
+    clock_speed : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    duplex_status : out STD_LOGIC;
+    mdio_gem_mdc : in STD_LOGIC;
+    mdio_gem_i : out STD_LOGIC;
+    mdio_gem_o : in STD_LOGIC;
+    mdio_gem_t : in STD_LOGIC;
+    mdio_phy_mdc : out STD_LOGIC;
+    mdio_phy_i : in STD_LOGIC;
+    mdio_phy_o : out STD_LOGIC;
+    mdio_phy_t : out STD_LOGIC;
+    gmii_txd : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    gmii_tx_en : in STD_LOGIC;
+    gmii_tx_er : in STD_LOGIC;
+    gmii_tx_clk : out STD_LOGIC;
+    gmii_crs : out STD_LOGIC;
+    gmii_col : out STD_LOGIC;
+    gmii_rxd : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    gmii_rx_dv : out STD_LOGIC;
+    gmii_rx_er : out STD_LOGIC;
+    gmii_rx_clk : out STD_LOGIC;
+    speed_mode : out STD_LOGIC_VECTOR ( 1 downto 0 )
+  );
+  end component design_1_gmii_to_rgmii_0_0;
   component design_1_gmii_to_rgmii_1_0 is
   port (
     tx_reset : in STD_LOGIC;
@@ -229,22 +269,6 @@ architecture STRUCTURE of design_1 is
     prog_empty : out STD_LOGIC
   );
   end component design_1_fifo_generator_0_0;
-  component design_1_fifo_generator_1_0 is
-  port (
-    rst : in STD_LOGIC;
-    wr_clk : in STD_LOGIC;
-    rd_clk : in STD_LOGIC;
-    din : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    wr_en : in STD_LOGIC;
-    rd_en : in STD_LOGIC;
-    dout : out STD_LOGIC_VECTOR ( 9 downto 0 );
-    full : out STD_LOGIC;
-    empty : out STD_LOGIC;
-    valid : out STD_LOGIC;
-    prog_full : out STD_LOGIC;
-    prog_empty : out STD_LOGIC
-  );
-  end component design_1_fifo_generator_1_0;
   component design_1_link_status_and_gate_0 is
   port (
     Op1 : in STD_LOGIC_VECTOR ( 0 to 0 );
@@ -294,19 +318,19 @@ architecture STRUCTURE of design_1 is
   end component design_1_xlslice_valid_0_0;
   component design_1_xlslice_data_1_0 is
   port (
-    Din : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    Din : in STD_LOGIC_VECTOR ( 15 downto 0 );
     Dout : out STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   end component design_1_xlslice_data_1_0;
   component design_1_xlslice_error_1_0 is
   port (
-    Din : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    Din : in STD_LOGIC_VECTOR ( 15 downto 0 );
     Dout : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component design_1_xlslice_error_1_0;
   component design_1_xlslice_valid_1_0 is
   port (
-    Din : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    Din : in STD_LOGIC_VECTOR ( 15 downto 0 );
     Dout : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component design_1_xlslice_valid_1_0;
@@ -362,103 +386,186 @@ architecture STRUCTURE of design_1 is
     Res : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component design_1_not_gate_empty_fifo_1_0;
-  component design_1_gmii2axis_0_0 is
+  component design_1_fifo_generator_0_1 is
   port (
-    I_clk200 : in STD_LOGIC;
-    mdio_gem_mdc : in STD_LOGIC;
-    mdio_gem_i : out STD_LOGIC;
-    mdio_gem_o : in STD_LOGIC;
-    mdio_gem_t : in STD_LOGIC;
-    Q_link_status : out STD_LOGIC;
-    Q_clock_speed : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    Q_speed_mode : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    Q_duplex_status : out STD_LOGIC;
-    Q_rgmii_txd : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    Q_rgmii_tx_ctl : out STD_LOGIC;
-    Q_rgmii_txc : out STD_LOGIC;
-    I_rgmii_rxd : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    I_rgmii_rx_ctl : in STD_LOGIC;
-    I_rgmii_rxc : in STD_LOGIC;
-    mdio_phy_mdc : out STD_LOGIC;
-    mdio_phy_i : in STD_LOGIC;
-    mdio_phy_o : out STD_LOGIC;
-    mdio_phy_t : out STD_LOGIC;
-    Q_mmcm_locked : out STD_LOGIC;
-    I_gmii_tx_er : in STD_LOGIC;
-    Q_gmii_rx_er : out STD_LOGIC;
-    Q_gmii_clk_125m_out : out STD_LOGIC;
-    Q_gmii_clk_25m_out : out STD_LOGIC;
-    Q_gmii_clk_2_5m_out : out STD_LOGIC;
-    Q_ref_clk_out : out STD_LOGIC;
-    m00_axis_aclk_OUT : out STD_LOGIC;
-    m00_axis_tdata : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    m00_axis_tstrb : out STD_LOGIC_VECTOR ( 0 to 0 );
-    m00_axis_tlast : out STD_LOGIC;
-    m00_axis_tvalid : out STD_LOGIC;
-    m00_axis_tready : in STD_LOGIC;
-    s00_axis_aclk_OUT : out STD_LOGIC;
-    s00_axis_aresetn : in STD_LOGIC;
-    s00_axis_tvalid : in STD_LOGIC;
-    s00_axis_tdata : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    s00_axis_tstrb : in STD_LOGIC_VECTOR ( 0 to 0 );
-    s00_axis_tlast : in STD_LOGIC;
-    s00_axis_tready : out STD_LOGIC;
-    m00_axis_aresetn : in STD_LOGIC
+    rst : in STD_LOGIC;
+    wr_clk : in STD_LOGIC;
+    rd_clk : in STD_LOGIC;
+    din : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    wr_en : in STD_LOGIC;
+    rd_en : in STD_LOGIC;
+    dout : out STD_LOGIC_VECTOR ( 9 downto 0 );
+    full : out STD_LOGIC;
+    empty : out STD_LOGIC;
+    valid : out STD_LOGIC;
+    rd_data_count : out STD_LOGIC_VECTOR ( 9 downto 0 );
+    wr_data_count : out STD_LOGIC_VECTOR ( 9 downto 0 );
+    prog_full : out STD_LOGIC;
+    prog_empty : out STD_LOGIC
   );
-  end component design_1_gmii2axis_0_0;
-  component design_1_xlconstant_0_0 is
+  end component design_1_fifo_generator_0_1;
+  component design_1_fifo_generator_1_0 is
   port (
-    dout : out STD_LOGIC_VECTOR ( 0 to 0 )
+    m_aclk : in STD_LOGIC;
+    s_aclk : in STD_LOGIC;
+    s_aresetn : in STD_LOGIC;
+    s_axis_tvalid : in STD_LOGIC;
+    s_axis_tready : out STD_LOGIC;
+    s_axis_tdata : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    s_axis_tuser : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    m_axis_tvalid : out STD_LOGIC;
+    m_axis_tready : in STD_LOGIC;
+    m_axis_tdata : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    m_axis_tuser : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    axis_wr_data_count : out STD_LOGIC_VECTOR ( 10 downto 0 );
+    axis_rd_data_count : out STD_LOGIC_VECTOR ( 10 downto 0 );
+    axis_prog_full : out STD_LOGIC;
+    axis_prog_empty : out STD_LOGIC
   );
-  end component design_1_xlconstant_0_0;
-  component design_1_not_gate_full_fifo_1_1 is
+  end component design_1_fifo_generator_1_0;
+  component design_1_axis_read_0 is
+  port (
+    clk : in STD_LOGIC;
+    probe0 : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    probe1 : in STD_LOGIC_VECTOR ( 10 downto 0 );
+    probe2 : in STD_LOGIC_VECTOR ( 10 downto 0 );
+    probe3 : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    probe4 : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    probe5 : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    probe6 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe7 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe8 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe9 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe10 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe11 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe12 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe13 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe14 : in STD_LOGIC_VECTOR ( 10 downto 0 );
+    probe15 : in STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component design_1_axis_read_0;
+  component design_1_vio_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    probe_in0 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe_out0 : out STD_LOGIC_VECTOR ( 0 to 0 );
+    probe_out1 : out STD_LOGIC_VECTOR ( 10 downto 0 )
+  );
+  end component design_1_vio_0_0;
+  component design_1_link_status_not_gate_1 is
   port (
     Op1 : in STD_LOGIC_VECTOR ( 0 to 0 );
     Res : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  end component design_1_not_gate_full_fifo_1_1;
-  component design_1_axi_interfaces_0_0 is
+  end component design_1_link_status_not_gate_1;
+  component design_1_util_vector_logic_1_2 is
   port (
-    ap_clk : in STD_LOGIC;
-    ap_rst_n : in STD_LOGIC;
-    ap_start : in STD_LOGIC;
-    ap_done : out STD_LOGIC;
-    ap_idle : out STD_LOGIC;
-    ap_ready : out STD_LOGIC;
-    d_o_TVALID : out STD_LOGIC;
-    d_o_TREADY : in STD_LOGIC;
-    d_o_TDATA : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    d_i_TVALID : in STD_LOGIC;
-    d_i_TREADY : out STD_LOGIC;
-    d_i_TDATA : in STD_LOGIC_VECTOR ( 7 downto 0 )
+    Op1 : in STD_LOGIC_VECTOR ( 10 downto 0 );
+    Op2 : in STD_LOGIC_VECTOR ( 10 downto 0 );
+    Res : out STD_LOGIC_VECTOR ( 10 downto 0 )
   );
-  end component design_1_axi_interfaces_0_0;
-  signal axi_interfaces_0_d_i_TREADY : STD_LOGIC;
-  signal axi_interfaces_0_d_o_TDATA : STD_LOGIC_VECTOR ( 7 downto 0 );
-  signal axi_interfaces_0_d_o_TVALID : STD_LOGIC;
-  signal fifo_generator_0_dout : STD_LOGIC_VECTOR ( 9 downto 0 );
-  signal fifo_generator_0_prog_empty : STD_LOGIC;
-  signal fifo_generator_0_prog_full : STD_LOGIC;
-  signal fifo_generator_1_dout : STD_LOGIC_VECTOR ( 9 downto 0 );
-  signal fifo_generator_1_prog_empty : STD_LOGIC;
-  signal fifo_generator_1_prog_full : STD_LOGIC;
-  signal gmii2axis_0_Q_gmii_clk_125m_out : STD_LOGIC;
-  signal gmii2axis_0_Q_gmii_clk_25m_out : STD_LOGIC;
-  signal gmii2axis_0_Q_gmii_clk_2_5m_out : STD_LOGIC;
-  signal gmii2axis_0_Q_gmii_rx_er : STD_LOGIC;
-  signal gmii2axis_0_Q_link_status : STD_LOGIC;
-  signal gmii2axis_0_Q_mmcm_locked : STD_LOGIC;
-  signal gmii2axis_0_Q_ref_clk_out : STD_LOGIC;
-  signal gmii2axis_0_RGMII_RD : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal gmii2axis_0_RGMII_RXC : STD_LOGIC;
-  signal gmii2axis_0_RGMII_RX_CTL : STD_LOGIC;
-  signal gmii2axis_0_RGMII_TD : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal gmii2axis_0_RGMII_TXC : STD_LOGIC;
-  signal gmii2axis_0_RGMII_TX_CTL : STD_LOGIC;
-  signal gmii2axis_0_m00_axis_aclk_OUT : STD_LOGIC;
-  signal gmii2axis_0_m00_axis_tdata : STD_LOGIC_VECTOR ( 7 downto 0 );
-  signal gmii2axis_0_m00_axis_tvalid : STD_LOGIC;
-  signal gmii2axis_0_s00_axis_aclk_OUT : STD_LOGIC;
+  end component design_1_util_vector_logic_1_2;
+  component design_1_util_vector_logic_1_3 is
+  port (
+    Op1 : in STD_LOGIC_VECTOR ( 10 downto 0 );
+    Op2 : in STD_LOGIC_VECTOR ( 10 downto 0 );
+    Res : out STD_LOGIC_VECTOR ( 10 downto 0 )
+  );
+  end component design_1_util_vector_logic_1_3;
+  component design_1_util_vector_logic_1_4 is
+  port (
+    Op1 : in STD_LOGIC_VECTOR ( 10 downto 0 );
+    Op2 : in STD_LOGIC_VECTOR ( 10 downto 0 );
+    Res : out STD_LOGIC_VECTOR ( 10 downto 0 )
+  );
+  end component design_1_util_vector_logic_1_4;
+  component design_1_util_vector_logic_3_0 is
+  port (
+    Op1 : in STD_LOGIC_VECTOR ( 10 downto 0 );
+    Res : out STD_LOGIC_VECTOR ( 10 downto 0 )
+  );
+  end component design_1_util_vector_logic_3_0;
+  component design_1_xlconcat_2_0 is
+  port (
+    In0 : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    In1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    dout : out STD_LOGIC_VECTOR ( 10 downto 0 )
+  );
+  end component design_1_xlconcat_2_0;
+  component design_1_xlconcat_2_1 is
+  port (
+    In0 : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    In1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    dout : out STD_LOGIC_VECTOR ( 10 downto 0 )
+  );
+  end component design_1_xlconcat_2_1;
+  component design_1_xlslice_0_0 is
+  port (
+    Din : in STD_LOGIC_VECTOR ( 10 downto 0 );
+    Dout : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component design_1_xlslice_0_0;
+  component design_1_fifo_generator_2_0 is
+  port (
+    m_aclk : in STD_LOGIC;
+    s_aclk : in STD_LOGIC;
+    s_aresetn : in STD_LOGIC;
+    s_axis_tvalid : in STD_LOGIC;
+    s_axis_tready : out STD_LOGIC;
+    s_axis_tdata : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    s_axis_tuser : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    m_axis_tvalid : out STD_LOGIC;
+    m_axis_tready : in STD_LOGIC;
+    m_axis_tdata : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    m_axis_tuser : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    axis_wr_data_count : out STD_LOGIC_VECTOR ( 10 downto 0 );
+    axis_rd_data_count : out STD_LOGIC_VECTOR ( 10 downto 0 );
+    axis_prog_full : out STD_LOGIC;
+    axis_prog_empty : out STD_LOGIC
+  );
+  end component design_1_fifo_generator_2_0;
+  signal fifo_generator_0_dout : STD_LOGIC_VECTOR ( 15 downto 0 );
+  signal fifo_generator_1_dout : STD_LOGIC_VECTOR ( 10 downto 0 );
+  attribute MARK_DEBUG : boolean;
+  attribute MARK_DEBUG of fifo_generator_1_dout : signal is std.standard.true;
+  signal fifo_generator_1_dout1 : STD_LOGIC_VECTOR ( 9 downto 0 );
+  signal fifo_generator_1_rd_data_count : STD_LOGIC_VECTOR ( 9 downto 0 );
+  attribute MARK_DEBUG of fifo_generator_1_rd_data_count : signal is std.standard.true;
+  signal fifo_generator_1_wr_data_count : STD_LOGIC_VECTOR ( 9 downto 0 );
+  attribute MARK_DEBUG of fifo_generator_1_wr_data_count : signal is std.standard.true;
+  signal fifo_generator_2_axis_prog_empty : STD_LOGIC;
+  attribute MARK_DEBUG of fifo_generator_2_axis_prog_empty : signal is std.standard.true;
+  signal fifo_generator_2_axis_prog_full : STD_LOGIC;
+  attribute MARK_DEBUG of fifo_generator_2_axis_prog_full : signal is std.standard.true;
+  signal fifo_generator_2_axis_rd_data_count : STD_LOGIC_VECTOR ( 10 downto 0 );
+  attribute MARK_DEBUG of fifo_generator_2_axis_rd_data_count : signal is std.standard.true;
+  signal fifo_generator_2_axis_wr_data_count : STD_LOGIC_VECTOR ( 10 downto 0 );
+  attribute MARK_DEBUG of fifo_generator_2_axis_wr_data_count : signal is std.standard.true;
+  signal fifo_generator_2_m_axis_tdata : STD_LOGIC_VECTOR ( 15 downto 0 );
+  attribute MARK_DEBUG of fifo_generator_2_m_axis_tdata : signal is std.standard.true;
+  signal fifo_generator_2_prog_full : STD_LOGIC;
+  attribute MARK_DEBUG of fifo_generator_2_prog_full : signal is std.standard.true;
+  signal fifo_generator_2_s_axis_tready : STD_LOGIC;
+  attribute MARK_DEBUG of fifo_generator_2_s_axis_tready : signal is std.standard.true;
+  signal fifo_generator_3_axis_prog_empty : STD_LOGIC;
+  signal fifo_generator_3_axis_prog_full : STD_LOGIC;
+  signal gmii_clk_125m_out : STD_LOGIC;
+  signal gmii_to_rgmii_0_RGMII_RD : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal gmii_to_rgmii_0_RGMII_RXC : STD_LOGIC;
+  signal gmii_to_rgmii_0_RGMII_RX_CTL : STD_LOGIC;
+  signal gmii_to_rgmii_0_RGMII_TD : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal gmii_to_rgmii_0_RGMII_TXC : STD_LOGIC;
+  signal gmii_to_rgmii_0_RGMII_TX_CTL : STD_LOGIC;
+  signal gmii_to_rgmii_0_gmii_clk_25m_out : STD_LOGIC;
+  signal gmii_to_rgmii_0_gmii_clk_2_5m_out : STD_LOGIC;
+  signal gmii_to_rgmii_0_gmii_rx_clk : STD_LOGIC;
+  signal gmii_to_rgmii_0_gmii_rx_dv : STD_LOGIC;
+  signal gmii_to_rgmii_0_gmii_rx_er : STD_LOGIC;
+  signal gmii_to_rgmii_0_gmii_rxd : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal gmii_to_rgmii_0_gmii_tx_clk : STD_LOGIC;
+  signal gmii_to_rgmii_0_link_status : STD_LOGIC;
+  signal gmii_to_rgmii_0_mmcm_locked_out : STD_LOGIC;
+  signal gmii_to_rgmii_0_ref_clk_out : STD_LOGIC;
   signal gmii_to_rgmii_1_MDIO_PHY_MDC : STD_LOGIC;
   signal gmii_to_rgmii_1_MDIO_PHY_MDIO_I : STD_LOGIC;
   signal gmii_to_rgmii_1_MDIO_PHY_MDIO_O : STD_LOGIC;
@@ -476,16 +583,19 @@ architecture STRUCTURE of design_1 is
   signal gmii_to_rgmii_1_gmii_tx_clk : STD_LOGIC;
   signal gmii_to_rgmii_1_link_status : STD_LOGIC;
   signal link_status_and_gate_Res : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal link_status_not_gate1_Res : STD_LOGIC_VECTOR ( 0 to 0 );
   signal link_status_not_gate_Res : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal mux_not_Res : STD_LOGIC_VECTOR ( 10 downto 0 );
   signal not_gate_empty_fifo_0_Res : STD_LOGIC_VECTOR ( 0 to 0 );
   signal not_gate_empty_fifo_1_Res : STD_LOGIC_VECTOR ( 0 to 0 );
   signal not_gate_full_fifo_0_Res : STD_LOGIC_VECTOR ( 0 to 0 );
   signal not_gate_full_fifo_1_Res : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal not_gate_full_fifo_2_Res : STD_LOGIC_VECTOR ( 0 to 0 );
   signal or_gate_rd_en_fifo_0_Res : STD_LOGIC_VECTOR ( 0 to 0 );
   signal or_gate_rd_en_fifo_1_Res : STD_LOGIC_VECTOR ( 0 to 0 );
+  attribute MARK_DEBUG of or_gate_rd_en_fifo_1_Res : signal is std.standard.true;
   signal or_gate_wr_en_fifo_0_Res : STD_LOGIC_VECTOR ( 0 to 0 );
   signal or_gate_wr_en_fifo_1_Res : STD_LOGIC_VECTOR ( 0 to 0 );
+  attribute MARK_DEBUG of or_gate_wr_en_fifo_1_Res : signal is std.standard.true;
   signal processing_system7_0_DDR_ADDR : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal processing_system7_0_DDR_BA : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal processing_system7_0_DDR_CAS_N : STD_LOGIC;
@@ -519,33 +629,50 @@ architecture STRUCTURE of design_1 is
   signal util_reduced_logic_0_Res : STD_LOGIC;
   signal util_reduced_logic_1_Res : STD_LOGIC;
   signal util_vector_logic_0_Res : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal util_vector_logic_1_Res : STD_LOGIC_VECTOR ( 10 downto 0 );
+  signal util_vector_logic_2_Res : STD_LOGIC_VECTOR ( 10 downto 0 );
+  signal vio_0_probe_out0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal vio_0_probe_out1 : STD_LOGIC_VECTOR ( 10 downto 0 );
+  attribute MARK_DEBUG of vio_0_probe_out1 : signal is std.standard.true;
   signal xlconcat_0_dout : STD_LOGIC_VECTOR ( 9 downto 0 );
   signal xlconcat_1_dout : STD_LOGIC_VECTOR ( 9 downto 0 );
-  signal xlconstant_0_dout : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal xlconcat_2_dout : STD_LOGIC_VECTOR ( 10 downto 0 );
+  signal xlconcat_3_dout : STD_LOGIC_VECTOR ( 10 downto 0 );
+  signal xlslice_0_Dout : STD_LOGIC_VECTOR ( 0 to 0 );
+  attribute MARK_DEBUG of xlslice_0_Dout : signal is std.standard.true;
   signal xlslice_data_0_Dout : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal xlslice_data_1_Dout : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal xlslice_error_0_Dout : STD_LOGIC_VECTOR ( 0 to 0 );
   signal xlslice_error_1_Dout : STD_LOGIC_VECTOR ( 0 to 0 );
   signal xlslice_valid_0_Dout : STD_LOGIC_VECTOR ( 0 to 0 );
   signal xlslice_valid_1_Dout : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal NLW_axi_interfaces_0_ap_done_UNCONNECTED : STD_LOGIC;
-  signal NLW_axi_interfaces_0_ap_idle_UNCONNECTED : STD_LOGIC;
-  signal NLW_axi_interfaces_0_ap_ready_UNCONNECTED : STD_LOGIC;
   signal NLW_fifo_generator_0_empty_UNCONNECTED : STD_LOGIC;
   signal NLW_fifo_generator_0_full_UNCONNECTED : STD_LOGIC;
+  signal NLW_fifo_generator_0_prog_empty_UNCONNECTED : STD_LOGIC;
+  signal NLW_fifo_generator_0_prog_full_UNCONNECTED : STD_LOGIC;
   signal NLW_fifo_generator_0_valid_UNCONNECTED : STD_LOGIC;
+  signal NLW_fifo_generator_0_dout_UNCONNECTED : STD_LOGIC_VECTOR ( 9 downto 0 );
   signal NLW_fifo_generator_1_empty_UNCONNECTED : STD_LOGIC;
   signal NLW_fifo_generator_1_full_UNCONNECTED : STD_LOGIC;
+  signal NLW_fifo_generator_1_prog_empty_UNCONNECTED : STD_LOGIC;
   signal NLW_fifo_generator_1_valid_UNCONNECTED : STD_LOGIC;
-  signal NLW_gmii2axis_0_Q_duplex_status_UNCONNECTED : STD_LOGIC;
-  signal NLW_gmii2axis_0_m00_axis_tlast_UNCONNECTED : STD_LOGIC;
-  signal NLW_gmii2axis_0_mdio_phy_mdc_UNCONNECTED : STD_LOGIC;
-  signal NLW_gmii2axis_0_mdio_phy_o_UNCONNECTED : STD_LOGIC;
-  signal NLW_gmii2axis_0_mdio_phy_t_UNCONNECTED : STD_LOGIC;
-  signal NLW_gmii2axis_0_s00_axis_tready_UNCONNECTED : STD_LOGIC;
-  signal NLW_gmii2axis_0_Q_clock_speed_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal NLW_gmii2axis_0_Q_speed_mode_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal NLW_gmii2axis_0_m00_axis_tstrb_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_fifo_generator_2_m_axis_tvalid_UNCONNECTED : STD_LOGIC;
+  signal NLW_fifo_generator_2_m_axis_tuser_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal NLW_fifo_generator_2_s_axis_tdata_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 10 );
+  signal NLW_fifo_generator_3_m_axis_tvalid_UNCONNECTED : STD_LOGIC;
+  signal NLW_fifo_generator_3_s_axis_tready_UNCONNECTED : STD_LOGIC;
+  signal NLW_fifo_generator_3_axis_rd_data_count_UNCONNECTED : STD_LOGIC_VECTOR ( 10 downto 0 );
+  signal NLW_fifo_generator_3_axis_wr_data_count_UNCONNECTED : STD_LOGIC_VECTOR ( 10 downto 0 );
+  signal NLW_fifo_generator_3_m_axis_tuser_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal NLW_fifo_generator_3_s_axis_tdata_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 10 );
+  signal NLW_gmii_to_rgmii_0_duplex_status_UNCONNECTED : STD_LOGIC;
+  signal NLW_gmii_to_rgmii_0_gmii_col_UNCONNECTED : STD_LOGIC;
+  signal NLW_gmii_to_rgmii_0_gmii_crs_UNCONNECTED : STD_LOGIC;
+  signal NLW_gmii_to_rgmii_0_mdio_phy_mdc_UNCONNECTED : STD_LOGIC;
+  signal NLW_gmii_to_rgmii_0_mdio_phy_o_UNCONNECTED : STD_LOGIC;
+  signal NLW_gmii_to_rgmii_0_mdio_phy_t_UNCONNECTED : STD_LOGIC;
+  signal NLW_gmii_to_rgmii_0_clock_speed_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal NLW_gmii_to_rgmii_0_speed_mode_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal NLW_gmii_to_rgmii_1_duplex_status_UNCONNECTED : STD_LOGIC;
   signal NLW_gmii_to_rgmii_1_gmii_col_UNCONNECTED : STD_LOGIC;
   signal NLW_gmii_to_rgmii_1_gmii_crs_UNCONNECTED : STD_LOGIC;
@@ -586,10 +713,13 @@ architecture STRUCTURE of design_1 is
   signal NLW_processing_system7_0_M_AXI_GP0_WID_UNCONNECTED : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal NLW_processing_system7_0_M_AXI_GP0_WSTRB_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_processing_system7_0_USB0_PORT_INDCTL_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal NLW_xlslice_data_1_Din_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 11 );
+  signal NLW_xlslice_error_1_Din_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 11 );
+  signal NLW_xlslice_valid_1_Din_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 11 );
 begin
-  gmii2axis_0_RGMII_RD(3 downto 0) <= rgmii_port_0_rd(3 downto 0);
-  gmii2axis_0_RGMII_RXC <= rgmii_port_0_rxc;
-  gmii2axis_0_RGMII_RX_CTL <= rgmii_port_0_rx_ctl;
+  gmii_to_rgmii_0_RGMII_RD(3 downto 0) <= rgmii_port_0_rd(3 downto 0);
+  gmii_to_rgmii_0_RGMII_RXC <= rgmii_port_0_rxc;
+  gmii_to_rgmii_0_RGMII_RX_CTL <= rgmii_port_0_rx_ctl;
   gmii_to_rgmii_1_RGMII_RD(3 downto 0) <= rgmii_port_1_rd(3 downto 0);
   gmii_to_rgmii_1_RGMII_RXC <= rgmii_port_1_rxc;
   gmii_to_rgmii_1_RGMII_RX_CTL <= rgmii_port_1_rx_ctl;
@@ -597,107 +727,148 @@ begin
   ref_clk_oe(0) <= ref_clk_oe_dout(0);
   reset_port_0 <= util_reduced_logic_0_Res;
   reset_port_1 <= util_reduced_logic_1_Res;
-  rgmii_port_0_td(3 downto 0) <= gmii2axis_0_RGMII_TD(3 downto 0);
-  rgmii_port_0_tx_ctl <= gmii2axis_0_RGMII_TX_CTL;
-  rgmii_port_0_txc <= gmii2axis_0_RGMII_TXC;
+  rgmii_port_0_td(3 downto 0) <= gmii_to_rgmii_0_RGMII_TD(3 downto 0);
+  rgmii_port_0_tx_ctl <= gmii_to_rgmii_0_RGMII_TX_CTL;
+  rgmii_port_0_txc <= gmii_to_rgmii_0_RGMII_TXC;
   rgmii_port_1_td(3 downto 0) <= gmii_to_rgmii_1_RGMII_TD(3 downto 0);
   rgmii_port_1_tx_ctl <= gmii_to_rgmii_1_RGMII_TX_CTL;
   rgmii_port_1_txc <= gmii_to_rgmii_1_RGMII_TXC;
-axi_interfaces_0: component design_1_axi_interfaces_0_0
+both_data: component design_1_axis_read_0
      port map (
-      ap_clk => gmii2axis_0_m00_axis_aclk_OUT,
-      ap_done => NLW_axi_interfaces_0_ap_done_UNCONNECTED,
-      ap_idle => NLW_axi_interfaces_0_ap_idle_UNCONNECTED,
-      ap_ready => NLW_axi_interfaces_0_ap_ready_UNCONNECTED,
-      ap_rst_n => not_gate_full_fifo_2_Res(0),
-      ap_start => xlconstant_0_dout(0),
-      d_i_TDATA(7 downto 0) => gmii2axis_0_m00_axis_tdata(7 downto 0),
-      d_i_TREADY => axi_interfaces_0_d_i_TREADY,
-      d_i_TVALID => gmii2axis_0_m00_axis_tvalid,
-      d_o_TDATA(7 downto 0) => axi_interfaces_0_d_o_TDATA(7 downto 0),
-      d_o_TREADY => '0',
-      d_o_TVALID => axi_interfaces_0_d_o_TVALID
+      clk => gmii_to_rgmii_0_gmii_tx_clk,
+      probe0(9 downto 0) => fifo_generator_2_m_axis_tdata(9 downto 0),
+      probe1(10 downto 0) => fifo_generator_2_axis_wr_data_count(10 downto 0),
+      probe10(0) => vio_0_probe_out0(0),
+      probe11(0) => fifo_generator_2_s_axis_tready,
+      probe12(0) => fifo_generator_2_axis_prog_full,
+      probe13(0) => fifo_generator_2_axis_prog_empty,
+      probe14(10 downto 0) => fifo_generator_1_dout(10 downto 0),
+      probe15(0) => xlslice_0_Dout(0),
+      probe2(10 downto 0) => fifo_generator_2_axis_rd_data_count(10 downto 0),
+      probe3(9 downto 0) => fifo_generator_1_dout1(9 downto 0),
+      probe4(9 downto 0) => fifo_generator_1_wr_data_count(9 downto 0),
+      probe5(9 downto 0) => fifo_generator_1_rd_data_count(9 downto 0),
+      probe6(0) => or_gate_rd_en_fifo_1_Res(0),
+      probe7(0) => or_gate_wr_en_fifo_1_Res(0),
+      probe8(0) => fifo_generator_2_prog_full,
+      probe9(0) => fifo_generator_2_axis_prog_empty
     );
 fifo_generator_0: component design_1_fifo_generator_0_0
      port map (
       din(9 downto 0) => xlconcat_0_dout(9 downto 0),
-      dout(9 downto 0) => fifo_generator_0_dout(9 downto 0),
+      dout(9 downto 0) => NLW_fifo_generator_0_dout_UNCONNECTED(9 downto 0),
       empty => NLW_fifo_generator_0_empty_UNCONNECTED,
       full => NLW_fifo_generator_0_full_UNCONNECTED,
-      prog_empty => fifo_generator_0_prog_empty,
-      prog_full => fifo_generator_0_prog_full,
+      prog_empty => NLW_fifo_generator_0_prog_empty_UNCONNECTED,
+      prog_full => NLW_fifo_generator_0_prog_full_UNCONNECTED,
       rd_clk => gmii_to_rgmii_1_gmii_tx_clk,
       rd_en => or_gate_rd_en_fifo_0_Res(0),
-      rst => link_status_not_gate_Res(0),
+      rst => vio_0_probe_out0(0),
       valid => NLW_fifo_generator_0_valid_UNCONNECTED,
-      wr_clk => gmii2axis_0_m00_axis_aclk_OUT,
+      wr_clk => gmii_to_rgmii_0_gmii_rx_clk,
       wr_en => or_gate_wr_en_fifo_0_Res(0)
     );
-fifo_generator_1: component design_1_fifo_generator_1_0
+fifo_generator_1: component design_1_fifo_generator_0_1
      port map (
       din(9 downto 0) => xlconcat_1_dout(9 downto 0),
-      dout(9 downto 0) => fifo_generator_1_dout(9 downto 0),
+      dout(9 downto 0) => fifo_generator_1_dout1(9 downto 0),
       empty => NLW_fifo_generator_1_empty_UNCONNECTED,
       full => NLW_fifo_generator_1_full_UNCONNECTED,
-      prog_empty => fifo_generator_1_prog_empty,
-      prog_full => fifo_generator_1_prog_full,
-      rd_clk => gmii2axis_0_s00_axis_aclk_OUT,
+      prog_empty => NLW_fifo_generator_1_prog_empty_UNCONNECTED,
+      prog_full => fifo_generator_2_prog_full,
+      rd_clk => gmii_to_rgmii_0_gmii_tx_clk,
+      rd_data_count(9 downto 0) => fifo_generator_1_rd_data_count(9 downto 0),
       rd_en => or_gate_rd_en_fifo_1_Res(0),
-      rst => link_status_not_gate_Res(0),
+      rst => vio_0_probe_out0(0),
       valid => NLW_fifo_generator_1_valid_UNCONNECTED,
       wr_clk => gmii_to_rgmii_1_gmii_rx_clk,
+      wr_data_count(9 downto 0) => fifo_generator_1_wr_data_count(9 downto 0),
       wr_en => or_gate_wr_en_fifo_1_Res(0)
     );
-gmii2axis_0: component design_1_gmii2axis_0_0
+fifo_generator_2: component design_1_fifo_generator_1_0
      port map (
-      I_clk200 => processing_system7_0_FCLK_CLK1,
-      I_gmii_tx_er => xlslice_error_1_Dout(0),
-      I_rgmii_rx_ctl => gmii2axis_0_RGMII_RX_CTL,
-      I_rgmii_rxc => gmii2axis_0_RGMII_RXC,
-      I_rgmii_rxd(3 downto 0) => gmii2axis_0_RGMII_RD(3 downto 0),
-      Q_clock_speed(1 downto 0) => NLW_gmii2axis_0_Q_clock_speed_UNCONNECTED(1 downto 0),
-      Q_duplex_status => NLW_gmii2axis_0_Q_duplex_status_UNCONNECTED,
-      Q_gmii_clk_125m_out => gmii2axis_0_Q_gmii_clk_125m_out,
-      Q_gmii_clk_25m_out => gmii2axis_0_Q_gmii_clk_25m_out,
-      Q_gmii_clk_2_5m_out => gmii2axis_0_Q_gmii_clk_2_5m_out,
-      Q_gmii_rx_er => gmii2axis_0_Q_gmii_rx_er,
-      Q_link_status => gmii2axis_0_Q_link_status,
-      Q_mmcm_locked => gmii2axis_0_Q_mmcm_locked,
-      Q_ref_clk_out => gmii2axis_0_Q_ref_clk_out,
-      Q_rgmii_tx_ctl => gmii2axis_0_RGMII_TX_CTL,
-      Q_rgmii_txc => gmii2axis_0_RGMII_TXC,
-      Q_rgmii_txd(3 downto 0) => gmii2axis_0_RGMII_TD(3 downto 0),
-      Q_speed_mode(1 downto 0) => NLW_gmii2axis_0_Q_speed_mode_UNCONNECTED(1 downto 0),
-      m00_axis_aclk_OUT => gmii2axis_0_m00_axis_aclk_OUT,
-      m00_axis_aresetn => util_vector_logic_0_Res(0),
-      m00_axis_tdata(7 downto 0) => gmii2axis_0_m00_axis_tdata(7 downto 0),
-      m00_axis_tlast => NLW_gmii2axis_0_m00_axis_tlast_UNCONNECTED,
-      m00_axis_tready => axi_interfaces_0_d_i_TREADY,
-      m00_axis_tstrb(0) => NLW_gmii2axis_0_m00_axis_tstrb_UNCONNECTED(0),
-      m00_axis_tvalid => gmii2axis_0_m00_axis_tvalid,
+      axis_prog_empty => fifo_generator_2_axis_prog_empty,
+      axis_prog_full => fifo_generator_2_axis_prog_full,
+      axis_rd_data_count(10 downto 0) => fifo_generator_2_axis_rd_data_count(10 downto 0),
+      axis_wr_data_count(10 downto 0) => fifo_generator_2_axis_wr_data_count(10 downto 0),
+      m_aclk => gmii_to_rgmii_0_gmii_tx_clk,
+      m_axis_tdata(15 downto 0) => fifo_generator_2_m_axis_tdata(15 downto 0),
+      m_axis_tready => or_gate_rd_en_fifo_1_Res(0),
+      m_axis_tuser(3 downto 0) => NLW_fifo_generator_2_m_axis_tuser_UNCONNECTED(3 downto 0),
+      m_axis_tvalid => NLW_fifo_generator_2_m_axis_tvalid_UNCONNECTED,
+      s_aclk => gmii_to_rgmii_1_gmii_rx_clk,
+      s_aresetn => link_status_not_gate1_Res(0),
+      s_axis_tdata(15 downto 10) => NLW_fifo_generator_2_s_axis_tdata_UNCONNECTED(15 downto 10),
+      s_axis_tdata(9 downto 0) => xlconcat_1_dout(9 downto 0),
+      s_axis_tready => fifo_generator_2_s_axis_tready,
+      s_axis_tuser(3 downto 0) => B"0000",
+      s_axis_tvalid => or_gate_wr_en_fifo_1_Res(0)
+    );
+fifo_generator_3: component design_1_fifo_generator_2_0
+     port map (
+      axis_prog_empty => fifo_generator_3_axis_prog_empty,
+      axis_prog_full => fifo_generator_3_axis_prog_full,
+      axis_rd_data_count(10 downto 0) => NLW_fifo_generator_3_axis_rd_data_count_UNCONNECTED(10 downto 0),
+      axis_wr_data_count(10 downto 0) => NLW_fifo_generator_3_axis_wr_data_count_UNCONNECTED(10 downto 0),
+      m_aclk => gmii_to_rgmii_1_gmii_tx_clk,
+      m_axis_tdata(15 downto 0) => fifo_generator_0_dout(15 downto 0),
+      m_axis_tready => or_gate_rd_en_fifo_0_Res(0),
+      m_axis_tuser(3 downto 0) => NLW_fifo_generator_3_m_axis_tuser_UNCONNECTED(3 downto 0),
+      m_axis_tvalid => NLW_fifo_generator_3_m_axis_tvalid_UNCONNECTED,
+      s_aclk => gmii_to_rgmii_0_gmii_rx_clk,
+      s_aresetn => link_status_not_gate1_Res(0),
+      s_axis_tdata(15 downto 10) => NLW_fifo_generator_3_s_axis_tdata_UNCONNECTED(15 downto 10),
+      s_axis_tdata(9 downto 0) => xlconcat_0_dout(9 downto 0),
+      s_axis_tready => NLW_fifo_generator_3_s_axis_tready_UNCONNECTED,
+      s_axis_tuser(3 downto 0) => B"0000",
+      s_axis_tvalid => or_gate_wr_en_fifo_0_Res(0)
+    );
+gmii_to_rgmii_0: component design_1_gmii_to_rgmii_0_0
+     port map (
+      clkin => processing_system7_0_FCLK_CLK1,
+      clock_speed(1 downto 0) => NLW_gmii_to_rgmii_0_clock_speed_UNCONNECTED(1 downto 0),
+      duplex_status => NLW_gmii_to_rgmii_0_duplex_status_UNCONNECTED,
+      gmii_clk_125m_out => gmii_clk_125m_out,
+      gmii_clk_25m_out => gmii_to_rgmii_0_gmii_clk_25m_out,
+      gmii_clk_2_5m_out => gmii_to_rgmii_0_gmii_clk_2_5m_out,
+      gmii_col => NLW_gmii_to_rgmii_0_gmii_col_UNCONNECTED,
+      gmii_crs => NLW_gmii_to_rgmii_0_gmii_crs_UNCONNECTED,
+      gmii_rx_clk => gmii_to_rgmii_0_gmii_rx_clk,
+      gmii_rx_dv => gmii_to_rgmii_0_gmii_rx_dv,
+      gmii_rx_er => gmii_to_rgmii_0_gmii_rx_er,
+      gmii_rxd(7 downto 0) => gmii_to_rgmii_0_gmii_rxd(7 downto 0),
+      gmii_tx_clk => gmii_to_rgmii_0_gmii_tx_clk,
+      gmii_tx_en => xlslice_valid_1_Dout(0),
+      gmii_tx_er => xlslice_error_1_Dout(0),
+      gmii_txd(7 downto 0) => xlslice_data_1_Dout(7 downto 0),
+      link_status => gmii_to_rgmii_0_link_status,
       mdio_gem_i => gmii_to_rgmii_1_MDIO_PHY_MDIO_I,
       mdio_gem_mdc => gmii_to_rgmii_1_MDIO_PHY_MDC,
       mdio_gem_o => gmii_to_rgmii_1_MDIO_PHY_MDIO_O,
       mdio_gem_t => gmii_to_rgmii_1_MDIO_PHY_MDIO_T,
       mdio_phy_i => '0',
-      mdio_phy_mdc => NLW_gmii2axis_0_mdio_phy_mdc_UNCONNECTED,
-      mdio_phy_o => NLW_gmii2axis_0_mdio_phy_o_UNCONNECTED,
-      mdio_phy_t => NLW_gmii2axis_0_mdio_phy_t_UNCONNECTED,
-      s00_axis_aclk_OUT => gmii2axis_0_s00_axis_aclk_OUT,
-      s00_axis_aresetn => util_vector_logic_0_Res(0),
-      s00_axis_tdata(7 downto 0) => xlslice_data_1_Dout(7 downto 0),
-      s00_axis_tlast => '0',
-      s00_axis_tready => NLW_gmii2axis_0_s00_axis_tready_UNCONNECTED,
-      s00_axis_tstrb(0) => '0',
-      s00_axis_tvalid => xlslice_valid_1_Dout(0)
+      mdio_phy_mdc => NLW_gmii_to_rgmii_0_mdio_phy_mdc_UNCONNECTED,
+      mdio_phy_o => NLW_gmii_to_rgmii_0_mdio_phy_o_UNCONNECTED,
+      mdio_phy_t => NLW_gmii_to_rgmii_0_mdio_phy_t_UNCONNECTED,
+      mmcm_locked_out => gmii_to_rgmii_0_mmcm_locked_out,
+      ref_clk_out => gmii_to_rgmii_0_ref_clk_out,
+      rgmii_rx_ctl => gmii_to_rgmii_0_RGMII_RX_CTL,
+      rgmii_rxc => gmii_to_rgmii_0_RGMII_RXC,
+      rgmii_rxd(3 downto 0) => gmii_to_rgmii_0_RGMII_RD(3 downto 0),
+      rgmii_tx_ctl => gmii_to_rgmii_0_RGMII_TX_CTL,
+      rgmii_txc => gmii_to_rgmii_0_RGMII_TXC,
+      rgmii_txd(3 downto 0) => gmii_to_rgmii_0_RGMII_TD(3 downto 0),
+      rx_reset => util_vector_logic_0_Res(0),
+      speed_mode(1 downto 0) => NLW_gmii_to_rgmii_0_speed_mode_UNCONNECTED(1 downto 0),
+      tx_reset => util_vector_logic_0_Res(0)
     );
 gmii_to_rgmii_1: component design_1_gmii_to_rgmii_1_0
      port map (
       clock_speed(1 downto 0) => NLW_gmii_to_rgmii_1_clock_speed_UNCONNECTED(1 downto 0),
       duplex_status => NLW_gmii_to_rgmii_1_duplex_status_UNCONNECTED,
-      gmii_clk_125m_in => gmii2axis_0_Q_gmii_clk_125m_out,
-      gmii_clk_25m_in => gmii2axis_0_Q_gmii_clk_25m_out,
-      gmii_clk_2_5m_in => gmii2axis_0_Q_gmii_clk_2_5m_out,
+      gmii_clk_125m_in => gmii_clk_125m_out,
+      gmii_clk_25m_in => gmii_to_rgmii_0_gmii_clk_25m_out,
+      gmii_clk_2_5m_in => gmii_to_rgmii_0_gmii_clk_2_5m_out,
       gmii_col => NLW_gmii_to_rgmii_1_gmii_col_UNCONNECTED,
       gmii_crs => NLW_gmii_to_rgmii_1_gmii_crs_UNCONNECTED,
       gmii_rx_clk => gmii_to_rgmii_1_gmii_rx_clk,
@@ -717,8 +888,8 @@ gmii_to_rgmii_1: component design_1_gmii_to_rgmii_1_0
       mdio_phy_mdc => gmii_to_rgmii_1_MDIO_PHY_MDC,
       mdio_phy_o => gmii_to_rgmii_1_MDIO_PHY_MDIO_O,
       mdio_phy_t => gmii_to_rgmii_1_MDIO_PHY_MDIO_T,
-      mmcm_locked_in => gmii2axis_0_Q_mmcm_locked,
-      ref_clk_in => gmii2axis_0_Q_ref_clk_out,
+      mmcm_locked_in => gmii_to_rgmii_0_mmcm_locked_out,
+      ref_clk_in => gmii_to_rgmii_0_ref_clk_out,
       rgmii_rx_ctl => gmii_to_rgmii_1_RGMII_RX_CTL,
       rgmii_rxc => gmii_to_rgmii_1_RGMII_RXC,
       rgmii_rxd(3 downto 0) => gmii_to_rgmii_1_RGMII_RD(3 downto 0),
@@ -731,7 +902,7 @@ gmii_to_rgmii_1: component design_1_gmii_to_rgmii_1_0
     );
 link_status_and_gate: component design_1_link_status_and_gate_0
      port map (
-      Op1(0) => gmii2axis_0_Q_link_status,
+      Op1(0) => gmii_to_rgmii_0_link_status,
       Op2(0) => gmii_to_rgmii_1_link_status,
       Res(0) => link_status_and_gate_Res(0)
     );
@@ -740,30 +911,53 @@ link_status_not_gate: component design_1_link_status_not_gate_0
       Op1(0) => link_status_and_gate_Res(0),
       Res(0) => link_status_not_gate_Res(0)
     );
+link_status_not_gate1: component design_1_link_status_not_gate_1
+     port map (
+      Op1(0) => vio_0_probe_out0(0),
+      Res(0) => link_status_not_gate1_Res(0)
+    );
+mux_and: component design_1_util_vector_logic_1_3
+     port map (
+      Op1(10 downto 0) => mux_not_Res(10 downto 0),
+      Op2(10 downto 0) => xlconcat_2_dout(10 downto 0),
+      Res(10 downto 0) => util_vector_logic_2_Res(10 downto 0)
+    );
+mux_and_2: component design_1_util_vector_logic_1_2
+     port map (
+      Op1(10 downto 0) => xlconcat_3_dout(10 downto 0),
+      Op2(10 downto 0) => vio_0_probe_out1(10 downto 0),
+      Res(10 downto 0) => util_vector_logic_1_Res(10 downto 0)
+    );
+mux_not: component design_1_util_vector_logic_3_0
+     port map (
+      Op1(10 downto 0) => vio_0_probe_out1(10 downto 0),
+      Res(10 downto 0) => mux_not_Res(10 downto 0)
+    );
+mux_or: component design_1_util_vector_logic_1_4
+     port map (
+      Op1(10 downto 0) => util_vector_logic_1_Res(10 downto 0),
+      Op2(10 downto 0) => util_vector_logic_2_Res(10 downto 0),
+      Res(10 downto 0) => fifo_generator_1_dout(10 downto 0)
+    );
 not_gate_empty_fifo_0: component design_1_not_gate_empty_fifo_0_0
      port map (
-      Op1(0) => fifo_generator_0_prog_empty,
+      Op1(0) => fifo_generator_3_axis_prog_empty,
       Res(0) => not_gate_empty_fifo_0_Res(0)
     );
 not_gate_empty_fifo_1: component design_1_not_gate_empty_fifo_1_0
      port map (
-      Op1(0) => fifo_generator_1_prog_empty,
+      Op1(0) => fifo_generator_2_axis_prog_empty,
       Res(0) => not_gate_empty_fifo_1_Res(0)
     );
 not_gate_full_fifo_0: component design_1_not_gate_full_fifo_0_0
      port map (
-      Op1(0) => fifo_generator_0_prog_full,
+      Op1(0) => fifo_generator_3_axis_prog_full,
       Res(0) => not_gate_full_fifo_0_Res(0)
     );
 not_gate_full_fifo_1: component design_1_not_gate_full_fifo_1_0
      port map (
-      Op1(0) => fifo_generator_1_prog_full,
+      Op1(0) => xlslice_0_Dout(0),
       Res(0) => not_gate_full_fifo_1_Res(0)
-    );
-not_gate_full_fifo_2: component design_1_not_gate_full_fifo_1_1
-     port map (
-      Op1(0) => util_vector_logic_0_Res(0),
-      Res(0) => not_gate_full_fifo_2_Res(0)
     );
 or_gate_rd_en_fifo_0: component design_1_or_gate_rd_en_fifo_0_0
      port map (
@@ -780,7 +974,7 @@ or_gate_rd_en_fifo_1: component design_1_or_gate_rd_en_fifo_1_0
 or_gate_wr_en_fifo_0: component design_1_or_gate_wr_en_fifo_0_0
      port map (
       Op1(0) => not_gate_full_fifo_0_Res(0),
-      Op2(0) => axi_interfaces_0_d_o_TVALID,
+      Op2(0) => gmii_to_rgmii_0_gmii_rx_dv,
       Res(0) => or_gate_wr_en_fifo_0_Res(0)
     );
 or_gate_wr_en_fifo_1: component design_1_or_gate_wr_en_fifo_1_0
@@ -899,11 +1093,18 @@ util_vector_logic_0: component design_1_util_vector_logic_0_0
       Op1(0) => processing_system7_0_FCLK_RESET0_N,
       Res(0) => util_vector_logic_0_Res(0)
     );
+vio_0: component design_1_vio_0_0
+     port map (
+      clk => gmii_to_rgmii_0_gmii_rx_clk,
+      probe_in0(0) => link_status_not_gate_Res(0),
+      probe_out0(0) => vio_0_probe_out0(0),
+      probe_out1(10 downto 0) => vio_0_probe_out1(10 downto 0)
+    );
 xlconcat_0: component design_1_xlconcat_0_0
      port map (
-      In0(7 downto 0) => axi_interfaces_0_d_o_TDATA(7 downto 0),
-      In1(0) => gmii2axis_0_Q_gmii_rx_er,
-      In2(0) => axi_interfaces_0_d_o_TVALID,
+      In0(7 downto 0) => gmii_to_rgmii_0_gmii_rxd(7 downto 0),
+      In1(0) => gmii_to_rgmii_0_gmii_rx_er,
+      In2(0) => gmii_to_rgmii_0_gmii_rx_dv,
       dout(9 downto 0) => xlconcat_0_dout(9 downto 0)
     );
 xlconcat_1: component design_1_xlconcat_1_0
@@ -913,9 +1114,22 @@ xlconcat_1: component design_1_xlconcat_1_0
       In2(0) => gmii_to_rgmii_1_gmii_rx_dv,
       dout(9 downto 0) => xlconcat_1_dout(9 downto 0)
     );
-xlconstant_0: component design_1_xlconstant_0_0
+xlconcat_2: component design_1_xlconcat_2_0
      port map (
-      dout(0) => xlconstant_0_dout(0)
+      In0(9 downto 0) => fifo_generator_1_dout1(9 downto 0),
+      In1(0) => fifo_generator_2_prog_full,
+      dout(10 downto 0) => xlconcat_2_dout(10 downto 0)
+    );
+xlconcat_3: component design_1_xlconcat_2_1
+     port map (
+      In0(9 downto 0) => fifo_generator_2_m_axis_tdata(9 downto 0),
+      In1(0) => fifo_generator_2_axis_prog_full,
+      dout(10 downto 0) => xlconcat_3_dout(10 downto 0)
+    );
+xlslice_0: component design_1_xlslice_0_0
+     port map (
+      Din(10 downto 0) => fifo_generator_1_dout(10 downto 0),
+      Dout(0) => xlslice_0_Dout(0)
     );
 xlslice_data_0: component design_1_xlslice_data_0_0
      port map (
@@ -924,7 +1138,8 @@ xlslice_data_0: component design_1_xlslice_data_0_0
     );
 xlslice_data_1: component design_1_xlslice_data_1_0
      port map (
-      Din(9 downto 0) => fifo_generator_1_dout(9 downto 0),
+      Din(15 downto 11) => NLW_xlslice_data_1_Din_UNCONNECTED(15 downto 11),
+      Din(10 downto 0) => fifo_generator_1_dout(10 downto 0),
       Dout(7 downto 0) => xlslice_data_1_Dout(7 downto 0)
     );
 xlslice_error_0: component design_1_xlslice_error_0_0
@@ -934,7 +1149,8 @@ xlslice_error_0: component design_1_xlslice_error_0_0
     );
 xlslice_error_1: component design_1_xlslice_error_1_0
      port map (
-      Din(9 downto 0) => fifo_generator_1_dout(9 downto 0),
+      Din(15 downto 11) => NLW_xlslice_error_1_Din_UNCONNECTED(15 downto 11),
+      Din(10 downto 0) => fifo_generator_1_dout(10 downto 0),
       Dout(0) => xlslice_error_1_Dout(0)
     );
 xlslice_valid_0: component design_1_xlslice_valid_0_0
@@ -944,7 +1160,8 @@ xlslice_valid_0: component design_1_xlslice_valid_0_0
     );
 xlslice_valid_1: component design_1_xlslice_valid_1_0
      port map (
-      Din(9 downto 0) => fifo_generator_1_dout(9 downto 0),
+      Din(15 downto 11) => NLW_xlslice_valid_1_Din_UNCONNECTED(15 downto 11),
+      Din(10 downto 0) => fifo_generator_1_dout(10 downto 0),
       Dout(0) => xlslice_valid_1_Dout(0)
     );
 end STRUCTURE;

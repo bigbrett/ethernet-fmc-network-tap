@@ -58,7 +58,7 @@ USE work.xlslice;
 
 ENTITY design_1_xlslice_valid_1_0 IS
   PORT (
-    Din : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+    Din : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
     Dout : OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
   );
 END design_1_xlslice_valid_1_0;
@@ -73,7 +73,7 @@ ARCHITECTURE design_1_xlslice_valid_1_0_arch OF design_1_xlslice_valid_1_0 IS
       DIN_TO : INTEGER
     );
     PORT (
-      Din : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+      Din : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
       Dout : OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
     );
   END COMPONENT xlslice;
@@ -82,11 +82,11 @@ ARCHITECTURE design_1_xlslice_valid_1_0_arch OF design_1_xlslice_valid_1_0 IS
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF design_1_xlslice_valid_1_0_arch : ARCHITECTURE IS "design_1_xlslice_valid_1_0,xlslice,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF design_1_xlslice_valid_1_0_arch: ARCHITECTURE IS "design_1_xlslice_valid_1_0,xlslice,{x_ipProduct=Vivado 2016.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=xlslice,x_ipVersion=1.0,x_ipCoreRevision=0,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,DIN_WIDTH=10,DIN_FROM=9,DIN_TO=9}";
+  ATTRIBUTE CORE_GENERATION_INFO OF design_1_xlslice_valid_1_0_arch: ARCHITECTURE IS "design_1_xlslice_valid_1_0,xlslice,{x_ipProduct=Vivado 2016.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=xlslice,x_ipVersion=1.0,x_ipCoreRevision=0,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,DIN_WIDTH=16,DIN_FROM=9,DIN_TO=9}";
 BEGIN
   U0 : xlslice
     GENERIC MAP (
-      DIN_WIDTH => 10,
+      DIN_WIDTH => 16,
       DIN_FROM => 9,
       DIN_TO => 9
     )
